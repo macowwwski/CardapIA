@@ -1,0 +1,40 @@
+{
+    "geral": {
+        "percentual_minimo_agricultura_familiar": 30,
+        "alimentos_proibidos": [
+            "alimentos ricos em gorduras trans industrializadas"
+        ],
+       "frequencia_alimentos": {
+            "ferro_heme": "mínimo 4 vezes/semana",
+            "vitamina_A": "mínimo 3 vezes/semana",
+            "produtos_carneos": "máximo 2 vezes/mês",
+            "alimentos_em_conserva": "máximo 1 vez/mês",
+            "doces": "máximo 1 vez/mês"
+        },
+        "frequencia_alimentos_por_periodo": {
+            "liquidos_lacteos_com_aditivos_ou_adocados": {
+                "parcial": "máximo 1 vez/mês",
+                "integral": "máximo 2 vezes/mês"
+            },
+            "preparacoes_regionais_doces": {
+                "parcial": "máximo 2 vezes/mês",
+                "integral": "máximo 1 vez/semana"
+            },
+            "margarina_ou_creme_vegetal": {
+                "parcial": "máximo 2 vezes/mês",
+                "integral": "máximo 1 vez/semana"
+            },
+            "biscoito_bolacha_pão_ou_bolo": {
+                "parcial_1_refeicao": "máximo 2 vezes/semana",
+                "parcial_2_ou_mais_refeicoes": "máximo 3 vezes/semana",
+                "integral": "máximo 7 vezes/semana" 
+            }
+        },
+        "recomendacao_quantidade_de_alimentos": {
+            "description": "Os alimentos podem ser tanto in natura quanto processados",
+            "1_refeicao/dia": "mínimo 10 alimentos diferentes/semana",
+            "2_refeicoes/dia": "mínimo 14 alimentos diferentes/semana",
+            "3_ou_mais_refeicoes/dia": "mínimo 23 alimentos diferentes/semana"
+        }
+    }
+}
