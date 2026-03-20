@@ -28,13 +28,259 @@
                 "parcial_1_refeicao": "máximo 2 vezes/semana",
                 "parcial_2_ou_mais_refeicoes": "máximo 3 vezes/semana",
                 "integral": "máximo 7 vezes/semana" 
+            }, 
+            "frutas_e_legumes_in_natura": {
+                "observation": "Suco de fruta não substitui a oferta de frutas in natura.",
+                "parcial": {
+                    "quantidade": "mínimo 280g/estudante/semana",
+                    "frutas": "mínimo 2 dias/semana",
+                    "legumes": "mínimo 3 dias/semana"
+                },
+                "integral": {
+                    "quantidade": "mínimo 520g/estudante/semana",
+                    "frutas": "mínimo 4 dias/semana",
+                    "legumes": "mínimo 5 dias/semana"
+                }
             }
         },
-        "recomendacao_quantidade_de_alimentos": {
-            "description": "Os alimentos podem ser tanto in natura quanto processados",
+        "recomendacao_diferenciacao_de_alimentos": {
+            "observation": "Os alimentos podem ser tanto in natura quanto processados.",
             "1_refeicao/dia": "mínimo 10 alimentos diferentes/semana",
             "2_refeicoes/dia": "mínimo 14 alimentos diferentes/semana",
             "3_ou_mais_refeicoes/dia": "mínimo 23 alimentos diferentes/semana"
         }
+    },
+
+    "creche": {
+        "faixa_etaria": "0 a 3 anos",
+        "alimentos_proibidos": [
+            "alimentos ultraprocessados",
+            "alimentos com adição de açúcar",
+            "alimentos com adição de mel",
+            "alimentos com adição de adoçante"
+        ],
+        "referencias_nutricionais": {
+            "percentuais_vet": {
+                    "carboidratos": { "minimo": 55, "maximo": 65 },
+                    "proteinas": { "minimo": 10, "maximo": 15 },
+                    "lipidios": { "minimo": 25, "maximo": 35 }
+                },
+            "30%_das_necessidades_diarias": {
+                "description": "Valores referentes a 30% das necessidades diárias por refeição principal.",
+                "subfaixas_etarias": {
+                    "7_11_meses": {
+                        "energia_kcal": 203,
+                        "carboidratos_g": { "minimo": 28, "maximo": 33 },
+                        "proteinas_g": { "minimo": 5, "maximo": 8 },
+                        "lipidios_g": { "minimo": 6, "maximo": 8 },
+                        "vitamina_a_mcg": 150,
+                        "vitamina_c_mg": 15,
+                        "calcio_mg": 78,
+                        "ferro_mg": 2
+                    },
+                    "1_3_anos": {
+                        "energia_kcal": 304,
+                        "carboidratos_g": { "minimo": 42, "maximo": 49 },
+                        "proteinas_g": { "minimo": 8, "maximo": 11 },
+                        "lipidios_g": { "minimo": 8, "maximo": 12 },
+                        "vitamina_a_mcg": 63,
+                        "vitamina_c_mg": 4,
+                        "calcio_mg": 150,
+                        "ferro_mg": 1
+                    }
+                }
+        },
+        "70%_das_necessidades_diarias": {
+                "description": "Valores referentes a 70% das necessidades diárias por refeição principal.",
+                "subfaixas_etarias": {
+                    "7_11_meses": {
+                        "energia_kcal": 475,
+                        "carboidratos_g": { "minimo": 65, "maximo": 77 },
+                        "proteinas_g": { "minimo": 12, "maximo": 18 },
+                        "lipidios_g": { "minimo": 13, "maximo": 18 },
+                        "vitamina_a_mcg": 350,
+                        "vitamina_c_mg": 35,
+                        "calcio_mg": 182,
+                        "ferro_mg": 5
+                    },
+                    "1_3_anos": {
+                        "energia_kcal": 708,
+                        "carboidratos_g": { "minimo": 97, "maximo": 115 },
+                        "proteinas_g": { "minimo": 18, "maximo": 27 },
+                        "lipidios_g": { "minimo": 20, "maximo": 28 },
+                        "vitamina_a_mcg": 147,
+                        "vitamina_c_mg": 9,
+                        "calcio_mg": 350,
+                        "ferro_mg": 2
+                    }
+                }
+        }
     }
+},
+
+    "outras_etapas_ensino_basico": {
+        "description": "As etapas são: pré-escola, ensino fundamental, ensino médio e EJA",
+        "faixa_etaria": "4 anos ou mais",
+        "recomendacoes_quantidade": {
+            "percentual_energia_total": {
+                "acucar_simples_adicionado": 7,
+                "gorduras_totais": { "minimo": 15, "maximo": 30 },
+                "gordura_saturada": 7
+            },
+            "maximo_sodio": {
+                "parcial_1_refeicao": "600 mg ou 1,5 g de sal per capita",
+                "parcial_2_ou_mais_refeicoes": "800 mg ou 2,0 g de sal per capita",
+                "integral": "1400 mg ou 3,5 g de sal per capita"
+            }
+        },
+        "referencias_nutricionais": {
+            "percentuais_vet": {
+                    "carboidratos": { "minimo": 55, "maximo": 65 },
+                    "proteinas": { "minimo": 10, "maximo": 15 },
+                    "lipidios": { "minimo": 15, "maximo": 30 }
+                },
+            "20%_das_necessidades_diarias": {
+                "description": "Valores referentes a 20% das necessidades diárias por refeição principal.",
+                "subfaixas_etarias": {
+                    "pre-escola": {
+                        "idade": "4 a 5 anos",
+                        "energia_kcal": 270,
+                        "carboidratos_g": { "minimo": 37, "maximo": 44 },
+                        "proteinas_g": { "minimo": 7, "maximo": 10 },
+                        "lipidios_g": { "minimo": 8, "maximo": 11 }
+                    },
+                    "ensino_fundamental": {
+                        "6_a_10_anos": {
+                            "energia_kcal": 329,
+                            "carboidratos_g": { "minimo": 45, "maximo": 53 },
+                            "proteinas_g": { "minimo": 8, "maximo": 12 },
+                            "lipidios_g": { "minimo": 9, "maximo": 13 }
+                        },
+                        "11_a_15_anos": {
+                            "energia_kcal": 473,
+                            "carboidratos_g": { "minimo": 65, "maximo": 77 },
+                            "proteinas_g": { "minimo": 12, "maximo": 18 },
+                            "lipidios_g": { "minimo": 13, "maximo": 18 }
+                        }
+                    },
+                    "ensino_medio": {
+                        "idade": "16 a 18 anos",
+                            "energia_kcal": 543,
+                            "carboidratos_g": { "minimo": 75, "maximo": 88 },
+                            "proteinas_g": { "minimo": 14, "maximo": 20 },
+                            "lipidios_g": { "minimo": 15, "maximo": 21 }
+                    },
+                    "EJA": {
+                        "19_a_30_anos": {
+                            "energia_kcal": 477,
+                            "carboidratos_g": { "minimo": 66, "maximo": 77 },
+                            "proteinas_g": { "minimo": 12, "maximo": 18 },
+                            "lipidios_g": { "minimo": 8, "maximo": 16 }
+                        },
+                        "31_a_60_anos": {
+                            "energia_kcal": 459,
+                            "carboidratos_g": { "minimo": 63, "maximo": 75 },
+                            "proteinas_g": { "minimo": 11, "maximo": 17 },
+                            "lipidios_g": { "minimo": 8, "maximo": 15 }
+                        }
+                    }
+                }
+            },
+            "30%_das_necessidades_diarias": {
+                "description": "Valores referentes a 30% das necessidades diárias por refeição principal.",
+                "subfaixas_etarias": {
+                    "pre-escola": {
+                        "idade": "4 a 5 anos",
+                        "energia_kcal": 405,
+                        "carboidratos_g": { "minimo": 56, "maximo": 66 },
+                        "proteinas_g": { "minimo": 10, "maximo": 15 },
+                        "lipidios_g": { "minimo": 11, "maximo": 16 }
+                    },
+                    "ensino_fundamental": {
+                        "6_a_10_anos": {
+                            "energia_kcal": 493,
+                            "carboidratos_g": { "minimo": 68, "maximo": 80 },
+                            "proteinas_g": { "minimo": 12, "maximo": 18 },
+                            "lipidios_g": { "minimo": 14, "maximo": 19 }
+                        },
+                        "11_a_15_anos": {
+                            "energia_kcal": 710,
+                            "carboidratos_g": { "minimo": 98, "maximo": 115 },
+                            "proteinas_g": { "minimo": 18, "maximo": 27 },
+                            "lipidios_g": { "minimo": 20, "maximo": 28 }
+                        }
+                    },
+                    "ensino_medio": {
+                        "idade": "16 a 18 anos",
+                            "energia_kcal": 815,
+                            "carboidratos_g": { "minimo": 112, "maximo": 132 },
+                            "proteinas_g": { "minimo": 20, "maximo": 31 },
+                            "lipidios_g": { "minimo": 23, "maximo": 32 }
+                    },
+                    "EJA": {
+                        "19_a_30_anos": {
+                            "energia_kcal": 715,
+                            "carboidratos_g": { "minimo": 98, "maximo": 116 },
+                            "proteinas_g": { "minimo": 18, "maximo": 27 },
+                            "lipidios_g": { "minimo": 12, "maximo": 24 }
+                        },
+                        "31_a_60_anos": {
+                            "energia_kcal": 689,
+                            "carboidratos_g": { "minimo": 95, "maximo": 112 },
+                            "proteinas_g": { "minimo": 17, "maximo": 26 },
+                            "lipidios_g": { "minimo": 11, "maximo": 23 }
+                        }
+                    }
+                }
+            },
+            "70%_das_necessidades_diarias": {
+                "description": "Valores referentes a 70% das necessidades diárias por refeição principal.",
+                "subfaixas_etarias": {
+                    "pre-escola": {
+                        "idade": "4 a 5 anos",
+                        "energia_kcal": 945,
+                        "carboidratos_g": { "minimo": 130, "maximo": 154 },
+                        "proteinas_g": { "minimo": 24, "maximo": 35 },
+                        "lipidios_g": { "minimo": 26, "maximo": 37 }
+                    },
+                    "ensino_fundamental": {
+                        "6_a_10_anos": {
+                            "energia_kcal": 1150,
+                            "carboidratos_g": { "minimo": 158, "maximo": 187 },
+                            "proteinas_g": { "minimo": 29, "maximo": 43 },
+                            "lipidios_g": { "minimo": 32, "maximo": 45 }
+                        },
+                        "11_a_15_anos": {
+                            "energia_kcal": 1656,
+                            "carboidratos_g": { "minimo": 228, "maximo": 269 },
+                            "proteinas_g": { "minimo": 41, "maximo": 62 },
+                            "lipidios_g": { "minimo": 46, "maximo": 64 }
+                        }
+                    },
+                    "ensino_medio": {
+                        "idade": "16 a 18 anos",
+                            "energia_kcal": 1902,
+                            "carboidratos_g": { "minimo": 262, "maximo": 309 },
+                            "proteinas_g": { "minimo": 48, "maximo": 71 },
+                            "lipidios_g": { "minimo": 53, "maximo": 74 }
+                    },
+                    "EJA": {
+                        "19_a_30_anos": {
+                            "energia_kcal": 1668,
+                            "carboidratos_g": { "minimo": 229, "maximo": 271 },
+                            "proteinas_g": { "minimo": 42, "maximo": 63 },
+                            "lipidios_g": { "minimo": 28, "maximo": 56 }
+                        },
+                        "31_a_60_anos": {
+                            "energia_kcal": 1607,
+                            "carboidratos_g": { "minimo": 221, "maximo": 261 },
+                            "proteinas_g": { "minimo": 40, "maximo": 60 },
+                            "lipidios_g": { "minimo": 27, "maximo": 54 }
+                        }
+                    }
+                }
+        }
+
+    }
+}
 }
