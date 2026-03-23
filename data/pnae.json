@@ -5,6 +5,11 @@
         "alimentos_proibidos": [
             "alimentos ricos em gorduras trans industrializadas"
         ],
+        "mapeamento_periodo_percentual": {
+            "parcial_1_refeicao": "20%_das_necessidades_diarias",
+            "parcial_2_refeicoes": "30%_das_necessidades_diarias",
+            "integral": "70%_das_necessidades_diarias"
+        },
        "frequencia_alimentos": {
             "ferro_heme": {
                 "frequencia": "mínimo 4 vezes/semana",
