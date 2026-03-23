@@ -1,11 +1,15 @@
 {
     "geral": {
         "percentual_minimo_agricultura_familiar": 30,
+        "aplica_se_a": "creche e outras_etapas_ensino_basico",
         "alimentos_proibidos": [
             "alimentos ricos em gorduras trans industrializadas"
         ],
        "frequencia_alimentos": {
-            "ferro_heme": "mínimo 4 vezes/semana",
+            "ferro_heme": {
+                "frequencia": "mínimo 4 vezes/semana",
+                "observation": "No caso de alimentos fonte de ferro não heme, estes devem ser acompanhados de facilitadores da sua absorção, como alimentos fonte de vitamina C."
+            },
             "vitamina_A": "mínimo 3 vezes/semana",
             "produtos_carneos": "máximo 2 vezes/mês",
             "alimentos_em_conserva": "máximo 1 vez/mês",
@@ -45,9 +49,9 @@
         },
         "recomendacao_diferenciacao_de_alimentos": {
             "observation": "Os alimentos podem ser tanto in natura quanto processados.",
-            "1_refeicao/dia": "mínimo 10 alimentos diferentes/semana",
-            "2_refeicoes/dia": "mínimo 14 alimentos diferentes/semana",
-            "3_ou_mais_refeicoes/dia": "mínimo 23 alimentos diferentes/semana"
+            "1_refeicao_por_dia": "mínimo 10 alimentos diferentes/semana",
+            "2_refeicoes_por_dia": "mínimo 14 alimentos diferentes/semana",
+            "3_ou_mais_refeicoes_por_dia": "mínimo 23 alimentos diferentes/semana"
         }
     },
 
@@ -65,8 +69,9 @@
                     "proteinas": { "minimo": 10, "maximo": 15 },
                     "lipidios": { "minimo": 25, "maximo": 35 }
                 },
-            "30%_das_necessidades_diarias": {
+            "30pct_das_necessidades_diarias": {
                 "description": "Valores referentes a 30% das necessidades diárias por refeição principal.",
+                "numero_minimo_refeicoes": 2,
                 "subfaixas_etarias": {
                     "7_11_meses": {
                         "energia_kcal": 203,
@@ -90,8 +95,9 @@
                     }
                 }
         },
-        "70%_das_necessidades_diarias": {
+        "70pct_das_necessidades_diarias": {
                 "description": "Valores referentes a 70% das necessidades diárias por refeição principal.",
+                "numero_minimo_refeicoes": 3,
                 "subfaixas_etarias": {
                     "7_11_meses": {
                         "energia_kcal": 475,
@@ -120,6 +126,7 @@
 
     "outras_etapas_ensino_basico": {
         "description": "As etapas são: pré-escola, ensino fundamental, ensino médio e EJA",
+        "alimentos_proibidos": [],
         "faixa_etaria": "4 anos ou mais",
         "recomendacoes_quantidade": {
             "percentual_energia_total": {
@@ -134,12 +141,13 @@
             }
         },
         "referencias_nutricionais": {
+            "observation": "Não há especificação para micronutrientes.",
             "percentuais_vet": {
                     "carboidratos": { "minimo": 55, "maximo": 65 },
                     "proteinas": { "minimo": 10, "maximo": 15 },
                     "lipidios": { "minimo": 15, "maximo": 30 }
                 },
-            "20%_das_necessidades_diarias": {
+            "20pct_das_necessidades_diarias": {
                 "description": "Valores referentes a 20% das necessidades diárias por refeição principal.",
                 "subfaixas_etarias": {
                     "pre-escola": {
@@ -186,7 +194,7 @@
                     }
                 }
             },
-            "30%_das_necessidades_diarias": {
+            "30pct_das_necessidades_diarias": {
                 "description": "Valores referentes a 30% das necessidades diárias por refeição principal.",
                 "subfaixas_etarias": {
                     "pre-escola": {
@@ -233,7 +241,7 @@
                     }
                 }
             },
-            "70%_das_necessidades_diarias": {
+            "70pct_das_necessidades_diarias": {
                 "description": "Valores referentes a 70% das necessidades diárias por refeição principal.",
                 "subfaixas_etarias": {
                     "pre-escola": {
@@ -279,8 +287,8 @@
                         }
                     }
                 }
-        }
+            }
 
+        }
     }
-}
 }
