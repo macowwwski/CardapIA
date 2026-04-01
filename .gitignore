@@ -1,1 +1,13 @@
+# Ambiente virtual
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Variáveis de ambiente
 .env
+
+# Alembic (arquivos compilados)
+*.pyc
