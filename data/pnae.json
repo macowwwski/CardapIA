@@ -1,6 +1,6 @@
 {
     "geral": {
-        "percentual_minimo_agricultura_familiar": 30,
+        "percentual_minimo_agricultura_familiar": 45,
         "aplica_se_a": "creche e outras_etapas_ensino_basico",
         "alimentos_proibidos": [
             "alimentos ricos em gorduras trans industrializadas"
@@ -12,10 +12,10 @@
         },
        "frequencia_alimentos": {
             "ferro_heme": {
-                "frequencia": "mínimo 4 vezes/semana",
+                "frequencia": "mínimo 4 dias/semana",
                 "observation": "No caso de alimentos fonte de ferro não heme, estes devem ser acompanhados de facilitadores da sua absorção, como alimentos fonte de vitamina C."
             },
-            "vitamina_A": "mínimo 3 vezes/semana",
+            "vitamina_A": "mínimo 3 dias/semana",
             "produtos_carneos": "máximo 2 vezes/mês",
             "alimentos_em_conserva": "máximo 1 vez/mês",
             "doces": "máximo 1 vez/mês"
@@ -25,7 +25,7 @@
                 "parcial": "máximo 1 vez/mês",
                 "integral": "máximo 2 vezes/mês"
             },
-            "preparacoes_regionais_doces": {
+            "preparacoes_doces": {
                 "parcial": "máximo 2 vezes/mês",
                 "integral": "máximo 1 vez/semana"
             },
@@ -36,27 +36,27 @@
             "biscoito_bolacha_pão_ou_bolo": {
                 "parcial_1_refeicao": "máximo 2 vezes/semana",
                 "parcial_2_ou_mais_refeicoes": "máximo 3 vezes/semana",
-                "integral": "máximo 7 vezes/semana" 
+                "integral_3_ou_mais_refeicoes": "máximo 7 vezes/semana" 
             }, 
-            "frutas_e_legumes_in_natura": {
+            "frutas_legumes_e_verduras_in_natura": {
                 "observation": "Suco de fruta não substitui a oferta de frutas in natura.",
                 "parcial": {
                     "quantidade": "mínimo 280g/estudante/semana",
                     "frutas": "mínimo 2 dias/semana",
-                    "legumes": "mínimo 3 dias/semana"
+                    "legumes_e_verduras": "mínimo 3 dias/semana"
                 },
                 "integral": {
                     "quantidade": "mínimo 520g/estudante/semana",
                     "frutas": "mínimo 4 dias/semana",
-                    "legumes": "mínimo 5 dias/semana"
+                    "legumes_e_verduras": "mínimo 5 dias/semana"
                 }
             }
         },
         "recomendacao_diferenciacao_de_alimentos": {
-            "observation": "Os alimentos podem ser tanto in natura quanto processados.",
-            "1_refeicao_por_dia": "mínimo 10 alimentos diferentes/semana",
-            "2_refeicoes_por_dia": "mínimo 14 alimentos diferentes/semana",
-            "3_ou_mais_refeicoes_por_dia": "mínimo 23 alimentos diferentes/semana"
+            "observation": "Os alimentos podem ser tanto in natura quanto minimamente processados.",
+            "parcial_1_refeicao": "mínimo 10 alimentos diferentes/semana",
+            "parcial_2_ou_mais_refeicoes": "mínimo 14 alimentos diferentes/semana",
+            "integral_3_ou_mais_refeicoes": "mínimo 23 alimentos diferentes/semana"
         }
     },
 
@@ -142,7 +142,7 @@
             "maximo_sodio": {
                 "parcial_1_refeicao": "600 mg ou 1,5 g de sal per capita",
                 "parcial_2_ou_mais_refeicoes": "800 mg ou 2,0 g de sal per capita",
-                "integral": "1400 mg ou 3,5 g de sal per capita"
+                "integral_3_ou_mais_refeicoes": "1400 mg ou 3,5 g de sal per capita"
             }
         },
         "referencias_nutricionais": {
