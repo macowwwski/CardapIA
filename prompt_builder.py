@@ -13,33 +13,103 @@ with open(CAMINHO_JSON, encoding="utf-8") as f:
 # Funções auxiliares
 # ---------------------------------------------------------
 
-def _mapear_percentual(periodo: str) -> str:
-    """
-    Traduz o período informado no formulário para a chave
-    correta no JSON.
-    """
-    mapeamento = {
-        "parcial_1_refeicao":  "20%_das_necessidades_diarias",
-        "parcial_2_refeicoes": "30%_das_necessidades_diarias",
-        "integral":            "70%_das_necessidades_diarias",
-    }
-    if periodo not in mapeamento:
-        raise ValueError(f"Período inválido: '{periodo}'. "
-                         f"Valores aceitos: {list(mapeamento.keys())}")
-    return mapeamento[periodo]
+# def _mapear_percentual(periodo: str) -> str:
+#     """
+#     Traduz o período informado no formulário para a chave
+#     correta no JSON.
+#     """
+#     mapeamento = {
+#         "parcial_1_refeicao":  "20%_das_necessidades_diarias",
+#         "parcial_2_refeicoes": "30%_das_necessidades_diarias",
+#         "integral":            "70%_das_necessidades_diarias",
+#     }
+#     if periodo not in mapeamento:
+#         raise ValueError(f"Combinação inváldia: '{periodo}'. "
+#                          f"Valores aceitos: {list(mapeamento.keys())}")
+#     return mapeamento[periodo]
 
 
-def _obter_segmento(faixa_etaria: str) -> dict:
-    """
-    Retorna o bloco correto do JSON (creche ou outras_etapas)
-    com base na faixa etária.
-    """
-    faixas_creche = {"7_11_meses", "1_3_anos"}
+def _mapear_percentual(periodo: str, num_refeicoes: int) -> str:
+    if periodo == "integral":
+        return "70%_das_necessidades_diarias"
+    elif periodo == "parcial" and num_refeicoes == 1:
+        return "20%_das_necessidades_diarias"
+    elif periodo == "parcial" and num_refeicoes >= 2:
+        return "30%_das_necessidades_diarias"
+    else:
+        raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
 
-    if faixa_etaria in faixas_creche:
+
+def _mapear_refeicoes_periodo(periodo: str, num_refeicoes: int) -> str:
+    if periodo == "integral":
+        return "integral"
+    elif periodo == "parcial" and num_refeicoes == 1:
+        return "parcial_1_refeicao"
+    elif periodo == "parcial" and num_refeicoes >= 2:
+        return "parcial_2_ou_mais_refeicoes"
+    else:
+        raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
+
+
+def _obter_etapa(etapa: str) -> dict:
+    """
+    Decide entre os blocos raiz creche e outras_etapas.
+    """
+    if etapa == "creche":
         return REGRAS_PNAE["creche"]
     else:
         return REGRAS_PNAE["outras_etapas_ensino_basico"]
+    
+
+def _mapear_subfaixa_outras_etapas(etapa: str) -> str:
+    """
+    Busca a chave específica da subfaixa dentro de outras_etapas.
+    """
+    mapeamento = {
+        "pré-escola":           "pre-escola",
+        "ensino fundamental":   "ensino_fundamental",
+        "ensino médio":         "ensino_medio",
+        "EJA":                  "EJA"
+    }
+    
+    if etapa not in mapeamento:
+        raise ValueError(f"Etapa inválida: '{etapa}'")
+    return mapeamento[etapa]
+
+
+def _mapear_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict) -> dict:
+    """
+    Busca o bloco de faixa etária correto dentro de subfaixas_etarias.
+    """
+    if etapa == "creche":
+        mapeamento = {
+            "7 a 11 meses": "7_a_11_meses",
+            "1 a 3 anos": "1_a_3_anos",
+        }
+        return subfaixas[mapeamento[faixa_etaria]]
+    
+    elif etapa == "ensino fundamental":
+        mapeamento = {
+            "6 a 10 anos": "6_a_10_anos",
+            "11 a 15 anos": "11_a_15_anos",
+        }
+        return subfaixas["ensino_fundamental"][mapeamento[faixa_etaria]]
+    
+    elif etapa == "EJA":
+        mapeamento = {
+            "19 a 30 anos": "19_a_30_anos",
+            "31 a 60 anos": "31_a_60_anos"
+        }
+        return subfaixas["EJA"][mapeamento[faixa_etaria]]
+    
+    else:
+        mapeamento = {
+            "pré-escola": "pre-escola",
+            "ensino médio": "ensino_medio"
+        }
+        return subfaixas[mapeamento[etapa]]
+
+
 
 
 def _obter_subfaixa(faixa_etaria: str, periodo: str) -> dict:

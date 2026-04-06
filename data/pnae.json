@@ -5,6 +5,10 @@
         "alimentos_proibidos": [
             "alimentos ricos em gorduras trans industrializadas"
         ],
+        "refeicoes_por_periodo": {
+        "parcial": "1 ou 2 refeições por dia",
+        "integral": "mínimo 3 refeições por dia"
+        },
         "mapeamento_periodo_percentual": {
             "parcial_1_refeicao": "20pct_das_necessidades_diarias",
             "parcial_2_refeicoes": "30pct_das_necessidades_diarias",
@@ -36,7 +40,7 @@
             "biscoito_bolacha_pão_ou_bolo": {
                 "parcial_1_refeicao": "máximo 2 vezes/semana",
                 "parcial_2_ou_mais_refeicoes": "máximo 3 vezes/semana",
-                "integral_3_ou_mais_refeicoes": "máximo 7 vezes/semana" 
+                "integral": "máximo 7 vezes/semana" 
             }, 
             "frutas_legumes_e_verduras_in_natura": {
                 "observation": "Suco de fruta não substitui a oferta de frutas in natura.",
@@ -56,7 +60,7 @@
             "observation": "Os alimentos podem ser tanto in natura quanto minimamente processados.",
             "parcial_1_refeicao": "mínimo 10 alimentos diferentes/semana",
             "parcial_2_ou_mais_refeicoes": "mínimo 14 alimentos diferentes/semana",
-            "integral_3_ou_mais_refeicoes": "mínimo 23 alimentos diferentes/semana"
+            "integral": "mínimo 23 alimentos diferentes/semana"
         }
     },
 
@@ -104,7 +108,7 @@
                 "description": "Valores referentes a 70% das necessidades diárias por refeição principal.",
                 "numero_minimo_refeicoes": 3,
                 "subfaixas_etarias": {
-                    "7_11_meses": {
+                    "7_a_11_meses": {
                         "energia_kcal": 475,
                         "carboidratos_g": { "minimo": 65, "maximo": 77 },
                         "proteinas_g": { "minimo": 12, "maximo": 18 },
@@ -114,7 +118,7 @@
                         "calcio_mg": 182,
                         "ferro_mg": 5
                     },
-                    "1_3_anos": {
+                    "1_a_3_anos": {
                         "energia_kcal": 708,
                         "carboidratos_g": { "minimo": 97, "maximo": 115 },
                         "proteinas_g": { "minimo": 18, "maximo": 27 },
@@ -142,7 +146,7 @@
             "maximo_sodio": {
                 "parcial_1_refeicao": "600 mg ou 1,5 g de sal per capita",
                 "parcial_2_ou_mais_refeicoes": "800 mg ou 2,0 g de sal per capita",
-                "integral_3_ou_mais_refeicoes": "1400 mg ou 3,5 g de sal per capita"
+                "integral": "1400 mg ou 3,5 g de sal per capita"
             }
         },
         "referencias_nutricionais": {
