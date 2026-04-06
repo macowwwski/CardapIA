@@ -13,21 +13,8 @@ with open(CAMINHO_JSON, encoding="utf-8") as f:
 # Funções auxiliares
 # ---------------------------------------------------------
 
-# def _mapear_percentual(periodo: str) -> str:
-#     """
-#     Traduz o período informado no formulário para a chave
-#     correta no JSON.
-#     """
-#     mapeamento = {
-#         "parcial_1_refeicao":  "20%_das_necessidades_diarias",
-#         "parcial_2_refeicoes": "30%_das_necessidades_diarias",
-#         "integral":            "70%_das_necessidades_diarias",
-#     }
-#     if periodo not in mapeamento:
-#         raise ValueError(f"Combinação inváldia: '{periodo}'. "
-#                          f"Valores aceitos: {list(mapeamento.keys())}")
-#     return mapeamento[periodo]
-
+# Mapear: funções que apenas "traduzem" as entradas do forms para nomes no JSON
+# Obter: funções que navegam dentro do JSON
 
 def _mapear_percentual(periodo: str, num_refeicoes: int) -> str:
     if periodo == "integral":
@@ -77,7 +64,7 @@ def _mapear_subfaixa_outras_etapas(etapa: str) -> str:
     return mapeamento[etapa]
 
 
-def _mapear_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict) -> dict:
+def _mapear_e_obter_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict) -> dict:
     """
     Busca o bloco de faixa etária correto dentro de subfaixas_etarias.
     """
@@ -110,39 +97,12 @@ def _mapear_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict) -> dict
         return subfaixas[mapeamento[etapa]]
 
 
-
-
-def _obter_subfaixa(faixa_etaria: str, periodo: str) -> dict:
+def _obter_referencias_nutricionais(etapa_bloco: dict, percentual: str) -> dict:
     """
-    Navega até os valores nutricionais corretos dentro do JSON,
-    cruzando faixa etária com o percentual do período.
+    Navega até subfaixas_etarias dentro das referencias_nutricionais
+    com base no percentual das necessidades diárias.
     """
-    segmento   = _obter_segmento(faixa_etaria)
-    percentual = _mapear_percentual(periodo)
-
-    referencias = segmento["referencias_nutricionais"]
-
-    # Creche não tem bloco de 20% — valida combinação inválida
-    if percentual not in referencias:
-        raise ValueError(
-            f"Combinação inválida: faixa '{faixa_etaria}' "
-            f"não possui referência para '{percentual}'."
-        )
-
-    subfaixas = referencias[percentual]["subfaixas_etarias"]
-
-    # Para ensino_fundamental, a subfaixa fica um nível mais fundo
-    # ex: subfaixas["ensino_fundamental"]["6_a_10_anos"]
-    if faixa_etaria in {"6_a_10_anos", "11_a_15_anos"}:
-        return subfaixas["ensino_fundamental"][faixa_etaria]
-
-    if faixa_etaria in {"19_a_30_anos", "31_a_60_anos"}:
-        return subfaixas["EJA"][faixa_etaria]
-
-    if faixa_etaria not in subfaixas:
-        raise ValueError(f"Faixa etária '{faixa_etaria}' não encontrada no JSON.")
-
-    return subfaixas[faixa_etaria]
+    return etapa_bloco["referencias_nutricionais"][percentual]["subfaixas_etarias"]
 
 
 def _formatar_lista(lista: list[str]) -> str:
