@@ -116,11 +116,10 @@ def _formatar_frequencias(frequencias: dict) -> str:
     e formata cada regra como uma linha de texto.
     """
     linhas = []
-    for chave, valor in frequencias.items():
+    for chave, valor in frequencias.items(): 
         if chave == "description":
             continue
         if isinstance(valor, dict):
-            # Tem subcampos (ex: frutas_e_legumes com parcial/integral)
             for subchave, subvalor in valor.items():
                 if subchave == "observation":
                     linhas.append(f"  Obs: {subvalor}")
@@ -135,12 +134,14 @@ def _formatar_frequencias(frequencias: dict) -> str:
 
 
 # ---------------------------------------------------------
-# Função principal
+# Função principal de montagem do contexto
 # ---------------------------------------------------------
 
 def construir_contexto(
+    etapa: str,
     faixa_etaria: str,
     periodo: str,
+    num_refeicoes: int,
     restricoes: list[str] | None = None,
     num_semanas: int = 1
 ) -> str:
@@ -148,35 +149,51 @@ def construir_contexto(
     Monta o bloco de contexto que será injetado no prompt da LLM.
 
     Parâmetros:
-        faixa_etaria : chave do JSON (ex: "6_a_10_anos")
-        periodo      : "parcial_1_refeicao" | "parcial_2_refeicoes" | "integral"
-        restricoes   : lista de restrições alimentares da turma (opcional)
-        num_semanas  : quantas semanas de cardápio gerar
-
-    Retorna:
-        string formatada para ser inserida no prompt como contexto
+        etapa         : "creche" | "pré-escola" | "ensino fundamental" | "ensino médio" | "EJA"
+        faixa_etaria  : ex: "6 a 10 anos", "7 a 11 meses"
+        periodo       : "parcial" | "integral"
+        num_refeicoes : número de refeições diárias
+        restricoes    : lista de restrições alimentares da turma (opcional)
+        num_semanas   : quantas semanas de cardápio gerar
     """
     restricoes = restricoes or []
 
-    geral    = REGRAS_PNAE["geral"]
-    segmento = _obter_segmento(faixa_etaria)
-    subfaixa = _obter_subfaixa(faixa_etaria, periodo)
+    # --- Navegação no JSON ---
+    geral        = REGRAS_PNAE["geral"]
+    etapa_bloco  = _obter_etapa(etapa)
+    percentual   = _mapear_percentual(periodo, num_refeicoes)
+    subfaixas    = _obter_referencias_nutricionais(etapa_bloco, percentual)
+    valores      = _mapear_e_obter_faixa_etaria(etapa, faixa_etaria, subfaixas)
+    periodo_freq = _mapear_refeicoes_periodo(periodo, num_refeicoes)
 
-    # Junta proibições universais com as específicas da faixa etária
+    # --- Proibições: universais + específicas da etapa ---
     proibicoes = (
         geral.get("alimentos_proibidos", []) +
-        segmento.get("alimentos_proibidos", [])
+        etapa_bloco.get("alimentos_proibidos", [])
     )
 
-    # Percentuais VET do segmento
-    pvet = segmento["referencias_nutricionais"]["percentuais_vet"]
+    # --- Percentuais VET do bloco da etapa ---
+    pvet = etapa_bloco["referencias_nutricionais"]["percentuais_vet"]
 
+    # --- Frequências por período ---
+    # Filtra cada item do bloco de frequências pelo período correto
+    frequencias_periodo = {}
+    for chave, valor in geral["frequencia_alimentos_por_periodo"].items():
+        if chave == "description":
+            continue
+        if isinstance(valor, dict) and periodo_freq in valor:
+            frequencias_periodo[chave] = valor[periodo_freq]
+        else:
+            frequencias_periodo[chave] = valor
+
+    # --- Monta o texto ---
     contexto = f"""
 ## REGRAS DO PNAE — CONTEXTO PARA GERAÇÃO DE CARDÁPIO
 
 ### Configuração solicitada
-- Faixa etária: {faixa_etaria.replace("_", " ")}
-- Período: {periodo.replace("_", " ")}
+- Etapa: {etapa}
+- Faixa etária: {faixa_etaria}
+- Período: {periodo} ({num_refeicoes} refeição/refeições por dia)
 - Semanas a gerar: {num_semanas}
 - Restrições alimentares da turma: {_formatar_lista(restricoes) if restricoes else "nenhuma"}
 
@@ -186,36 +203,33 @@ def construir_contexto(
 ### Agricultura familiar
 - Mínimo obrigatório: {geral['percentual_minimo_agricultura_familiar']}% dos insumos
 
-### Frequências obrigatórias (válidas para todos os períodos)
+### Frequências obrigatórias (todos os períodos)
 {_formatar_frequencias(geral['frequencia_alimentos'])}
 
-### Frequências por período ({periodo.replace("_", " ")})
-{_formatar_frequencias({k: v[periodo] if periodo in v else v
-    for k, v in geral['frequencia_alimentos_por_periodo'].items()
-    if k != 'description'})}
+### Frequências para o período selecionado ({periodo}, {num_refeicoes} refeição/refeições)
+{_formatar_frequencias(frequencias_periodo)}
 
 ### Diversidade de alimentos
-- {num_semanas} semana(s): respeitar mínimo de alimentos diferentes por semana
-  conforme número de refeições diárias
+{_formatar_frequencias(geral['recomendacao_diferenciacao_de_alimentos'])}
 
-### Referências nutricionais por refeição
-- Carboidratos: {pvet['carboidratos']['minimo']}% a {pvet['carboidratos']['maximo']}% do VET
-- Proteínas:    {pvet['proteinas']['minimo']}% a {pvet['proteinas']['maximo']}% do VET
-- Lipídios:     {pvet['lipidios']['minimo']}% a {pvet['lipidios']['maximo']}% do VET
+### Percentuais do VET
+- Carboidratos: {pvet['carboidratos']['minimo']}% a {pvet['carboidratos']['maximo']}%
+- Proteínas:    {pvet['proteinas']['minimo']}% a {pvet['proteinas']['maximo']}%
+- Lipídios:     {pvet['lipidios']['minimo']}% a {pvet['lipidios']['maximo']}%
 
-Valores absolutos para a faixa etária e período selecionados:
-- Energia:       {subfaixa['energia_kcal']} kcal
-- Carboidratos:  {subfaixa['carboidratos_g']['minimo']}g a {subfaixa['carboidratos_g']['maximo']}g
-- Proteínas:     {subfaixa['proteinas_g']['minimo']}g a {subfaixa['proteinas_g']['maximo']}g
-- Lipídios:      {subfaixa['lipidios_g']['minimo']}g a {subfaixa['lipidios_g']['maximo']}g
+### Valores nutricionais absolutos por refeição ({percentual.replace('_', ' ')})
+- Energia:      {valores['energia_kcal']} kcal
+- Carboidratos: {valores['carboidratos_g']['minimo']}g a {valores['carboidratos_g']['maximo']}g
+- Proteínas:    {valores['proteinas_g']['minimo']}g a {valores['proteinas_g']['maximo']}g
+- Lipídios:     {valores['lipidios_g']['minimo']}g a {valores['lipidios_g']['maximo']}g
 """
 
     # Micronutrientes — só existem no bloco creche
-    if "vitamina_a_mcg" in subfaixa:
-        contexto += f"""- Vitamina A:    {subfaixa['vitamina_a_mcg']} mcg
-- Vitamina C:    {subfaixa['vitamina_c_mg']} mg
-- Cálcio:        {subfaixa['calcio_mg']} mg
-- Ferro:         {subfaixa['ferro_mg']} mg
+    if "vitamina_a_mcg" in valores:
+        contexto += f"""- Vitamina A:    {valores['vitamina_a_mcg']} mcg
+- Vitamina C:    {valores['vitamina_c_mg']} mg
+- Cálcio:        {valores['calcio_mg']} mg
+- Ferro:         {valores['ferro_mg']} mg
 """
 
     return contexto.strip()
