@@ -56,7 +56,7 @@
                 }
             }
         },
-        "recomendacao_diferenciacao_de_alimentos": {
+        "recomendacao_diversidade_de_alimentos": {
             "observation": "Os alimentos podem ser tanto in natura quanto minimamente processados.",
             "parcial_1_refeicao": "mínimo 10 alimentos diferentes/semana",
             "parcial_2_ou_mais_refeicoes": "mínimo 14 alimentos diferentes/semana",

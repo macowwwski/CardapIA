@@ -18,11 +18,11 @@ with open(CAMINHO_JSON, encoding="utf-8") as f:
 
 def _mapear_percentual(periodo: str, num_refeicoes: int) -> str:
     if periodo == "integral":
-        return "70%_das_necessidades_diarias"
+        return "70pct_das_necessidades_diarias"
     elif periodo == "parcial" and num_refeicoes == 1:
-        return "20%_das_necessidades_diarias"
+        return "20pct_das_necessidades_diarias"
     elif periodo == "parcial" and num_refeicoes >= 2:
-        return "30%_das_necessidades_diarias"
+        return "30pct_das_necessidades_diarias"
     else:
         raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
 
@@ -95,6 +95,14 @@ def _mapear_e_obter_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict)
             "ensino médio": "ensino_medio"
         }
         return subfaixas[mapeamento[etapa]]
+
+
+def _obter_recomendacoes_quantidade(etapa_bloco: dict) -> dict | None:
+    """
+    Retorna o bloco recomendacoes_quantidade se existir.
+    Retorna None para creche, que não possui esse bloco.
+    """
+    return etapa_bloco.get("recomendacoes_quantidade", None)
 
 
 def _obter_referencias_nutricionais(etapa_bloco: dict, percentual: str) -> dict:
@@ -181,10 +189,24 @@ def construir_contexto(
     for chave, valor in geral["frequencia_alimentos_por_periodo"].items():
         if chave == "description":
             continue
-        if isinstance(valor, dict) and periodo_freq in valor:
-            frequencias_periodo[chave] = valor[periodo_freq]
+        if isinstance(valor, dict):
+            if periodo_freq in valor:      # ex: biscoito_bolacha
+                frequencias_periodo[chave] = valor[periodo_freq]
+            elif periodo in valor:         # ex: frutas_legumes, liquidos_lacteos
+                frequencias_periodo[chave] = valor[periodo]
+            else:
+                frequencias_periodo[chave] = valor
         else:
             frequencias_periodo[chave] = valor
+
+    # --- Diversidade de alimentos por período ---
+    # Filtra o bloco de recomendacao_diversidade_de_alimentos pelo período correto
+    diversidade_periodo = {}
+    for chave, valor in geral["recomendacao_diversidade_de_alimentos"].items():
+        if chave in ("description", "observation"):
+            continue
+        if chave == periodo_freq:
+            diversidade_periodo[chave] = valor
 
     # --- Monta o texto ---
     contexto = f"""
@@ -209,8 +231,8 @@ def construir_contexto(
 ### Frequências para o período selecionado ({periodo}, {num_refeicoes} refeição/refeições)
 {_formatar_frequencias(frequencias_periodo)}
 
-### Diversidade de alimentos
-{_formatar_frequencias(geral['recomendacao_diferenciacao_de_alimentos'])}
+### Diversidade de alimentos para ({periodo}, {num_refeicoes} refeição/refeições)
+{_formatar_frequencias(diversidade_periodo)}
 
 ### Percentuais do VET
 - Carboidratos: {pvet['carboidratos']['minimo']}% a {pvet['carboidratos']['maximo']}%
@@ -231,5 +253,17 @@ def construir_contexto(
 - Cálcio:        {valores['calcio_mg']} mg
 - Ferro:         {valores['ferro_mg']} mg
 """
+        
+    # Recomendações quantidade energia total e sódio — só existe em outras_etapas
+    recomendacoes = _obter_recomendacoes_quantidade(etapa_bloco)
 
+    if recomendacoes:
+        contexto += f"""
+### Recomendações de quantidade
+- Açúcar simples adicionado: máximo {recomendacoes['percentual_energia_total']['acucar_simples_adicionado']}% do VET
+- Gorduras totais: {recomendacoes['percentual_energia_total']['gorduras_totais']['minimo']}% a {recomendacoes['percentual_energia_total']['gorduras_totais']['maximo']}% do VET
+- Gordura saturada: máximo {recomendacoes['percentual_energia_total']['gordura_saturada']}% do VET
+- Sódio ({periodo}, {num_refeicoes} refeição/refeições): {recomendacoes['maximo_sodio'][periodo_freq]}
+"""
+    
     return contexto.strip()
