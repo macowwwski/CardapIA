@@ -51,6 +51,93 @@ CREATE TABLE public.taco (
 
 
 -- -------------------------------------------------------------
--- TABELAS DE CARDÁPIOS
--- (a ser adicionado nas próximas etapas do projeto)
+-- TABELA: etapa_escolar
 -- -------------------------------------------------------------
+ 
+CREATE TABLE public.etapa_escolar (
+    id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    etapa        VARCHAR NOT NULL,    -- "creche", "pré-escola", "ensino fundamental", "ensino médio", "EJA"
+    faixa_etaria VARCHAR NOT NULL,    
+    UNIQUE (etapa, faixa_etaria)
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: cardapio
+-- Cardápio mensal gerado para uma etapa escolar específica
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.cardapio (
+    id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    etapa_escolar_id UUID NOT NULL REFERENCES public.etapa_escolar(id),
+    periodo          VARCHAR NOT NULL,   -- "parcial", "integral"
+    mes_aplicacao    TEXT,
+    num_refeicoes    INTEGER NOT NULL,
+    num_semanas      INTEGER NOT NULL DEFAULT 4,
+    data_geracao     TIMESTAMP NOT NULL DEFAULT now(),
+    aprovado         BOOLEAN NOT NULL DEFAULT false,
+    observacoes      TEXT
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: semana
+-- Cada cardápio é dividido em semanas (1 a 4)
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.semana (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    cardapio_id UUID NOT NULL REFERENCES public.cardapio(id) ON DELETE CASCADE,
+    numero      INTEGER NOT NULL CHECK (numero BETWEEN 1 AND 4)
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: dia
+-- Cada semana é dividida em dias úteis (segunda a sexta)
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.dia (
+    id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    semana_id   UUID NOT NULL REFERENCES public.semana(id) ON DELETE CASCADE,
+    dia_semana  VARCHAR NOT NULL    -- "segunda", "terça", "quarta", "quinta", "sexta"
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: refeicao
+-- Cada dia tem uma ou mais refeições
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.refeicao (
+    id      UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    dia_id  UUID NOT NULL REFERENCES public.dia(id) ON DELETE CASCADE,
+    tipo    VARCHAR NOT NULL,    -- "almoço", "lanche da manhã", "lanche da tarde", "jantar"
+    horario TIME                 
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: prato
+-- Cada refeição é composta por um ou mais pratos
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.prato (
+    id                 UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    refeicao_id        UUID NOT NULL REFERENCES public.refeicao(id) ON DELETE CASCADE,
+    nome               VARCHAR NOT NULL,
+    estado_preparacao  VARCHAR             -- "cozido", "grelhado", "cru", "assado"
+);
+ 
+ 
+-- -------------------------------------------------------------
+-- TABELA: ingrediente
+-- Cada prato é composto por ingredientes da TACO com quantidade
+-- -------------------------------------------------------------
+ 
+CREATE TABLE public.ingrediente (
+    id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    prato_id     UUID NOT NULL REFERENCES public.prato(id) ON DELETE CASCADE,
+    taco_id      UUID NOT NULL REFERENCES public.taco(id),
+    quantidade_g FLOAT NOT NULL
+);

@@ -45,6 +45,7 @@ def run_migrations_offline() -> None:
     load_dotenv()
 
     url = os.getenv("DATABASE_URL")
+    print(f"URL recebida: '{url}'")
 
     context.configure(
         url=url,
@@ -57,22 +58,19 @@ def run_migrations_offline() -> None:
         context.run_migrations()
 
 
-def run_migrations_online() -> None:
-    """Run migrations in 'online' mode.
+def run_migrations_online():
+    import os
+    from dotenv import load_dotenv
+    from sqlalchemy import create_engine
 
-    In this scenario we need to create an Engine
-    and associate a connection with the context.
+    load_dotenv()
 
-    """
-    connectable = engine_from_config(
-        config.get_section(config.config_ini_section, {}),
-        prefix="sqlalchemy.",
-        poolclass=pool.NullPool,
-    )
+    connectable = create_engine(os.getenv("DATABASE_URL"))
 
     with connectable.connect() as connection:
         context.configure(
-            connection=connection, target_metadata=target_metadata
+            connection=connection,
+            target_metadata=target_metadata
         )
 
         with context.begin_transaction():
