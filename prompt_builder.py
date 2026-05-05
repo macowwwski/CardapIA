@@ -37,6 +37,13 @@ def _mapear_refeicoes_periodo(periodo: str, num_refeicoes: int) -> str:
     else:
         raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
 
+"""
+def _tipos_de_refeicao(turno: str, num_refeicoes: int) -> list:
+    if num_refeicoes == 1:
+        return {"lanche"}
+    if num_refeicoes == 2:
+        return {""}
+"""
 
 def _obter_etapa(etapa: str) -> dict:
     """
@@ -149,6 +156,7 @@ def construir_contexto(
     etapa: str,
     faixa_etaria: str,
     periodo: str,
+    #turno: str,
     num_refeicoes: int,
     restricoes: list[str] | None = None,
     num_semanas: int = 1
@@ -160,6 +168,7 @@ def construir_contexto(
         etapa         : "creche" | "pré-escola" | "ensino fundamental" | "ensino médio" | "EJA"
         faixa_etaria  : ex: "6 a 10 anos", "7 a 11 meses"
         periodo       : "parcial" | "integral"
+        turno         : "matutino" | "vespertino" | "integral"
         num_refeicoes : número de refeições diárias
         restricoes    : lista de restrições alimentares da turma (opcional)
         num_semanas   : quantas semanas de cardápio gerar
