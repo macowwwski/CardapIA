@@ -1,6 +1,8 @@
 import os
 import json
 import time
+import re
+import unicodedata
 from dotenv import load_dotenv
 from enum import Enum
 from langchain_core.tools import tool
@@ -32,9 +34,9 @@ class PratoSchema(BaseModel):
     ingredientes: list[IngredienteSchema]
 
 class TipoRefeicao(str, Enum):
-    cafe_da_manha = "café da manhã"
-    lanche_manha = "lanche da manhã"
+    desjejum = "desjejum"
     almoco = "almoço"
+    reforco = "reforço"
     lanche_tarde = "lanche da tarde"
     jantar = "jantar"
 
@@ -55,6 +57,16 @@ class CardapioSchema(BaseModel):
     mes_aplicacao: str
     semanas: list[SemanaSchema]
     observacoes: str
+
+
+TIPOS_REFEICAO_PERMITIDOS = {tipo.value for tipo in TipoRefeicao}
+ORDEM_TIPOS_REFEICAO = [
+    TipoRefeicao.desjejum.value,
+    TipoRefeicao.almoco.value,
+    TipoRefeicao.reforco.value,
+    TipoRefeicao.lanche_tarde.value,
+    TipoRefeicao.jantar.value,
+]
 
 
 # ---------------------------------------------------------
@@ -126,24 +138,108 @@ def buscar_cn_ingrediente_taco(nome_alimento: str) -> dict:
         }
 
 
-def corrigir_estrutura(dados: dict):
+def _texto_normalizado(valor: object) -> str:
+    texto = str(valor or "").strip().lower()
+    return "".join(
+        caractere
+        for caractere in unicodedata.normalize("NFD", texto)
+        if unicodedata.category(caractere) != "Mn"
+    )
+
+
+def _extrair_numero(valor: object, padrao: int) -> int:
+    if isinstance(valor, int):
+        return valor
+
+    match = re.search(r"\d+", str(valor or ""))
+    return int(match.group()) if match else padrao
+
+
+def _tipo_refeicao_por_posicao(indice: int, num_refeicoes: int | None) -> str:
+    if not num_refeicoes or num_refeicoes >= len(ORDEM_TIPOS_REFEICAO):
+        return ORDEM_TIPOS_REFEICAO[min(indice, len(ORDEM_TIPOS_REFEICAO) - 1)]
+
+    if num_refeicoes == 1:
+        ordem = [TipoRefeicao.almoco.value]
+    elif num_refeicoes == 2:
+        ordem = [TipoRefeicao.almoco.value, TipoRefeicao.lanche_tarde.value]
+    elif num_refeicoes == 3:
+        ordem = [
+            TipoRefeicao.desjejum.value,
+            TipoRefeicao.almoco.value,
+            TipoRefeicao.lanche_tarde.value,
+        ]
+    else:
+        ordem = ORDEM_TIPOS_REFEICAO[:num_refeicoes]
+
+    return ordem[min(indice, len(ordem) - 1)]
+
+
+def _normalizar_tipo_refeicao(valor: object, indice: int, num_refeicoes: int | None) -> str:
+    if valor in TIPOS_REFEICAO_PERMITIDOS:
+        return str(valor)
+
+    texto = _texto_normalizado(valor)
+    if "desjejum" in texto:
+        return TipoRefeicao.desjejum.value
+    if "almoco" in texto:
+        return TipoRefeicao.almoco.value
+    if "reforco" in texto:
+        return TipoRefeicao.reforco.value
+    if "lanche" in texto and ("tarde" in texto or "vespertino" in texto):
+        return TipoRefeicao.lanche_tarde.value
+    if "jantar" in texto or "ceia" in texto:
+        return TipoRefeicao.jantar.value
+
+    match = re.search(r"\d+", texto)
+    if match:
+        return _tipo_refeicao_por_posicao(int(match.group()) - 1, num_refeicoes)
+
+    return _tipo_refeicao_por_posicao(indice, num_refeicoes)
+
+
+def corrigir_estrutura(
+    dados: dict,
+    mes_aplicacao: str | None = None,
+    num_refeicoes: int | None = None,
+) -> dict:
     if "cardapio" in dados:
         dados = dados["cardapio"]
 
     if "mes" in dados:
         dados["mes_aplicacao"] = f"{dados.pop('mes')} de {dados.pop('ano', '')}"
 
-    if "semanas" in dados:
-        for s in dados["semanas"]:
+    dados.setdefault("mes_aplicacao", mes_aplicacao or "")
+    dados.setdefault("observacoes", "")
+    dados.setdefault("semanas", [])
+
+    if isinstance(dados["semanas"], dict):
+        dados["semanas"] = list(dados["semanas"].values())
+
+    if isinstance(dados["semanas"], list):
+        for indice_semana, s in enumerate(dados["semanas"], start=1):
             if "semana" in s:
                 s["numero"] = s.pop("semana")
+
+            s["numero"] = _extrair_numero(s.get("numero"), indice_semana)
+            s.setdefault("dias", [])
+
+            if isinstance(s["dias"], dict):
+                s["dias"] = list(s["dias"].values())
 
             for d in s.get("dias", []):
                 if "dia" in d:
                     d["dia_semana"] = d.pop("dia")
 
-                for r in d.get("refeicoes", []):
-                    # corrigir "itens" → pratos (já existe no seu código)
+                d.setdefault("dia_semana", "")
+                d.setdefault("refeicoes", [])
+
+                if isinstance(d["refeicoes"], dict):
+                    d["refeicoes"] = list(d["refeicoes"].values())
+
+                for indice_refeicao, r in enumerate(d.get("refeicoes", [])):
+                    r.setdefault("horario", "")
+
                     if "itens" in r:
                         r["pratos"] = [{
                             "nome": ", ".join(r.pop("itens")),
@@ -151,19 +247,59 @@ def corrigir_estrutura(dados: dict):
                             "ingredientes": []
                         }]
 
-                    # 🛠️ NOVO: corrigir tipo de refeição
-                    tipo = r.get("tipo", "").lower()
+                    r["tipo"] = _normalizar_tipo_refeicao(
+                        r.get("tipo"),
+                        indice_refeicao,
+                        num_refeicoes,
+                    )
+                    r.setdefault("pratos", [])
 
-                    if "1" in tipo:
-                        r["tipo"] = "café da manhã"
-                    elif "2" in tipo:
-                        r["tipo"] = "almoço"
-                    elif "lanche" in tipo:
-                        r["tipo"] = "lanche da tarde"
-                    else:
-                        r["tipo"] = "almoço"  # fallback seguro
+                    if isinstance(r["pratos"], dict):
+                        r["pratos"] = list(r["pratos"].values())
+
+                    for prato in r.get("pratos", []):
+                        prato.setdefault("nome", "")
+                        prato.setdefault("estado_preparacao", "preparado")
+                        prato.setdefault("ingredientes", [])
+
+                        if isinstance(prato["ingredientes"], dict):
+                            prato["ingredientes"] = list(prato["ingredientes"].values())
+
+                        for ingrediente in prato.get("ingredientes", []):
+                            if "nome" in ingrediente and "nome_taco" not in ingrediente:
+                                ingrediente["nome_taco"] = ingrediente.pop("nome")
+                            if "alimento" in ingrediente and "nome_taco" not in ingrediente:
+                                ingrediente["nome_taco"] = ingrediente.pop("alimento")
+                            if "quantidade" in ingrediente and "quantidade_g" not in ingrediente:
+                                ingrediente["quantidade_g"] = ingrediente.pop("quantidade")
+
+                            ingrediente.setdefault("nome_taco", "")
+                            ingrediente.setdefault("quantidade_g", 0.0)
                         
     return dados
+
+
+def validar_cardapio(
+    resultado: object,
+    mes_aplicacao: str,
+    num_refeicoes: int,
+) -> CardapioSchema:
+    if isinstance(resultado, CardapioSchema):
+        return resultado
+
+    if isinstance(resultado, dict):
+        dados = resultado
+    elif hasattr(resultado, "model_dump"):
+        dados = resultado.model_dump()
+    else:
+        raise ValueError("Formato inesperado da resposta estruturada")
+
+    dados = corrigir_estrutura(
+        dados,
+        mes_aplicacao=mes_aplicacao,
+        num_refeicoes=num_refeicoes,
+    )
+    return CardapioSchema.model_validate(dados)
 
 
 # ---------------------------------------------------------
@@ -176,6 +312,7 @@ def gerar_cardapio(
     periodo: str,
     num_refeicoes: int,
     mes_aplicacao: str,
+    turno: str = "matutino",
     restricoes: list[str] | None = None,
 ) -> CardapioSchema:
 
@@ -186,8 +323,9 @@ def gerar_cardapio(
         faixa_etaria=faixa_etaria,
         periodo=periodo,
         num_refeicoes=num_refeicoes,
+        turno=turno,
         restricoes=restricoes,
-        num_semanas=4
+        num_semanas=1
     )
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -241,7 +379,7 @@ INSTRUÇÕES:
 
             mensagens.append(
                 ToolMessage(
-                    content=json.dumps(resultado),
+                    content=json.dumps(resultado, ensure_ascii=False),
                     tool_call_id=tool_call["id"]
                 )
             )
@@ -254,6 +392,8 @@ INSTRUÇÕES:
         model="gemma4:31b-cloud",
         temperature=0
     ).with_structured_output(CardapioSchema)
+
+    schema_json = json.dumps(CardapioSchema.model_json_schema(), ensure_ascii=False, indent=2)
 
     prompt_2 = f"""
 Você é um gerador de JSON estrito.
@@ -270,12 +410,15 @@ REGRAS CRÍTICAS (OBRIGATÓRIAS):
 
 2. O JSON deve ser totalmente compatível com validação Pydantic.
 
+SCHEMA PYDANTIC EM JSON:
+{schema_json}
+
 3. Campos enum devem respeitar EXATAMENTE os valores permitidos.
 
 Para o campo "tipo" das refeições, use SOMENTE UM dos valores abaixo:
-- "café da manhã"
-- "lanche da manhã"
+- "desjejum"
 - "almoço"
+- "reforço"
 - "lanche da tarde"
 - "jantar"
 
@@ -304,14 +447,14 @@ REGRAS IMPORTANTES:
 EXEMPLOS:
 
 Exemplo válido:
-{
+{{
   "tipo": "almoço"
-}
+}}
 
 Exemplo inválido (NUNCA FAZER):
-{
+{{
   "tipo": "Refeição 1"
-}
+}}
 
 ---
 
@@ -333,25 +476,11 @@ Retorne apenas o JSON final válido.
             {texto_cardapio}
             """)
 
-            # ✅ caso ideal
-            if isinstance(resultado, CardapioSchema):
-                return resultado
-
-            # ⚠️ fallback: transformar em dict
-            if isinstance(resultado, dict):
-                dados = resultado
-            elif hasattr(resultado, "model_dump"):
-                dados = resultado.model_dump()
-            else:
-                raise ValueError("Formato inesperado da resposta")
-
-            # tenta validar direto
-            try:
-                return CardapioSchema(**dados)
-            except:
-                # 🛠️ corrige estrutura
-                dados_corrigidos = corrigir_estrutura(dados)
-                return CardapioSchema(**dados_corrigidos)
+            return validar_cardapio(
+                resultado,
+                mes_aplicacao=mes_aplicacao,
+                num_refeicoes=num_refeicoes,
+            )
 
         except Exception as e:
             print(f"Erro na etapa 2 (tentativa {tentativa+1}): {e}")

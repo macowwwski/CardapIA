@@ -37,13 +37,35 @@ def _mapear_refeicoes_periodo(periodo: str, num_refeicoes: int) -> str:
     else:
         raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
 
-"""
-def _tipos_de_refeicao(turno: str, num_refeicoes: int) -> list:
-    if num_refeicoes == 1:
-        return {"lanche"}
-    if num_refeicoes == 2:
-        return {""}
-"""
+
+def _validar_configuracao(etapa: str, periodo: str, num_refeicoes: int) -> None:
+    if etapa == "creche" and periodo == "parcial" and num_refeicoes < 2:
+        raise ValueError("Creche em período parcial deve ter no mínimo 2 refeições.")
+
+
+def resolver_tipos_refeicao(etapa: str, periodo: str, turno: str, faixa_etaria: str) -> list[str]:
+    """
+    Resolve os tipos de refeicao esperados para a combinacao etapa/periodo/turno.
+    """
+    if etapa == "creche" and periodo == "parcial" and turno == "matutino":
+        return ["desjejum", "almoço"]
+
+    if etapa == "creche" and periodo == "parcial" and turno == "vespertino":
+        return ["reforço", "jantar"]
+    
+    if etapa == "creche" and periodo == "integral" and faixa_etaria == "7 a 11 meses":
+        return ["desjejum", "almoço", "reforço", "lanche da tarde", "jantar"]
+    
+    if etapa == "creche" and periodo == "integral" and faixa_etaria == "1 a 3 anos":
+        return ["desjejum", "almoço", "lanche da tarde", "jantar"]
+
+    if etapa in ("pré-escola", "ensino fundamental", "ensino médio", "EJA") and periodo == "parcial" and turno == "matutino":
+        return ["almoço"]
+    
+    if etapa in ("pré-escola", "ensino fundamental", "ensino médio", "EJA") and periodo == "parcial" and turno == "vespertino":
+        return ["jantar"]
+
+    return []
 
 def _obter_etapa(etapa: str) -> dict:
     """
@@ -77,10 +99,13 @@ def _mapear_e_obter_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict)
     """
     if etapa == "creche":
         mapeamento = {
-            "7 a 11 meses": "7_a_11_meses",
-            "1 a 3 anos": "1_a_3_anos",
+            "7 a 11 meses": ("7_a_11_meses", "7_11_meses"),
+            "1 a 3 anos": ("1_a_3_anos", "1_3_anos"),
         }
-        return subfaixas[mapeamento[faixa_etaria]]
+        for chave in mapeamento[faixa_etaria]:
+            if chave in subfaixas:
+                return subfaixas[chave]
+        raise ValueError(f"Faixa etaria invalida para creche: '{faixa_etaria}'")
     
     elif etapa == "ensino fundamental":
         mapeamento = {
@@ -156,8 +181,8 @@ def construir_contexto(
     etapa: str,
     faixa_etaria: str,
     periodo: str,
-    #turno: str,
     num_refeicoes: int,
+    turno: str = "matutino",
     restricoes: list[str] | None = None,
     num_semanas: int = 1
 ) -> str:
@@ -174,6 +199,7 @@ def construir_contexto(
         num_semanas   : quantas semanas de cardápio gerar
     """
     restricoes = restricoes or []
+    _validar_configuracao(etapa, periodo, num_refeicoes)
 
     # --- Navegação no JSON ---
     geral        = REGRAS_PNAE["geral"]
@@ -182,6 +208,7 @@ def construir_contexto(
     subfaixas    = _obter_referencias_nutricionais(etapa_bloco, percentual)
     valores      = _mapear_e_obter_faixa_etaria(etapa, faixa_etaria, subfaixas)
     periodo_freq = _mapear_refeicoes_periodo(periodo, num_refeicoes)
+    tipos_refeicao = resolver_tipos_refeicao(etapa, periodo, turno, faixa_etaria)
 
     # --- Proibições: universais + específicas da etapa ---
     proibicoes = (
@@ -225,8 +252,12 @@ def construir_contexto(
 - Etapa: {etapa}
 - Faixa etária: {faixa_etaria}
 - Período: {periodo} ({num_refeicoes} refeição/refeições por dia)
+- Turno: {turno}
 - Semanas a gerar: {num_semanas}
 - Restrições alimentares da turma: {_formatar_lista(restricoes) if restricoes else "nenhuma"}
+
+### Tipos de refeição obrigatórios
+{_formatar_lista(tipos_refeicao) if tipos_refeicao else "nenhum tipo específico configurado"}
 
 ### Alimentos proibidos
 {_formatar_lista(proibicoes)}
