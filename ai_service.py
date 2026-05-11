@@ -155,14 +155,21 @@ def _extrair_numero(valor: object, padrao: int) -> int:
     return int(match.group()) if match else padrao
 
 
-def _tipo_refeicao_por_posicao(indice: int, num_refeicoes: int | None) -> str:
+def _tipo_refeicao_por_posicao(
+    indice: int,
+    num_refeicoes: int | None,
+    turno: str | None = None,
+) -> str:
     if not num_refeicoes or num_refeicoes >= len(ORDEM_TIPOS_REFEICAO):
         return ORDEM_TIPOS_REFEICAO[min(indice, len(ORDEM_TIPOS_REFEICAO) - 1)]
 
     if num_refeicoes == 1:
         ordem = [TipoRefeicao.almoco.value]
     elif num_refeicoes == 2:
-        ordem = [TipoRefeicao.almoco.value, TipoRefeicao.lanche_tarde.value]
+        if _texto_normalizado(turno) == "vespertino":
+            ordem = [TipoRefeicao.reforco.value, TipoRefeicao.jantar.value]
+        else:
+            ordem = [TipoRefeicao.almoco.value, TipoRefeicao.lanche_tarde.value]
     elif num_refeicoes == 3:
         ordem = [
             TipoRefeicao.desjejum.value,
@@ -175,7 +182,12 @@ def _tipo_refeicao_por_posicao(indice: int, num_refeicoes: int | None) -> str:
     return ordem[min(indice, len(ordem) - 1)]
 
 
-def _normalizar_tipo_refeicao(valor: object, indice: int, num_refeicoes: int | None) -> str:
+def _normalizar_tipo_refeicao(
+    valor: object,
+    indice: int,
+    num_refeicoes: int | None,
+    turno: str | None = None,
+) -> str:
     if valor in TIPOS_REFEICAO_PERMITIDOS:
         return str(valor)
 
@@ -193,15 +205,20 @@ def _normalizar_tipo_refeicao(valor: object, indice: int, num_refeicoes: int | N
 
     match = re.search(r"\d+", texto)
     if match:
-        return _tipo_refeicao_por_posicao(int(match.group()) - 1, num_refeicoes)
+        return _tipo_refeicao_por_posicao(
+            int(match.group()) - 1,
+            num_refeicoes,
+            turno,
+        )
 
-    return _tipo_refeicao_por_posicao(indice, num_refeicoes)
+    return _tipo_refeicao_por_posicao(indice, num_refeicoes, turno)
 
 
 def corrigir_estrutura(
     dados: dict,
     mes_aplicacao: str | None = None,
     num_refeicoes: int | None = None,
+    turno: str | None = None,
 ) -> dict:
     if "cardapio" in dados:
         dados = dados["cardapio"]
@@ -251,6 +268,7 @@ def corrigir_estrutura(
                         r.get("tipo"),
                         indice_refeicao,
                         num_refeicoes,
+                        turno,
                     )
                     r.setdefault("pratos", [])
 
@@ -283,6 +301,7 @@ def validar_cardapio(
     resultado: object,
     mes_aplicacao: str,
     num_refeicoes: int,
+    turno: str | None = None,
 ) -> CardapioSchema:
     if isinstance(resultado, CardapioSchema):
         return resultado
@@ -298,6 +317,7 @@ def validar_cardapio(
         dados,
         mes_aplicacao=mes_aplicacao,
         num_refeicoes=num_refeicoes,
+        turno=turno,
     )
     return CardapioSchema.model_validate(dados)
 
@@ -480,6 +500,7 @@ Retorne apenas o JSON final válido.
                 resultado,
                 mes_aplicacao=mes_aplicacao,
                 num_refeicoes=num_refeicoes,
+                turno=turno,
             )
 
         except Exception as e:

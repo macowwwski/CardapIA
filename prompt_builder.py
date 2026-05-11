@@ -212,7 +212,7 @@ def construir_contexto(
 
     # --- Proibições: universais + específicas da etapa ---
     proibicoes = (
-        geral.get("alimentos_proibidos", []) +
+        geral.get("alimentos_proibidos", []) +  
         etapa_bloco.get("alimentos_proibidos", [])
     )
 
