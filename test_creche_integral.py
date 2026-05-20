@@ -1,4 +1,4 @@
-# teste_ia.py
+
 from ai_service import gerar_cardapio
 
 cardapio = gerar_cardapio(

@@ -141,3 +141,22 @@ CREATE TABLE public.ingrediente (
     taco_id      UUID NOT NULL REFERENCES public.taco(id),
     quantidade_g FLOAT NOT NULL
 );
+
+
+-- -------------------------------------------------------------
+-- TABELA: per_capita
+-- Fonte: Manual de Per Capita PNAE / Resolução FNDE 06/2020
+-- Porcionamento recomendado por faixa etária em gramas
+-- -------------------------------------------------------------
+
+CREATE TABLE public.per_capita (
+    id                   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    taco_id              UUID REFERENCES public.taco(id),  -- nullable: nem todo item do manual está na TACO
+    nome_alimento        VARCHAR NOT NULL UNIQUE,
+    fator_correcao       FLOAT NOT NULL DEFAULT 1.0,
+    fator_coccao         FLOAT NOT NULL DEFAULT 1.0,
+    per_capita_creche         FLOAT,   -- NULL = restrito para creche
+    per_capita_pre_escola     FLOAT,   -- NULL = restrito para pré-escola
+    per_capita_fund           FLOAT,   -- NULL = restrito para fundamental
+    per_capita_medio_eja      FLOAT    -- NULL = restrito para médio/EJA
+);

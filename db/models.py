@@ -150,3 +150,20 @@ class Ingrediente(Base):
     # Relacionamentos
     prato        = relationship("Prato", back_populates="ingredientes")
     taco         = relationship("Taco", back_populates="ingredientes")
+
+
+class PerCapita(Base):
+    __tablename__ = "per_capita"
+
+    id                       = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    taco_id                  = Column(UUID(as_uuid=True), ForeignKey("taco.id"), nullable=True)
+    nome_alimento            = Column(String, nullable=False, unique=True)
+    fator_correcao           = Column(Float, nullable=False, default=1.0)
+    fator_coccao             = Column(Float, nullable=False, default=1.0)
+    per_capita_creche        = Column(Float, nullable=True)  # NULL = restrito
+    per_capita_pre_escola    = Column(Float, nullable=True)
+    per_capita_fund          = Column(Float, nullable=True)
+    per_capita_medio_eja     = Column(Float, nullable=True)
+
+    # Relacionamento
+    taco = relationship("Taco")

@@ -9,9 +9,9 @@ from langchain_core.tools import tool
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 from langchain_ollama import ChatOllama
 from pydantic import BaseModel
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import Session
-from db.models import Taco
+from db.models import Taco, PerCapita
 
 
 load_dotenv()
@@ -322,6 +322,171 @@ def validar_cardapio(
     return CardapioSchema.model_validate(dados)
 
 
+def _tokens_normalizados(valor: object) -> set[str]:
+    texto = re.sub(r"[^a-z0-9]+", " ", _texto_normalizado(valor))
+    tokens = set()
+
+    for token in texto.split():
+        if token in {"de", "da", "do", "das", "dos", "e", "ou", "com", "sem"}:
+            continue
+
+        if len(token) > 4 and token[-1] in {"a", "o", "s"}:
+            token = token[:-1]
+
+        tokens.add(token)
+
+    return tokens
+
+
+def _selecionar_registro_per_capita(registros: list[PerCapita], campo: str) -> PerCapita | None:
+    for registro in registros:
+        if getattr(registro, campo) is not None:
+            return registro
+
+    return registros[0] if registros else None
+
+
+def _candidatos_per_capita(nome_alimento: str) -> list[str]:
+    aliases = {
+        "mandioquinha": "Batata, baroa",
+        "mandioquinha salsa": "Batata, baroa",
+        "batata baroa": "Batata, baroa",
+    }
+
+    candidatos = [
+        candidato.strip()
+        for candidato in re.split(r"\s*/\s*", nome_alimento)
+        if candidato.strip()
+    ]
+    if nome_alimento not in candidatos:
+        candidatos.insert(0, nome_alimento)
+
+    for candidato in list(candidatos):
+        alias = aliases.get(_texto_normalizado(candidato))
+        if alias and alias not in candidatos:
+            candidatos.append(alias)
+
+    return candidatos
+
+
+def obter_per_capita(nome_alimento: str, etapa: str) -> float:
+    """
+    Retorna o per capita em gramas para um alimento e etapa escolar.
+    Fonte: Manual de Per Capita PNAE / Resolucao FNDE 06/2020.
+    """
+    mapeamento_etapa = {
+        "creche": "per_capita_creche",
+        "pre-escola": "per_capita_pre_escola",
+        "pre escola": "per_capita_pre_escola",
+        "ensino fundamental": "per_capita_fund",
+        "fundamental": "per_capita_fund",
+        "ensino medio": "per_capita_medio_eja",
+        "medio": "per_capita_medio_eja",
+        "eja": "per_capita_medio_eja",
+    }
+
+    campo_per_capita = mapeamento_etapa.get(_texto_normalizado(etapa))
+    if not campo_per_capita:
+        raise ValueError(f"Etapa escolar invalida para per capita: {etapa}")
+
+    candidatos = _candidatos_per_capita(nome_alimento)
+
+    with Session(engine) as session:
+        query_base = session.query(PerCapita).outerjoin(
+            Taco,
+            PerCapita.taco_id == Taco.id,
+        ).order_by(PerCapita.nome_alimento)
+        registro = None
+
+        for candidato in candidatos:
+            registros = query_base.filter(
+                or_(
+                    PerCapita.nome_alimento.ilike(candidato),
+                    Taco.description.ilike(candidato),
+                )
+            ).all()
+            registro = _selecionar_registro_per_capita(registros, campo_per_capita)
+            if registro:
+                break
+
+        if not registro:
+            for candidato in candidatos:
+                if len(candidato) < 4:
+                    continue
+
+                padrao = f"%{candidato}%"
+                registros = query_base.filter(
+                    or_(
+                        PerCapita.nome_alimento.ilike(padrao),
+                        Taco.description.ilike(padrao),
+                    )
+                ).all()
+                registro = _selecionar_registro_per_capita(registros, campo_per_capita)
+                if registro:
+                    break
+
+        if not registro:
+            todos_registros = query_base.all()
+            for candidato in candidatos:
+                tokens_candidato = _tokens_normalizados(candidato)
+                if not tokens_candidato:
+                    continue
+
+                registros = [
+                    registro
+                    for registro in todos_registros
+                    if tokens_candidato <= _tokens_normalizados(registro.nome_alimento)
+                    or (
+                        registro.taco
+                        and tokens_candidato <= _tokens_normalizados(registro.taco.description)
+                    )
+                ]
+                registro = _selecionar_registro_per_capita(registros, campo_per_capita)
+                if registro:
+                    break
+
+        if not registro:
+            raise ValueError(f"Per capita nao encontrado para alimento: {nome_alimento}")
+
+        valor = getattr(registro, campo_per_capita)
+        if valor is None:
+            raise ValueError(
+                f"Alimento restrito ou sem per capita para a etapa '{etapa}': {nome_alimento}"
+            )
+
+        return float(valor)
+
+
+def aplicar_per_capita(cardapio: CardapioSchema, etapa: str) -> CardapioSchema:
+    avisos = []
+    avisos_vistos = set()
+
+    for semana in cardapio.semanas:
+        for dia in semana.dias:
+            for refeicao in dia.refeicoes:
+                for prato in refeicao.pratos:
+                    for ingrediente in prato.ingredientes:
+                        try:
+                            ingrediente.quantidade_g = obter_per_capita(
+                                ingrediente.nome_taco,
+                                etapa,
+                            )
+                        except ValueError as erro:
+                            aviso = str(erro)
+                            if aviso not in avisos_vistos:
+                                avisos.append(aviso)
+                                avisos_vistos.add(aviso)
+
+    if avisos:
+        observacao = "Per capita nao aplicado para alguns ingredientes: " + "; ".join(avisos)
+        cardapio.observacoes = (
+            f"{cardapio.observacoes}\n{observacao}".strip()
+            if cardapio.observacoes
+            else observacao
+        )
+
+    return cardapio
+
 # ---------------------------------------------------------
 # Função principal
 # ---------------------------------------------------------
@@ -496,15 +661,19 @@ Retorne apenas o JSON final válido.
             {texto_cardapio}
             """)
 
-            return validar_cardapio(
+            cardapio = validar_cardapio(
                 resultado,
                 mes_aplicacao=mes_aplicacao,
                 num_refeicoes=num_refeicoes,
                 turno=turno,
             )
+            break
 
         except Exception as e:
             print(f"Erro na etapa 2 (tentativa {tentativa+1}): {e}")
             time.sleep(1)
 
-    raise RuntimeError("Falha ao converter cardápio para estrutura válida.")
+    else:
+        raise RuntimeError("Falha ao converter cardápio para estrutura válida.")
+
+    return aplicar_per_capita(cardapio, etapa)
