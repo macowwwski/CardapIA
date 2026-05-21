@@ -1,0 +1,470 @@
+﻿id,taco_id,nome_alimento,fator_correcao,fator_coccao,per_capita_creche,per_capita_pre_escola,per_capita_fund,per_capita_medio_eja
+573a2ec0-580b-4160-a1b1-523945d832e5,,"Abacate, cru",1.51,1.0,30.0,40.0,60.0,80.0
+b9287c88-2c71-4572-9ce9-9e89a3d66f56,,"Abacaxi, cru",1.93,1.0,40.0,70.0,130.0,150.0
+18ab4f7f-32ec-4874-884a-0116fbe74980,,"Abacaxi, polpa, congelada",1.0,1.0,50.0,80.0,130.0,150.0
+0405d2f0-c15a-4237-92ec-7cd6d2b4f20e,,"Abadejo, filé, congelado, cru",1.0,0.77,50.0,85.0,100.0,120.0
+8bcdc183-665a-4c1c-97bd-c69651ab71ff,,"Abiu, cru",1.51,1.0,30.0,50.0,70.0,100.0
+0944713b-1243-4947-b8fe-4aa74db399a2,,"Abóbora, cabotian, crua",1.31,0.95,30.0,50.0,95.0,100.0
+c86f4c87-3a64-4e56-9f14-d853ddd2a101,,"Abóbora, menina brasileira, crua",1.33,0.98,30.0,50.0,95.0,100.0
+d69c551f-f939-45fd-a371-2687655a83cc,,"Abóbora, moranga, crua",1.5,0.88,30.0,50.0,95.0,100.0
+39cae607-9746-4169-a186-9aab794583f7,,"Abóbora, pescoço, crua",1.4,0.93,30.0,50.0,95.0,100.0
+502ad392-1c99-46ac-a44b-c4ffd1ed02b1,,"Abobrinha, italiana, crua",1.26,0.93,30.0,50.0,95.0,100.0
+e2bf6508-bebf-4154-81a1-730c14b0cd40,,"Abobrinha, paulista, crua",1.47,0.77,30.0,50.0,95.0,100.0
+0a1c3e59-429f-4686-8bcc-4a58b7606a8b,,"Açafrão, pó",1.0,1.0,0.5,1.0,2.0,2.0
+419c7e0b-a14f-412d-ba6c-9e449466458e,,"Açaí, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+bdc44a11-69e5-4c85-b463-275d0bc4554a,,"Acelga, crua",1.43,1.0,10.0,10.0,10.0,15.0
+94f4e2ee-18a7-4020-a894-fd6cb68388ea,,"Acerola, crua",1.23,1.0,60.0,80.0,95.0,100.0
+5d3ee705-855d-4e60-971d-0b7c29949bb4,,"Acerola, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+6597b545-97b7-474d-b86e-77383c5003a9,,Achocolatado em pó diet,1.0,1.0,,10.0,10.0,15.0
+0cdc1f34-b934-488f-ab9e-f4579b58a183,,"Achocolatado, pó",1.0,1.0,,7.0,10.0,15.0
+e5ab6902-9dfc-45c0-9fd6-c00baa4785b9,,"Açúcar, cristal",1.0,1.0,,5.0,5.0,5.0
+f9c51f0f-9fbd-4ab5-8ccf-62279438ed82,,"Açúcar, mascavo",1.0,1.0,,5.0,5.0,5.0
+011a3c89-9d18-46ba-ae1b-2bb497f9ebd4,,"Açúcar, refinado",1.0,1.0,,5.0,5.0,5.0
+3a00430c-1c13-4284-8177-cf78d2eb009a,,Adoçante artificial,1.0,1.0,,0.5,1.0,1.0
+c3302d75-fb61-4515-844b-815699028401,,"Agrião, cru",1.78,1.0,5.0,5.0,5.0,10.0
+743ca65e-7389-476c-8174-ac922fbd0331,,Água de coco,1.0,1.0,100.0,150.0,200.0,250.0
+e3dbf8f2-622e-418a-8650-e5658e92a26c,,"Aipo, cru",1.34,1.0,30.0,30.0,60.0,80.0
+544ed916-a03b-4433-815d-3e6b83c6fab3,,"Alface, americana, crua",1.21,1.0,10.0,20.0,40.0,40.0
+e6cac164-2194-4b5a-800f-acc71512d8c4,,"Alface, crespa, crua",1.46,1.0,10.0,20.0,40.0,40.0
+8bbf6ced-2185-4258-a5a6-10015cc392bf,,"Alface, lisa, crua",1.31,1.0,10.0,20.0,40.0,40.0
+7ffe7f14-07c2-40ad-885a-d0dc2525758f,,"Alface, roxa, crua",1.45,1.0,10.0,20.0,40.0,40.0
+f640faf7-bd29-4f11-b394-0cffad454087,,"Alfavaca, crua",1.67,1.0,10.0,20.0,40.0,60.0
+a7b40ac3-8e89-49f6-88dd-cfc10151a9d7,,"Alho, cru",1.08,1.0,2.0,2.0,3.0,5.0
+af5f7966-f4df-4bea-86f4-7b1ee13f6b85,,"Alho-poró, cru",1.62,1.0,10.0,15.0,20.0,30.0
+ea467ed1-79ab-47f4-91c6-bc58bf7cf737,,"Almeirão, cru",1.12,1.0,10.0,10.0,10.0,15.0
+b388e39f-5dbe-4c04-904c-20d840b5a103,,Almôndega ao molho em conserva,1.0,0.77,,50.0,95.0,120.0
+1688c519-a54c-4c93-9776-960fbfc10c25,,"Almôndega, frango, crua",1.0,0.77,35.0,50.0,95.0,120.0
+0338d83b-d6bd-41aa-a3dc-17677ea5646c,,"Ameixa, calda, enlatada",1.0,1.0,,50.0,50.0,60.0
+f9439669-b8f5-4abe-acc9-9f213d58f92b,,"Ameixa, crua",1.03,1.0,80.0,80.0,90.0,100.0
+277e9054-81e2-45e8-8870-b5c3807c7b08,,"Amêndoa, torrada, salgada",1.0,1.0,5.0,5.0,10.0,10.0
+c9830624-884a-43e1-8668-71c7ae9d0df6,,"Amendoim, grão, cru",2.69,1.0,5.0,10.0,20.0,20.0
+d6a2a71f-ec9f-4d03-ac14-8029ad90afe1,,"Amendoim, torrado, salgado",1.0,1.0,5.0,10.0,20.0,20.0
+4a734a99-4455-4873-b292-45898abc72ac,,Apresuntado,1.0,1.0,,10.0,10.0,20.0
+085ebc6d-a464-4d30-b850-6f8bfee485f9,,Araçá,1.16,1.0,40.0,40.0,60.0,80.0
+ae23d1f0-5847-4ae0-a3fb-04ceb82d9042,,"Arroz, farelo",1.0,1.0,15.0,15.0,20.0,20.0
+4c1e7fb4-c7a5-4ac4-a884-2ea135ec1308,,"Arroz, integral, cru",1.0,2.46,30.0,30.0,50.0,80.0
+0fec1954-31c3-4ebd-aa09-cd14e8f35276,,"Arroz, tipo 1, cru",1.0,2.33,30.0,30.0,50.0,50.0
+edef371e-25ff-4a18-99be-3d0faba6c0e8,,"Aspargo, cru",2.0,1.0,25.0,30.0,50.0,70.0
+168fbcd0-3259-4d29-b794-e3db138707fd,,"Atemóia, crua",2.56,1.0,50.0,70.0,80.0,100.0
+07dee633-02ea-4d8e-b904-2ea0b1c1ac12,,"Atum, conserva em óleo",1.0,1.0,30.0,30.0,40.0,60.0
+05f2e576-fd0a-4c34-9014-ec2020591574,,"Atum, fresco, cru",1.33,0.8,60.0,85.0,95.0,110.0
+6e1ad854-df4e-4801-94ab-a6e6f33d4460,,"Aveia, flocos, crua",1.0,1.0,20.0,30.0,30.0,60.0
+a2876942-5b32-4a74-a308-64b16a6a7517,,"Azeite, de dendê",1.0,1.0,3.0,4.0,4.0,8.0
+3ac5c8fa-637e-48d3-86c2-63da388741cc,,"Azeite, de oliva, extra virgem",1.0,1.0,3.0,4.0,4.0,8.0
+73ed07ab-9afa-4b27-81ef-914a8a09fbb2,,"Azeitona, preta, conserva",1.0,1.0,10.0,15.0,20.0,40.0
+5bf6ada2-d3c5-4fa2-ba6a-853e4902f7c2,,"Azeitona, verde, conserva",1.0,1.0,10.0,15.0,20.0,40.0
+b80ed45e-9820-4ba9-a157-4469efe747b2,,"Bacalhau, salgado, cru",2.52,0.8,45.0,60.0,75.0,90.0
+87540bea-004f-42de-b4d2-51f7e09feb99,,Bacuri,3.15,1.0,45.0,60.0,80.0,100.0
+076b80d6-8821-41b1-8d7b-f51f185323a0,,"Banana, da terra, crua",1.86,1.0,40.0,60.0,90.0,100.0
+50f16284-1a56-4551-a179-36927f1115a7,,"Banana, doce em barra",1.0,1.0,,20.0,20.0,20.0
+5bd46dd0-9ddc-44a0-8fe1-6284153b884a,,"Banana, figo, crua",1.66,1.0,40.0,60.0,90.0,100.0
+2e759d58-7fb1-42ea-a79f-6f4820fe6ecc,,"Banana, maçã, crua",1.53,1.0,40.0,60.0,90.0,100.0
+aad971da-8a73-4815-813e-ebdde82d639a,,"Banana, nanica, crua",1.66,1.0,40.0,60.0,90.0,100.0
+d1347f84-2884-4252-86a8-1b4f643cafcb,,"Banana, ouro, crua",1.22,1.0,40.0,60.0,90.0,100.0
+2002a101-cc58-4276-b442-4c24fd6ff81d,,"Banana, pacova, crua",1.39,1.0,40.0,60.0,90.0,100.0
+97c8b759-198d-43f3-a490-ba86da8ab2cc,,"Banana, prata, crua",1.51,1.0,40.0,60.0,90.0,100.0
+02224e25-c5d3-43dd-9ad2-0f8b98430eff,,Banha suína,1.0,1.0,3.0,3.0,4.0,7.0
+1b29be1a-096b-4f94-b91e-9c4f0a61506a,,"Batata, baroa, crua",1.15,0.94,60.0,80.0,80.0,100.0
+e2f14b82-3584-49dd-8300-1d1146488caa,,"Batata, doce, crua",1.21,0.95,60.0,80.0,80.0,100.0
+f3e35e6c-66f9-4ef5-ad17-8b58929d3b8b,,"Batata, inglesa, crua",1.06,0.95,60.0,80.0,80.0,100.0
+8515e54b-1036-40ac-bb1d-cc0cc422e7ea,,Batata palha,1.0,1.0,,20.0,25.0,50.0
+d6726bb2-8b17-46e8-9440-78e986a26642,,Bebida láctea,1.0,1.0,,70.0,100.0,100.0
+3d44360a-7b90-42f6-ad6b-30064096e56e,,"Berinjela, crua",1.08,0.97,80.0,80.0,90.0,100.0
+521af75a-52f7-4225-918d-91cbaa689434,,"Beterraba, crua",1.53,0.88,80.0,80.0,90.0,100.0
+618ea589-9216-45ef-829d-8923480ad97c,,Biscoito de polvilho,1.0,1.0,15.0,20.0,30.0,30.0
+5f12c404-bb78-4fcd-ad3b-df4e3b83353f,,Biscoito de polvilho doce,1.0,1.0,,20.0,30.0,30.0
+f81a1ca7-0514-4e2f-ba2e-65c4cf83b36c,,"Biscoito, doce, maisena",1.0,1.0,,20.0,30.0,30.0
+65276a2c-9c2b-4ff1-bedb-d85ca1b99944,,Biscoito salgado,1.0,1.0,15.0,20.0,30.0,30.0
+31db24a1-f606-465d-aca9-9672018d3a85,,"Biscoito, salgado, cream cracker",1.0,1.0,,20.0,30.0,30.0
+a72697dd-3852-48b2-803d-b3fc5ca37c16,,Bisteca bovina (crua),1.08,0.77,35.0,50.0,95.0,120.0
+f62c80bf-a1a1-4678-b1b3-0c716fa8825d,,"Brócolis, cru",2.12,0.95,50.0,50.0,85.0,100.0
+16d16f93-5a6f-4213-8b91-e9382baf0093,,Broto de alfafa,1.0,1.0,50.0,50.0,85.0,100.0
+8b84219a-332d-45c8-af03-6f3a961ee8b4,,Butiá,1.0,1.0,80.0,80.0,90.0,100.0
+7ca95460-e2dc-4091-afbc-3a45c48f6abe,,"Cação, posta, crua",1.18,0.77,50.0,50.0,85.0,100.0
+c7611aab-30bc-4c9b-a7a5-c2159c62a3e5,,"Cacau, cru",3.54,1.0,40.0,80.0,90.0,100.0
+079a9629-63ea-4067-a080-aaa28c792976,,Café,1.0,1.0,,5.0,10.0,10.0
+adadbf2d-e717-482b-b666-84f34f7d46e3,,"Café, pó, torrado",1.0,1.0,,5.0,10.0,10.0
+f87b2159-2d95-4a12-b120-39d287f69a1c,,Café solúvel capuccino,1.0,1.0,,5.0,10.0,10.0
+b62df494-de6a-4562-ba81-81847f116620,,"Cajá-Manga, cru",1.61,1.0,40.0,40.0,60.0,80.0
+35f46ec7-6379-4f36-969c-7d07ffed2750,,"Cajá, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+46539aac-7a00-4994-8927-7564d062b399,,"Caju, cru",1.28,1.0,50.0,50.0,75.0,100.0
+1cc05029-6dfe-4057-acd4-a605cbe70550,,Cajuína,1.0,1.0,,100.0,150.0,200.0
+f226b3da-8304-40be-bd72-36233fb8d3ea,,"Caju, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+4767c94d-11e8-4b31-ac8d-62e726074996,,"Caju, suco concentrado, envasado",1.0,1.0,20.0,40.0,40.0,60.0
+045dec69-02db-42e8-8e09-fe9aaaf730cd,,"Camarão, Rio Grande, grande, cozido",4.1,0.83,40.0,70.0,70.0,95.0
+52d8ee82-8a8a-434e-8c02-a687487c17b2,,Canela em pó,1.0,1.0,0.5,0.5,2.0,2.0
+709d97c6-88fb-4011-8550-9e4ed5a93d0a,,"Canjica, branca, crua",1.04,2.33,25.0,25.0,50.0,80.0
+ab3cf259-e30d-4d32-a7f3-1bd01266a4cf,,"Caqui, chocolate, cru",1.06,1.0,40.0,65.0,80.0,100.0
+2c152e62-c36a-49f9-9f14-9a04afa4448c,,"Cará, cru",1.35,0.95,30.0,50.0,70.0,100.0
+9eb740c8-56ab-4ead-bd5a-3a4a558b6fe3,,"Carambola, crua",1.27,1.0,50.0,50.0,80.0,100.0
+ee5a4c91-ea37-4997-ac4d-892cfce8d2c4,,"Caranguejo, cozido",8.33,0.85,35.0,50.0,70.0,80.0
+5485d1f0-fd12-4f1d-be27-c4aa4fcec5aa,,"Carne, avestruz, crua (média de diferentes cortes)",1.0,0.7,35.0,50.0,95.0,120.0
+2b456fb2-42ed-4014-ab04-08f6937ba8c8,,"Carne, bovina, acém, moído, cru",1.12,0.77,35.0,50.0,95.0,120.0
+88b7e507-710b-4a0c-99ec-e242eeb57e33,,"Carne, bovina, acém, sem gordura, cru",1.0,0.77,35.0,50.0,95.0,120.0
+a4c8e175-c686-4434-aee3-5528c3704735,,"Carne, bovina, almôndegas, cruas",1.0,0.77,35.0,50.0,95.0,120.0
+e97ab9e1-6f5f-49c1-92f9-f88e883c9495,,"Carne, bovina, bucho, cru",1.11,0.77,35.0,50.0,95.0,120.0
+138b4858-0e4e-4fd4-8001-c21da8117256,,"Carne, bovina, capa de contra-filé, com gordura, crua",1.56,0.77,35.0,50.0,95.0,120.0
+81b4adc2-747a-4f33-8ead-f28bf175b795,,"Carne, bovina, capa de contra-filé, sem gordura, crua",1.0,0.77,35.0,50.0,,120.0
+258fec94-7059-4aee-a223-d002920bdd2c,,"Carne, bovina, charque, cru",1.23,0.77,35.0,50.0,95.0,120.0
+d01b250b-35f2-47f2-af76-05f35d7c6143,,"Carne, bovina, contra- filé, com gordura, cru",1.23,0.77,35.0,50.0,95.0,120.0
+05c43bd9-9101-4a52-803a-35ed4d63cd4c,,"Carne, bovina, contra- filé de costela, cru",1.65,0.77,35.0,50.0,95.0,120.0
+e6c4d58a-68ed-447f-a361-745c1fc39e45,,"Carne, bovina, contra- filé, sem gordura, cru",1.0,0.77,35.0,50.0,95.0,120.0
+98c03595-cef3-4dd7-a502-2536e9ffb21a,,"Carne, bovina, costela, crua",1.13,0.77,35.0,50.0,95.0,120.0
+7e440179-ad2e-488e-af7f-01cc46a0b9f4,,"Carne, bovina, coxão duro, sem gordura, cru",1.0,0.77,35.0,50.0,95.0,120.0
+6aecc850-ca88-4d2d-807b-8b3a74cf573e,,"Carne, bovina, coxão mole, sem gordura, cru",1.0,0.77,35.0,50.0,95.0,120.0
+821d9ebb-54a5-4c13-ad23-9149f0652af7,,"Carne, bovina, cupim, cru",1.2,0.77,35.0,50.0,95.0,120.0
+6c18e45e-a3de-45b9-96e8-65559decb888,,"Carne, bovina, fígado, cru",1.0,0.7,35.0,50.0,95.0,120.0
+7a223cb3-f5ba-48df-8008-27a8d1611e3d,,"Carne, bovina, filé mingnon, sem gordura, cru",1.59,0.77,35.0,50.0,95.0,120.0
+179f4e47-68a4-4c34-95c3-3a1f4b044fab,,"Carne, bovina, flanco, sem gordura, cru",1.2,0.77,35.0,50.0,95.0,120.0
+f25dee1f-3767-4744-8884-2a77b0678443,,"Carne, bovina, fraldinha, com gordura, crua",1.15,0.77,35.0,50.0,95.0,120.0
+832da66a-7dcb-46e5-a172-b53382ba0950,,"Carne, bovina, lagarto, cru",1.93,0.77,35.0,50.0,95.0,120.0
+8d260f4f-1c8e-4551-8bcd-138c995e0fb0,,"Carne, bovina, língua, crua",1.2,0.77,35.0,50.0,95.0,120.0
+ebae7bb9-3435-4486-b2c9-1dab9859cb37,,"Carne, bovina, maminha, crua",1.26,0.77,35.0,50.0,95.0,120.0
+0a87502e-d19b-4db8-9ce1-06b3d533c883,,"Carne, bovina, miolo de alcatra, sem gordura, cru",1.59,0.77,35.0,50.0,95.0,120.0
+08618756-d094-48e5-9722-d7e9eaf3247f,,"Carne, bovina, músculo, sem gordura, cru",1.12,0.77,35.0,50.0,95.0,120.0
+f7ac2b95-576f-4b96-87af-6ce943a1697e,,"Carne, bovina, paleta, com gordura, crua",1.65,0.77,35.0,50.0,95.0,120.0
+f02a57b4-e069-43cf-9aad-f20e7f6da59d,,"Carne, bovina, paleta, sem gordura, crua",1.65,0.77,35.0,50.0,95.0,120.0
+94b243a0-0daf-4ef6-8f54-c789c473b305,,"Carne, bovina, patinho, sem gordura, cru",1.12,0.77,35.0,50.0,95.0,120.0
+adc94551-643c-4a54-81e3-525486ab5fd0,,"Carne, bovina, peito, sem gordura, cru",1.16,0.77,35.0,50.0,95.0,120.0
+724d8304-b637-4cb8-9e5b-cf898dcf2d78,,"Carne, bovina, picanha, com gordura, crua",1.59,0.77,35.0,50.0,95.0,120.0
+32335077-d177-4d36-92ec-8acc64669528,,"Carne, bovina, picanha, sem gordura, crua",1.59,0.77,35.0,50.0,95.0,120.0
+7cb3174b-c686-470a-84c3-7a40cdded837,,"Carne, bovina, seca, crua",1.23,0.77,35.0,50.0,95.0,120.0
+1553a01e-07f0-4a8b-8745-4c742104899d,,Carne de bode/caprino,1.75,0.75,30.0,45.0,85.0,100.0
+3a11e988-24c5-4d73-92f4-1e6a3fed656f,,Carne de caprino,1.75,0.75,30.0,45.0,85.0,100.0
+1e7a00df-4575-4568-9b2d-df83b474d9fe,,Carne de ovelha,1.74,0.7,30.0,45.0,85.0,100.0
+118a9710-7b09-4dec-805a-1bb697ca2419,,Carne de pato,1.56,0.65,30.0,45.0,85.0,100.0
+2885d569-5267-491f-bcae-d89fb891e5ba,,Carne de sol,1.23,0.65,30.0,40.0,70.0,95.0
+f8ebcfd4-dc5b-4803-a40a-59b6640666e5,,"Carne, frango, caipira, inteiro, c/ pele, cozida, Gallus gallus",2.21,0.61,35.0,50.0,95.0,120.0
+4c9d699d-642f-4f8d-8987-24affa112b7b,,"Carne, frango, caipira, inteiro, s/ pele, cozida, Gallus gallus",2.21,0.61,35.0,50.0,95.0,120.0
+cd6649e9-3704-4991-93f0-655a9abd5e34,,Carne moída,1.0,0.75,35.0,50.0,95.0,120.0
+7385cc28-9bed-4ba6-8333-e93a9ae7a909,,"Caruru, cru",2.0,1.0,15.0,15.0,25.0,40.0
+be70e7f1-5991-4748-a8a6-3b3c8ea5a65e,,"Castanha-de-caju, torrada, salgada",1.0,1.0,2.5,5.0,10.0,10.0
+c290a68e-652d-40ce-ade5-64ce80b7cf85,,"Castanha-do-Brasil, crua",1.0,1.0,2.5,5.0,10.0,10.0
+f23d4da1-6005-454b-b4ba-e7b7cc802b77,,"Catalonha, crua",1.26,1.0,15.0,25.0,25.0,40.0
+d7282dfc-f568-41d0-892c-dcd95f0ab28d,,"Cebola, crua",1.73,1.0,4.0,4.0,6.0,6.0
+61158d24-7861-4a8c-96a4-12fd7e4fd69c,,"Cebolinha, crua",1.18,1.0,1.0,1.0,2.0,2.0
+97718d19-3467-41e1-ac77-fdfbcf0b29b2,,"Cenoura, crua",1.17,0.89,15.0,25.0,40.0,55.0
+b6792986-b0bc-4b30-a6ec-0604f7bbb21c,,"Cereais, milho, flocos, com sal",1.0,1.0,20.0,20.0,30.0,30.0
+8e3d08c0-345c-41df-b092-55f7d2ed034d,,"Cereais, milho, flocos, sem sal",1.0,1.0,20.0,20.0,30.0,30.0
+b0f2e8b9-2028-4ece-ad97-c76e07b5ad91,,"Cereal matinal, milho",1.0,1.0,20.0,20.0,20.0,20.0
+98ec5a3c-7d40-48c9-bd72-4a563f7f7591,,Chá mate orgânico,1.0,1.0,,,15.0,15.0
+24794409-3e5b-42d0-b81b-90886d57c9e5,,Chambaril,1.0,0.71,90.0,90.0,150.0,300.0
+83be4cf1-7087-4125-a71b-bc134a54b165,,Chantilly,1.0,1.0,,,,
+619d1ca4-3180-438d-8db8-489448983335,,"Chá (preto, camomila, erva-cidreira, capim- limão, etc.)",1.0,1.0,,,15.0,15.0
+f164da0e-d8ff-4241-b5a7-d56a89dfd722,,"Cheiro verde (50% cebolinha verde, 50% salsa), cru",1.31,1.0,2.0,2.0,4.0,5.0
+e2661b88-8c72-4ba6-b2ea-73594da0f8b9,,"Chicória, crua",1.26,1.0,15.0,25.0,35.0,50.0
+865123f8-9cdc-4e98-a385-ae3c1375ffee,,Chocolate em p?,1.0,1.0,,20.0,20.0,20.0
+083db874-8dbb-4884-9070-a1dd1e4c4878,,"Chuchu, cru",1.47,0.9,25.0,35.0,60.0,80.0
+3720c153-d042-46f6-9afd-db001b540f80,,"Ciriguela, crua",1.48,1.0,24.0,24.0,40.0,80.0
+2a1db6f6-c974-4eec-bb72-26dc54168c0a,,Cocada branca,1.0,1.0,,20.0,33.0,66.0
+2dc79e7e-95c5-47bf-8742-c10ed0220881,,"Coco, cru",1.79,1.0,24.0,24.0,40.0,80.0
+d814d891-2632-491a-89a0-a9edd087e414,,Coco fresco ralado,1.0,1.0,10.0,10.0,15.0,17.0
+adedd153-5754-4588-9585-bcb0a47c4885,,Coco seco ralado,1.0,1.0,10.0,10.0,15.0,17.0
+b591a889-8be4-41bc-8ffb-04755ee2d14d,,Coentro,1.26,1.0,0.5,0.5,1.0,2.0
+a266e030-ef4c-46d9-9e1d-f0eb930f8ecb,,"Coentro, folhas desidratadas",1.0,1.0,3.0,3.0,4.0,5.0
+bc74cdc8-dd38-4094-a5a4-004126a4faa4,,Cogumelo/champignon em conserva,1.0,1.0,10.0,10.0,10.0,10.0
+be49172c-c96b-4ce6-a9f8-3d3a0ff0cc98,,"Corimba, cru",1.81,0.8,45.0,50.0,80.0,100.0
+5699a22c-4846-4cb0-a405-ef0d37c80e0b,,"Corvina de água doce, crua",1.19,0.8,45.0,50.0,80.0,100.0
+bfc66003-b3da-4728-a23b-0da475754ee7,,"Corvina do mar, crua",1.19,0.8,45.0,50.0,80.0,100.0
+8e7d2f5d-2b60-44a7-8845-40db9c307a8d,,"Couve-flor, crua",2.24,0.98,20.0,40.0,60.0,80.0
+43522e5b-9955-428f-8858-3e949a9a8136,,"Couve, manteiga, crua",1.5,0.83,15.0,15.0,27.0,27.0
+4f203c2c-d2cb-4b5f-8511-80b25b784f58,,Creme de Leite,1.0,1.0,35.0,35.0,50.0,60.0
+9bd2a6ce-2f31-4f40-8785-d840e9dfdd7f,,"Cupuaçu, cru",1.67,1.0,24.0,24.0,40.0,80.0
+bf463765-a691-444c-bc81-a80880f85d55,,"Cupuaçu, polpa, congelada",1.0,1.0,15.0,15.0,60.0,60.0
+6e7867e6-2195-4852-9acf-ee0f346c5045,,Doce de frutas cristalizado,1.0,1.0,,20.0,33.0,66.0
+46a7d17a-e81d-46ce-83f7-300ec99e59d7,,Doce de frutas em calda,1.0,1.0,,20.0,33.0,66.0
+8babdf60-bf7a-4cf3-ae3c-508c45a50556,,Doce de frutas em pasta,1.0,1.0,,20.0,33.0,66.0
+27e19f6d-55a1-413d-bdcd-e4f9bf475a38,,"Doce, de leite, cremoso",1.0,1.0,,20.0,33.0,66.0
+bc0c604d-9268-48d9-84bf-db9c1023ebb0,,"Dourada de água doce, fresca",1.04,0.8,,,,
+8afa71b0-76c6-4fec-9c7a-d4c8d2e477a4,,Ervilha em grão,1.03,2.08,15.0,15.0,20.0,40.0
+dbcd7699-dde6-415a-8e75-b86fa098f8ab,,"Ervilha, em vagem",1.04,1.02,15.0,15.0,20.0,40.0
+24816131-640b-4189-b806-b510a754eeb1,,"Ervilha, enlatada, drenada",1.0,1.0,,,,
+36ef90ef-22b2-4eb0-a2a8-cc110d68b4cc,,"Espinafre, Nova Zelândia, cru",1.79,0.6,15.0,15.0,20.0,40.0
+6f1b5f57-cb42-4a50-bbdc-94f69fbc3a70,,"Farinha, de arroz, enriquecida",1.0,1.0,,,,
+31461ae8-6944-41f8-b083-26018f87ea66,,"Farinha, de centeio, integral",1.0,1.0,,,,
+ab20e331-cfd5-4fd9-8114-326eec32b42e,,"Farinha, de fubá",1.0,1.0,10.0,15.0,30.0,35.0
+17047e02-5910-4fa2-8730-cef6625bce8e,,"Farinha, de mandioca, crua",1.0,1.0,,,,
+8817f812-8e8d-40fb-a761-4c1264a22874,,"Farinha, de mandioca, torrada",1.0,1.0,,,,
+9f77e7b3-97fa-49ae-949b-39e3acdd5373,,"Farinha, de mesocarpo de babaçu, crua",1.0,1.0,,,,
+977fe610-c75b-4410-800c-d2eff79319aa,,"Farinha, de milho, amarela",1.0,1.0,,,,
+0c55abba-e8ee-4572-80d1-3d2f1e37a47f,,"Farinha, de rosca",1.0,1.0,10.0,15.0,30.0,35.0
+a4591187-7f63-4732-8c64-cfb42d63cfc8,,Farinha de tapioca/beiju,1.0,1.0,10.0,15.0,30.0,35.0
+a10dc243-1bc7-4e2d-8ceb-fc29295e7036,,"Farinha, de trigo",1.0,1.0,10.0,15.0,30.0,35.0
+3be85f39-a69a-406d-8923-321c093351fd,,Fava (em grão),1.04,1.94,15.0,20.0,32.0,40.0
+80385df3-e997-4d9f-9ae5-03b55ece8ef9,,"Fécula, de mandioca",1.0,1.0,10.0,15.0,30.0,35.0
+604e5d26-4aff-46b7-a624-184db9e6041a,,"Feijão, broto, cru",1.04,1.0,15.0,20.0,32.0,40.0
+160e2561-41f1-4514-beb1-2cb2a7ca96f7,,"Feijão, carioca, cru",1.04,2.18,15.0,20.0,32.0,40.0
+c8162694-4c13-40a6-b824-7da5690f25af,,"Feijão, fradinho, cru",1.04,2.27,15.0,20.0,32.0,40.0
+e137253a-acbb-4c5e-846e-445c75b7011a,,"Feijão, jalo, cru",1.04,2.27,15.0,20.0,32.0,40.0
+bee7ab3f-fce2-4d54-8f1f-d07d39bd2972,,"Feijão, preto, cru",1.04,2.1,15.0,20.0,32.0,40.0
+89bf59ac-b36b-4b09-b371-bde64ab2f14a,,"Feijão, rajado, cru",1.04,2.27,15.0,20.0,32.0,40.0
+4ba84f8a-e9a9-4324-9fc9-aea19d5a10e2,,"Feijão, rosinha, cru",1.04,2.75,15.0,20.0,32.0,40.0
+4b74958f-6b8d-4bfd-b640-5d853c4cdf2d,,"Feijão, roxo, cru",1.04,2.75,15.0,20.0,32.0,40.0
+1baa7452-5b65-4c4b-88f2-4677d6f54db3,,Feijão-verde,2.09,2.75,15.0,20.0,32.0,40.0
+c4b1bbdc-c525-4e92-8533-e03fe12c1331,,"Fermento, biológico, levedura, tablete",1.0,1.0,,,,
+246ee832-cd02-4aee-9cd4-a3783e819728,,"Fermento em pó, químico",1.0,1.0,,,,
+9c0b566b-fa0d-4118-b455-271ad81d1d44,,Fibra de trigo,1.0,1.0,,,,
+b6306424-0892-4775-a440-f14d62d578b9,,"Figo, cru",1.07,1.0,50.0,50.0,80.0,100.0
+550eae12-c9ce-4097-ba30-ea5317bbe13e,,"Figo, enlatado, em calda",1.0,1.0,,20.0,33.0,66.0
+3b4d8cfb-8d72-479b-b3b7-a05caf06849b,,Filé de frango,1.39,0.72,55.0,60.0,104.0,130.0
+e4a7d12e-adfd-4660-8c39-481a7439a644,,"Frango, asa, com pele, crua",2.24,0.71,75.0,85.0,125.0,250.0
+6b709817-7ad8-4660-925c-368b44756c18,,"Frango, coração, cru",1.3,0.72,55.0,60.0,104.0,130.0
+99b51a89-c922-479e-9dc0-3e641aaccb97,,"Frango, coxa, com pele, crua",1.5,0.74,75.0,85.0,125.0,250.0
+7c903002-cfde-4f4e-8f9b-3820f05f39a2,,"Frango, coxa, sem pele, crua",1.0,0.74,75.0,85.0,125.0,250.0
+6ae3c32a-1ae5-4bac-882f-1096ee886ffe,,"Frango, fígado, cru",1.2,0.74,55.0,60.0,104.0,130.0
+d8d70121-a0e9-4094-ab42-399d30dd1e48,,"Frango, inteiro, com pele, cru",2.38,0.74,75.0,85.0,125.0,250.0
+ce1406c1-6699-4a80-887b-175e749ab465,,"Frango, inteiro, sem pele, cru",2.38,0.74,75.0,85.0,125.0,250.0
+9616849f-e047-41ee-bf58-8a7c03557bf7,,"Frango, peito, com pele, cru",1.39,0.72,55.0,60.0,104.0,130.0
+cb7b01aa-dcc5-4edd-8638-a5be3b6eb663,,"Frango, peito, sem pele, cru",1.39,0.72,75.0,85.0,125.0,250.0
+e7f6483b-c02f-456b-809d-c243b67d5dac,,"Frango, sobrecoxa, com pele, crua",1.31,0.72,75.0,85.0,125.0,250.0
+c77c4fb2-81fb-4a45-8e47-47470ce38b52,,"Frango, sobrecoxa, sem pele, crua",1.31,0.72,75.0,85.0,125.0,250.0
+92473fd9-b6b4-4dad-bf0d-c4e9f6f440b3,,"Fruta-pão, crua",1.3,1.0,24.0,24.0,40.0,80.0
+a9b8ab5b-717f-4c44-a4ff-240bc1f32a7c,,"Geleia de frutas, diversos sabores",1.0,1.0,6.0,6.0,10.0,20.0
+c558b48b-4f3a-40b5-8891-95d09779b046,,"Geleia, mocotó, natural",1.0,1.0,,20.0,33.0,66.0
+5bda29f8-e8ee-4b71-8ab0-a55f6dbdb483,,"Geleias, (média diferentes amostras)",1.0,1.0,6.0,6.0,10.0,20.0
+1b925a91-230c-488c-8dd6-38bece24d697,,"Gergelim, semente",1.0,1.0,,,,
+3100e35d-0a8d-43fe-acc8-92dd96e975b5,,"Goiaba, branca, com casca, crua",1.22,1.0,24.0,24.0,40.0,80.0
+d8279916-7bc5-4545-9a77-4d9847ebfc38,,"Goiaba, doce, cascão",1.0,1.0,,20.0,33.0,66.0
+384216e1-99fd-460b-8dc9-b0f40097554e,,"Goiaba, doce em pasta",1.0,1.0,,20.0,33.0,66.0
+2e3c4c76-90d8-4ead-ae5b-b927f7c22a4b,,"Goiaba, vermelha, com casca, crua",1.22,1.0,24.0,24.0,40.0,80.0
+c6c7881f-0793-4c7f-8295-5c3002254584,,"Grão-de-bico, cru",1.02,2.01,15.0,20.0,32.0,40.0
+4f55c328-f25f-49f3-9982-5d1e5febd8d6,,"Graviola, crua",1.37,1.0,24.0,24.0,40.0,80.0
+c54795a9-6758-4379-9ab7-44cc61cf9d61,,"Graviola, polpa, congelada",1.0,1.0,15.0,15.0,60.0,60.0
+077229ce-b9a2-49fa-ad3a-692e875c220c,,"Guandu, cru",1.03,2.0,15.0,20.0,32.0,40.0
+523efa99-68ac-4e27-a6cc-fb05bbf1b16f,,"Hambúrguer, bovino, cru",1.0,0.72,35.0,50.0,95.0,120.0
+ba5deedd-0f69-409f-b601-148549632478,,Hortelã,1.36,1.0,3.0,3.0,5.0,5.0
+eee85f16-e30d-4493-8450-6f31ff16e1fd,,"Inhame, cru",1.4,1.02,30.0,40.0,50.0,100.0
+8586ce31-9a7c-4a71-9456-c15641be9927,,Iogurte natural,1.0,1.0,70.0,100.0,170.0,200.0
+ff0c8426-f162-4712-8622-856d59e2cd9e,,"Jabuticaba, crua",1.62,1.0,50.0,65.0,80.0,100.0
+e2ab75be-aa90-46fb-918c-5087cff1aabb,,"Jaca, crua",4.13,1.0,50.0,50.0,80.0,100.0
+ddf8876a-2373-49d2-9083-b1e389391591,,"Jambo, cru",1.24,1.0,45.0,45.0,60.0,90.0
+a37a70f5-6482-402e-b988-c4d0f3e00468,,"Jamelão, cru",1.56,1.0,50.0,50.0,80.0,80.0
+62a3dbee-07a5-4a25-890f-087e1d520057,,Jenipapo,1.37,1.0,50.0,50.0,80.0,100.0
+68726d27-4ef3-49ec-8daa-d9cb4f321370,,"Jiló, cru",1.09,1.02,30.0,30.0,50.0,50.0
+9e7bf920-083a-4fcc-ac73-41c44f147fde,,"Jurubeba, crua",1.19,1.0,30.0,30.0,50.0,50.0
+879aaa26-d6a3-48bb-8173-168186f99217,,"Kiwi, cru",1.11,1.0,45.0,65.0,80.0,120.0
+1eeaf816-cfe7-46cb-9b66-1170fe13d9ae,,"Lambari, congelado, cru",1.0,0.7,55.0,65.0,95.0,110.0
+a519505b-39d9-4e3a-8c3d-f41db2074e8b,,"Lambari, fresco, cru",1.2,0.7,50.0,60.0,90.0,100.0
+20a8041b-cfd7-47bd-ba76-111bc9f81529,,"Laranja, baía, crua",1.51,1.0,50.0,60.0,70.0,100.0
+c78f8342-80b5-4cfc-8c13-29365ae71aa7,,"Laranja, baía, suco",1.0,1.0,80.0,100.0,150.0,200.0
+b8c432b8-c047-4805-bd25-8ae3acec87d5,,"Laranja, da terra, crua",1.76,1.0,50.0,60.0,70.0,100.0
+643e4b80-3196-4df6-99ab-d2bff43fb180,,"Laranja, da terra, suco",1.0,1.0,80.0,100.0,150.0,200.0
+8824f862-052f-46ed-8985-bef8125d779c,,"Laranja, lima, crua",1.46,1.0,50.0,60.0,70.0,100.0
+de3f22c5-4942-40b6-83f5-d3f8cf6cadeb,,"Laranja, lima, suco",1.0,1.0,80.0,100.0,150.0,200.0
+7ac7d462-42bb-4918-8098-d24dba691674,,"Laranja, pêra, crua",1.5,1.0,50.0,60.0,70.0,100.0
+162f0f1c-280d-4193-9615-828f37f57bd0,,"Laranja, pêra, suco",1.0,1.0,80.0,100.0,150.0,200.0
+3f4152b8-44cc-4ded-ba54-1213410783d7,,"Laranja, valência, crua",1.65,1.0,50.0,60.0,70.0,100.0
+8531a15e-7fb4-4309-b000-3d65bb30f0c4,,"Laranja, valência, suco",1.0,1.0,80.0,100.0,150.0,200.0
+13e5bb22-b05f-4806-b2c4-449fddf5c4c4,,"Lasanha, massa fresca, cozida",1.0,1.0,40.0,60.0,100.0,120.0
+8cffc864-7595-4b59-bc78-7e3c87477b22,,"Lasanha, massa fresca, crua",1.0,1.0,10.0,15.0,25.0,30.0
+ff06b600-a1cc-4acf-969f-26f26eca256a,,Leite achocolatado diet,1.0,1.0,,100.0,150.0,200.0
+88e0c077-ebfc-421b-93d3-6f28ba57f085,,"Leite, condensado",1.0,1.0,,15.0,40.0,60.0
+b9c44cc5-6fbf-436e-8c03-a7fdb34c4798,,"Leite, de cabra",1.0,1.0,80.0,100.0,150.0,200.0
+004ce2be-a173-4c98-9531-d9410829990e,,"Leite, de coco",1.0,1.0,50.0,80.0,100.0,130.0
+16e96842-3b3e-4eb6-adea-2212e6093bac,,Leite de soja em pó,1.0,1.0,13.0,13.0,26.0,26.0
+e6f8c0cc-5240-472c-8777-1970a6004ba7,,"Leite, de vaca, achocolatado",1.0,1.0,,100.0,150.0,200.0
+9b2b398a-7078-4249-b59f-4ff64a6b4553,,"Leite, de vaca, desnatado, pó",1.0,1.0,15.0,15.0,30.0,30.0
+791347e8-e5fc-4212-b0fd-1b30c9af7ae1,,"Leite, de vaca, desnatado, UHT",1.0,1.0,80.0,120.0,150.0,200.0
+b1b18bc3-6bf4-45e6-af4b-bc69047adfc1,,"Leite, de vaca, integral",1.0,1.0,80.0,120.0,150.0,200.0
+d533dd68-07be-49d5-bcbe-d92ab6a5a71d,,"Leite, de vaca, integral, pó",1.0,1.0,15.0,15.0,30.0,30.0
+97d0ed61-dec3-4ff0-9909-3cc91177069b,,"Leite, fermentado",1.0,1.0,,80.0,120.0,120.0
+26142780-0f84-4b8e-9500-e939137f6ed2,,"Lentilha, crua",1.03,2.31,15.0,25.0,30.0,40.0
+301f83f8-aaee-4638-9398-d273b14e0800,,"Limão, cravo, suco",1.5,1.0,20.0,20.0,50.0,50.0
+dddc0020-af26-4d63-959e-33b61e589daf,,"Limão, galego, suco",1.6,1.0,20.0,20.0,50.0,50.0
+28bae514-e2a7-48ad-b94d-a9e188d22155,,"Limão, tahiti, cru",1.66,1.0,15.0,20.0,50.0,60.0
+1368c95e-3451-4953-817e-f83f9289e179,,"Lingui?a, calabresa, fininha, crua",1.0,0.77,,60.0,70.0,90.0
+03e14119-77ad-4e43-9fd4-a51df1006925,,"Lingui?a (su?na, bovina, mista) crua",1.0,1.0,,20.0,33.0,66.0
+a4555351-f0bf-45af-ab31-b85e96b10846,,"Linguiça, calabresa,",1.0,0.64,,60.0,70.0,90.0
+340ef32e-9374-4d2b-aa8e-f3c653b4b80b,,"Linguiça, frango, crua",1.0,0.77,,60.0,70.0,90.0
+1fdcbf3a-9647-49f9-9a3b-b9e6dfd68866,,"Linguiça, porco, crua",1.0,0.77,,60.0,70.0,90.0
+83424761-68a5-494b-aa1d-802330fc7ee5,,"Linhaça, semente",1.0,1.0,5.0,5.0,10.0,10.0
+98ef5ec4-53a9-4a1a-9dd4-25aa07ab26a2,,"Maçã, Argentina, com casca, crua",1.24,1.0,60.0,80.0,130.0,150.0
+85b98931-e8a7-4be2-9b65-f2d59211a050,,"Maçã, Fuji, com casca, crua",1.26,1.0,60.0,80.0,130.0,150.0
+0db0bda0-b215-45b2-8b34-fb503fd98d27,,"Macarrão, trigo, cru",1.0,2.44,20.0,40.0,50.0,50.0
+9f7b55f7-5dca-4075-8411-03c5d059b300,,"Macarrão, trigo, cru, com ovos",1.0,2.44,20.0,40.0,50.0,50.0
+751dd47b-f53c-4476-a887-319199cd0eda,,"Macaúba, crua",2.67,1.0,50.0,50.0,80.0,100.0
+6020a7f3-5568-49a0-846f-38d6696c6d18,,"Mamão, Formosa, cru",1.38,1.0,40.0,80.0,100.0,150.0
+302c84b7-0f49-471a-961d-63439de169a9,,"Mamão, Papaia, cru",1.39,1.0,40.0,80.0,100.0,150.0
+6c58e757-d3ef-4b74-9155-c540fa8e9a6c,,"Mam?o, doce em calda, drenado",1.0,1.0,,15.0,20.0,40.0
+703599b3-359b-4380-bf8e-1fd34acda813,,"Mandioca, crua",1.31,1.1,50.0,50.0,55.0,70.0
+eed4107a-90d5-496d-b379-47f653dc039c,,"Mandioca, farofa, temperada",1.0,1.0,10.0,10.0,30.0,30.0
+cb20efba-a72d-41ab-9ecf-dd15e4583f93,,Mangaba,1.32,1.0,30.0,45.0,45.0,60.0
+f2dc6387-afbf-48f7-b899-4754138f1ec4,,"Manga, Haden, crua",1.61,1.0,60.0,60.0,80.0,100.0
+62cb6831-b7b2-41e0-97f5-162bc7afbaf6,,"Manga, Palmer, crua",1.61,1.0,60.0,60.0,80.0,100.0
+f5440ae6-c9b2-415c-810a-7c9945b0ed46,,"Manga, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+47af9cd2-dcd0-41d2-aa83-755b6be8b7a2,,"Manjericão, cru",1.52,1.0,0.5,0.5,1.0,1.0
+9c81500a-a350-46e1-bc1a-d88e7eb2a2f8,,"Manteiga, com sal",1.0,1.0,5.0,5.0,7.0,7.0
+47617a35-0fe8-49fd-b51f-76a5fd31bc65,,"Manteiga, sem sal",1.0,1.0,5.0,5.0,7.0,7.0
+faab9507-f8a7-4ab4-a753-2e6201fb8e4b,,"Maracujá, cru",2.16,1.0,40.0,65.0,65.0,100.0
+2245d635-7824-4b85-861d-5fb02ad859e5,,"Maracujá, polpa, congelada",1.0,1.0,40.0,70.0,80.0,100.0
+d2a5e219-9c62-4899-aa19-4c9630b5108b,,"Maracujá, suco concentrado, envasado",1.0,1.0,10.0,15.0,20.0,50.0
+cd315118-d851-4ba2-be3c-1b26ac9fb3d6,,"Margarina, com ?leo, sem sal",1.0,1.0,,5.0,7.0,7.0
+3c907e98-8656-4052-818d-42029db1f349,,Maria mole,1.0,1.0,,5.0,10.0,20.0
+8d94b91c-e53c-42d1-ba8a-92a36784bb9a,,"Maria mole, coco",1.0,1.0,,5.0,10.0,20.0
+e175d76f-627f-464b-95ea-c7fc8fec6b00,,Marmelada,1.0,1.0,,10.0,20.0,20.0
+9869d098-6181-457e-8b6c-47f72942dcdb,,"Massa, fresca, crua",1.0,2.6,25.0,40.0,40.0,60.0
+fadfd2c0-3287-4c6b-9be9-c6d08599194f,,"Maxixe, cru",1.05,0.9,30.0,55.0,75.0,100.0
+f91265c6-a8d5-4ccf-916f-9eacfaba668f,,Melado,1.0,1.0,,10.0,15.0,20.0
+bf164a29-971c-4507-ae70-ec65ec68bb83,,"Melancia, crua",1.9,1.0,60.0,90.0,145.0,200.0
+df236524-a494-44c3-b799-e2ed71e882c4,,"Melão, cru",1.04,1.0,50.0,85.0,95.0,150.0
+c52c87ff-5ef5-4318-86f8-0e2201096ef6,,"Melão, suco natural (néctar), s/ açúcar",1.0,1.0,80.0,100.0,150.0,200.0
+7a768784-cd00-45f0-88d3-293ab3829d03,,"Mel, de abelha",1.0,1.0,,10.0,15.0,20.0
+bca309a1-766b-49a1-8def-084b35a78679,,"Merluza, filé, cru",1.66,0.8,35.0,50.0,95.0,100.0
+d465d497-6165-4c62-b0f3-c391326e0632,,"Mexerica, Murcote, crua",1.3,1.0,50.0,70.0,95.0,100.0
+9bd2ea4d-a323-423c-97ee-ba8ef00eef5f,,"Mexerica, Rio, crua",1.5,1.0,50.0,70.0,95.0,100.0
+aab9e5e7-f30f-4850-9dcb-4d8ce5e71dd4,,"Milho, amido, cru",1.0,1.15,10.0,10.0,30.0,50.0
+05557603-73df-4248-afe1-504f3f983f58,,Milho (em grão) cru,1.0,1.07,50.0,60.0,85.0,100.0
+21bd23e1-30d2-430a-b02e-8d7936f5a07d,,"Milho, fubá, cru",1.0,1.15,20.0,30.0,60.0,60.0
+27b5de05-961d-47df-84a5-b75945fadaa2,,"Milho, pipoca, grãos cru",1.0,1.25,25.0,30.0,65.0,80.0
+6b83fcc3-8166-4d3f-b7f5-c82f75829850,,"Milho, verde, cru",2.63,1.07,65.0,85.0,100.0,175.0
+ba03355a-7b17-4ce5-9bca-ee2c788e0a0c,,"Milho, verde, enlatado, drenado",1.0,1.0,20.0,20.0,50.0,60.0
+7e6ae66a-3f34-4107-8812-46c3b1187520,,Mini pizza semi pronta (crua),1.0,0.95,20.0,30.0,50.0,70.0
+b919bedd-bf73-4f1a-8a41-18f992251d33,,Moela de galinha ou frango,1.0,0.9,40.0,45.0,75.0,90.0
+4d7de4f2-1031-4575-91f7-47a3cc86db3b,,"Molho, p/ salada, c/ salsa, suco de limão, azeite de oliva, c/ sal",1.0,1.0,5.0,5.0,10.0,10.0
+6d71f64a-de5a-4929-8d87-6deb8f72da20,,"Molho, p/ salada, c/ salsa, vinagre de maçã, azeite de oliva, c/ sal",1.0,1.0,5.0,5.0,10.0,10.0
+e1ab0de2-084f-453c-9de0-9c851a1ec597,,"Morango, cru",1.12,1.0,40.0,50.0,80.0,100.0
+b57758bb-9add-48bd-8a0c-4584bb412eb4,,Mortadela,1.0,1.0,,10.0,20.0,20.0
+9028c6ba-0770-4236-9e8b-8d441640e8ca,,"Mostarda, folha, crua",1.51,1.0,30.0,30.0,30.0,50.0
+2da2865d-2029-4bed-9bf6-3f8376269bcb,,"Nabo, cru",1.12,1.0,60.0,70.0,80.0,100.0
+d7935e05-2089-4eaa-96b3-3175ba0f34a5,,Nata,1.0,1.0,10.0,10.0,15.0,20.0
+20592cb3-60bc-458f-9bee-3ac2ba2fe632,,Nectarina,1.24,1.0,50.0,65.0,80.0,140.0
+9514c0db-4cd0-4824-a9a2-6e9fdd658c7e,,"Nêspera, crua",1.31,1.0,50.0,50.0,70.0,70.0
+0e512b56-0a10-4152-835f-0bef4cc66981,,"Noz, crua",4.32,1.0,5.0,5.0,9.0,9.0
+0ea5364c-bb19-45a8-bce6-b2339fefbfb9,,Nuggets de frango,1.0,0.9,,50.0,70.0,80.0
+34bdcb7d-fc6b-46ef-ade3-11ab7b20ffa7,,"Óleo, de babaçu",1.0,1.0,4.0,4.0,7.0,8.0
+edab400a-2b66-4f11-9d63-46d94e05b64e,,"Óleo, de canola",1.0,1.0,4.0,4.0,7.0,8.0
+f301d32b-5df4-4ef5-b533-92b416ec1bbd,,"Óleo, de girassol",1.0,1.0,4.0,4.0,7.0,8.0
+542debe6-49c6-4454-8d58-c1f22117b70d,,"Óleo, de milho",1.0,1.0,4.0,4.0,7.0,8.0
+3af3dd0a-50f9-499b-bb6c-38b503fbd325,,"Óleo, de pequi",1.0,1.0,4.0,4.0,7.0,8.0
+a8b23522-2b97-4960-abc3-5617ad0ffeaf,,"Óleo, de soja",1.0,1.0,4.0,4.0,7.0,8.0
+89f3e47f-ca6e-426b-a23b-5549373610f0,,Orégano,1.0,1.0,1.0,1.0,2.0,2.0
+a9764a86-19b5-4f71-bbba-e79908a858fe,,"Ovo, de codorna, inteiro, cru",1.11,0.89,30.0,30.0,60.0,60.0
+e67dd1b3-d997-4bb3-86c1-e62de0aca77c,,"Ovo, de galinha, inteiro, cru",1.12,0.95,45.0,45.0,75.0,75.0
+ec9666f9-a8d2-49c5-8be4-13b822684594,,"Ovo, galinha, clara, desidratada, pasteurizada",1.0,1.0,13.0,13.0,27.0,27.0
+8b70f080-ce1a-4438-8770-56be4da435b3,,"Ovo, galinha, gema, desidratada, pasteurizada",1.0,1.0,13.0,13.0,26.0,26.0
+4c75d713-385c-4062-b04f-357e136920e9,,"Ovo, galinha, integral, desidratada, pasteurizada",1.0,1.0,30.0,30.0,45.0,45.0
+7d806f93-2d7e-405f-b2b3-e609a2a03780,,"Paçoca, amendoim",1.0,1.0,,15.0,25.0,25.0
+218639cc-16ef-4264-92ed-17c4290da19c,,Palmito in natura cru,1.0,1.0,30.0,30.0,40.0,60.0
+d0bcf06e-b2e4-4d74-b793-fff66137142e,,"Palmito, ju?ara, em conserva",1.0,1.0,20.0,20.0,30.0,40.0
+d1483490-7f7a-4acd-9d1e-f6ba6f45dda9,,"Palmito, pupunha, em conserva",1.0,1.0,20.0,20.0,30.0,40.0
+7d1a096c-84c0-4a45-aaad-71cb6d0613a3,,Pamonha,1.0,1.0,30.0,50.0,80.0,100.0
+b1d0e295-96f8-4b00-81dc-f3932139a194,,"Pão, aveia, forma",1.0,1.0,25.0,50.0,50.0,75.0
+01a98901-7bfe-41ec-96ff-8ee08a534357,,Pão de hambúrguer,1.0,1.0,25.0,50.0,50.0,75.0
+e27f4969-ce7d-480d-a7fd-ffaa8d276bfc,,"Pão, de queijo, assado",1.0,1.0,25.0,50.0,50.0,75.0
+1faeaad9-ecc6-4a2c-9b25-e9dbe57decd2,,Pão de queijo pronto para o consumo,1.0,1.0,25.0,50.0,50.0,75.0
+4b17ddbd-6fa3-4f6d-a101-9383f1d64d2b,,"Pão, de soja",1.0,1.0,25.0,50.0,50.0,75.0
+11ef225d-ac8e-43fe-91b5-f1bf914ab9b5,,Pão doce,1.0,1.0,25.0,50.0,50.0,75.0
+084448a5-5e21-40a8-b347-b282f38c275c,,"Pão, glúten, forma",1.0,1.0,25.0,50.0,50.0,75.0
+ab8da3ef-f217-45e6-8a45-a881104d823c,,"Pão, milho, forma",1.0,1.0,25.0,50.0,50.0,75.0
+58d44bcb-2891-4aad-9d55-de414cbf2640,,"Pão, trigo/centeio, preto, forma",1.0,1.0,25.0,50.0,50.0,75.0
+b25e1221-1104-4d64-a283-1d77e0a1974b,,"Pão, trigo, forma, integral",1.0,1.0,25.0,50.0,50.0,75.0
+5f00e481-95bc-44c5-a19f-dcd16b62f2da,,"Pão, trigo, francês",1.0,1.0,25.0,50.0,50.0,75.0
+44e3443b-af8d-4187-8ffd-4be4719d7654,,"Pão, trigo, sovado",1.0,1.0,25.0,50.0,50.0,75.0
+a9baa245-1ec1-4001-832f-da095d452238,,"Pastel (queijo, carne, palmito, etc.)",1.0,1.22,30.0,50.0,70.0,100.0
+60f9905e-f7e6-4f09-869e-294e93269681,,"Patê (fígado, calabresa, frango, presunto, etc.)",1.0,1.0,10.0,10.0,20.0,20.0
+e1f83e46-cc54-40d1-808f-34b545b2bb93,,"P?-de-moleque, amendoim",1.0,1.0,,20.0,33.0,66.0
+9b13ed04-cea8-4e3d-b988-6d3870c7001e,,"Peixe, água doce, tilápia, filé, cru, Oreochromis niloticus",1.0,0.8,45.0,50.0,80.0,120.0
+0d27b0e6-0164-4a3b-9837-319902b49c28,,"Peixe, ?gua salgada, sardinha, conserva, c/ molho de tomate",1.0,1.0,,25.0,30.0,40.0
+11185e06-91cc-42d5-a53a-0f43cae8f781,,"Pepino, cru",1.3,1.0,17.0,17.0,27.0,55.0
+93983b52-34df-4c06-9f9e-76100142fe94,,"Pequi, cru",3.04,0.93,15.0,15.0,25.0,50.0
+5988a44c-d893-4a32-9111-80719175a9fc,,"Pêra, Park, crua",1.2,1.0,80.0,80.0,90.0,110.0
+3b73a8dd-2d59-4f69-976d-a78524809134,,"Pêra, Williams, crua",1.2,1.0,80.0,80.0,90.0,110.0
+49765d7f-4d50-4f00-8eef-04b0f98c3f5f,,"Peru, congelado, cru",1.64,0.7,35.0,50.0,150.0,300.0
+333bd9d3-5bb1-4105-88ff-5d1e31e90494,,"Pescada, branca, crua",2.0,0.69,45.0,50.0,85.0,150.0
+2872cb9a-5265-4137-aa54-7dfcf0f59b6e,,"Pescada, filé, cru",1.0,0.69,45.0,50.0,85.0,150.0
+935d3e0b-2f2b-4e4b-9c91-a189da9bcb55,,"Pescadinha, crua",2.0,0.69,45.0,50.0,85.0,150.0
+97d26dd3-2488-44bc-afff-b4b54086d3f2,,"Pêssego, Aurora, cru",1.25,1.0,60.0,60.0,60.0,60.0
+674c0416-392b-47a4-b4f7-7e892c7a7bd1,,"Pêssego, enlatado, em",1.0,1.0,,20.0,33.0,66.0
+dc74a351-1ebf-44a3-b594-71ed76fc7cb1,,Pimenta em pó,1.0,1.0,,,1.0,1.0
+d8c5f6ed-007e-4427-8d39-4613dad88eab,,"Pimentão, amarelo, cru",1.26,1.0,10.0,10.0,10.0,10.0
+fd5b95b2-2502-4818-965c-b65a073a7f75,,"Pimentão, verde, cru",1.26,1.0,10.0,10.0,10.0,10.0
+7bf7d67b-2a0b-498c-ae4f-cfad07202d47,,"Pimentão, vermelho, cru",1.26,1.0,10.0,10.0,10.0,10.0
+e84d419b-6159-4fdc-a156-bafce52d5ade,,"Pinha, crua",2.56,1.0,30.0,30.0,60.0,60.0
+b9e28b2a-bc22-4598-a656-e7a542aaad52,,Pinhão,1.72,1.25,15.0,25.0,50.0,80.0
+440ff744-2d67-402a-a024-ad61668ce3ce,,"Pintado, assado",1.3,0.77,40.0,45.0,80.0,120.0
+c11482dc-09ae-44f2-9a2e-a6aadb7e6f3f,,"Pintado, cru",1.03,0.77,45.0,50.0,80.0,120.0
+983ca275-ad8b-45e0-b383-84a3514edad4,,Pipoca doce ou salgada,1.0,1.0,,20.0,33.0,66.0
+53d8ad51-814e-4728-b77f-077afeca09c1,,"Pitanga, crua",1.23,1.0,50.0,50.0,50.0,50.0
+3b3be47c-7f5f-4cad-a015-46f2e8e4cb48,,"Pitanga, polpa, congelada",1.0,1.0,15.0,15.0,60.0,60.0
+7d40fca7-eb80-4c7a-af6a-c544da5286da,,"Polenta, pré-cozida",1.0,0.87,30.0,37.0,55.0,57.0
+b7f68348-5db4-475c-babf-7c87ad4cdfe2,,"Polvilho, doce",1.0,1.0,,,,
+46bda03e-d0b4-4746-a830-06b143c0c62d,,"Porco, bisteca, crua",2.2,0.64,50.0,50.0,85.0,100.0
+73a21c79-45f0-4ba8-83cc-cde430960007,,"Porco, bisteca, frita",2.2,0.64,50.0,50.0,85.0,100.0
+7dfb4038-c7a0-4ae3-9242-eb2495a674e0,,"Porco, costela, crua",2.2,0.64,50.0,50.0,85.0,100.0
+59ce0b0b-a8cc-472d-a989-a1e9a663cd61,,"Porco, lombo, cru",2.2,0.64,50.0,50.0,85.0,100.0
+1f760afa-239b-471c-b38a-f635f89fd708,,"Porco, orelha, salgada, crua",2.2,0.64,50.0,50.0,85.0,100.0
+71960849-b901-49d4-a617-90339357dbef,,"Porco, pernil, cru",2.2,0.64,50.0,50.0,85.0,100.0
+362958a5-c8e3-4d49-9289-eac6f80c9a64,,"Porco, rabo, salgado, cru",2.2,0.64,50.0,50.0,85.0,100.0
+6c13ede4-7fe8-40db-a20c-d39da1a20724,,"Porquinho, cru",2.2,0.64,50.0,50.0,85.0,100.0
+57ed3571-f498-43d6-9d66-9bc0291de440,,"Presunto, com capa de gordura",1.0,1.0,,10.0,20.0,20.0
+9df507fa-b86f-46c4-80e5-81671dbfda10,,"Presunto, sem capa de gordura",1.0,1.0,,10.0,20.0,20.0
+80dba58f-223b-4908-abbc-8b8d75064dec,,"P?ssego, enlatado, em calda",1.0,1.0,,15.0,20.0,40.0
+33b00821-e0e8-4f84-a22c-08c035ce3a45,,Queijo colonial,1.0,1.01,25.0,30.0,40.0,50.0
+d32cdc0b-2c76-4ddf-9941-82d6050141ce,,Queijo de coalho,1.0,1.01,25.0,30.0,40.0,50.0
+777d83cc-1d24-48c2-8957-3e3b2cca1627,,"Queijo, minas, frescal",1.0,1.01,25.0,30.0,40.0,50.0
+c7c33fc6-d5e8-4d20-83f1-658b1e2d5246,,"Queijo, minas, meia cura",1.0,1.01,25.0,30.0,40.0,50.0
+4644cbd7-56b5-4d39-9edb-e65f729ce25f,,"Queijo, mozarela",1.0,1.01,25.0,30.0,40.0,50.0
+4da1ee6b-aeb0-45d6-ad50-450707b74e0e,,"Queijo, parmesão",1.0,1.01,25.0,30.0,40.0,50.0
+7073b3e7-bdf4-4869-af58-bb87d0721d6b,,"Queijo, pasteurizado",1.0,1.01,25.0,30.0,40.0,50.0
+2dc049fb-997a-4914-bd49-238e9e277915,,"Queijo, petit suisse, morango",1.0,1.0,,45.0,45.0,45.0
+61c0681a-e065-403e-b468-cb2dc08ff370,,"Queijo, prato",1.0,1.01,25.0,30.0,40.0,50.0
+dd73f1fc-f880-4cc0-bf50-b06df345516f,,Queijo ralado,1.0,1.0,4.0,4.0,5.0,6.0
+19083051-06d7-4ad8-8d85-2eb5db938339,,"Queijo, requeijão, cremoso",1.0,1.0,10.0,15.0,30.0,30.0
+49000817-8a57-49b1-abfc-6384599ee3eb,,"Queijo, ricota",1.0,1.01,25.0,30.0,40.0,50.0
+80045bca-e5cc-432c-a5a3-779141e32cba,,"Quiabo, cru",1.31,1.58,20.0,30.0,30.0,32.0
+cbfd2c9f-7ac7-4fab-98c1-4bbb87ac55e1,,Quindim,1.0,1.0,,20.0,33.0,66.0
+a0fe46f1-60af-43ba-a264-fcccc9f9295a,,"Quinoa, crua",1.0,1.0,5.0,5.0,10.0,10.0
+b2b13b84-4492-4bad-9ac4-4a762d03e170,,Quirera não especificada,1.0,1.49,35.0,40.0,60.0,62.0
+4d58dfb7-3b96-4dea-96c5-00237a58fefb,,"Rabanete, cru",1.1,1.0,10.0,10.0,20.0,20.0
+26e46e8f-b05d-4124-9d77-1b6717601ce9,,Rapadura,1.0,1.0,,20.0,33.0,66.0
+cde32f75-57b1-47ca-a2ad-ad9cfc0f3646,,"Repolho, branco, cru",1.54,0.93,10.0,13.0,25.0,30.0
+a9c7b529-69e9-4d7c-90b1-808af8a94da7,,"Repolho, roxo, cru",1.54,0.93,10.0,13.0,25.0,30.0
+a55af334-f926-4708-9417-a39ba0440b1b,,"Romã, crua",1.89,1.0,40.0,65.0,65.0,100.0
+734a037c-9cf7-487d-87c9-5132dda19b39,,"Rúcula, crua",1.41,1.0,10.0,13.0,25.0,30.0
+8b897f00-f409-45d7-90e8-df280baa7fcc,,Salame,1.0,1.0,,25.0,30.0,35.0
+71c28486-c317-43c1-885d-f95128ebb5d4,,"Sal, grosso",1.0,1.0,2.5,2.5,3.0,3.0
+af2e899b-a7e8-4e2a-ad61-78af4dc13b80,,"Salmão, sem pele, fresco, cru",2.17,0.8,45.0,50.0,70.0,100.0
+a2ec78c4-2c0b-49b7-b72e-4b972c6af46f,,"Salsa, crua",1.27,1.0,1.0,1.0,1.0,1.0
+69ecfe84-ad3b-4259-93a7-390935de26ad,,Salsicha em conserva,1.0,1.0,,25.0,30.0,35.0
+e1f59599-6518-4d06-91b0-8eda4e67127d,,Salsicha no varejo crua,1.0,1.0,,25.0,30.0,35.0
+fc1db10d-9e21-4d21-88fa-acbc2cd60b57,,Salsinha,1.27,1.0,1.0,1.0,1.0,1.0
+7d705c85-4f80-4a5a-a9e0-0bf8a9066e86,,Salsinha seca,1.0,1.0,1.0,1.0,1.0,1.0
+b3c69294-4461-4343-b10d-b1011c53c3c1,,Sapoti,1.33,1.0,80.0,80.0,90.0,100.0
+82d8e94f-a120-4555-bc93-8a4a4c2db6f3,,"Sardinha, conserva em ?leo",1.0,1.0,25.0,30.0,40.0,52.0
+be3c752b-61bf-4622-9ff2-c249efe70e0d,,"Sardinha, inteira, crua",1.65,0.8,45.0,50.0,85.0,120.0
+8fe987ac-9570-4fe8-ba4a-65f7be156100,,"Seleta de legumes, enlatada",1.0,1.0,20.0,30.0,40.0,50.0
+50b765b6-027e-4c2b-88c6-95f27895acf5,,"Serralha, crua",1.43,1.0,10.0,13.0,25.0,30.0
+f4b40b6d-7b5f-4a0b-8165-b6956933f4b3,,"Soja, extrato solúvel, pó",1.0,1.0,10.0,15.0,30.0,35.0
+0e1c883c-3476-4b85-9946-745cec3d50ae,,"Soja, farinha",1.0,1.0,10.0,15.0,30.0,35.0
+b5a8c1fb-6c95-4171-a359-c4ed00e6af1b,,"Soja, queijo (tofu)",2.08,1.0,25.0,30.0,40.0,50.0
+e28cd54c-3521-44f7-818f-34bc43df3138,,Sonho,1.0,1.0,,25.0,50.0,50.0
+57681448-dfb6-44c1-9443-9fb30feefee5,,"Sorvete de qualquer sabor, industrializado",1.0,1.0,,30.0,60.0,60.0
+42f5293a-fcac-48ad-831b-59983d01096e,,"Taioba, crua",1.15,1.0,10.0,13.0,25.0,30.0
+0b5b67b8-6394-4d3e-8ed5-4e88236f042c,,"Tamarindo, cru",2.08,1.0,80.0,80.0,90.0,100.0
+7b8a5c0a-01f3-4046-9b4a-d5e044f779dc,,"Tangerina, Poncã, crua",1.36,1.0,60.0,80.0,100.0,120.0
+daef625c-1d9b-456e-a975-c3daa918e5c8,,"Tangerina, Poncã, suco",1.36,1.0,50.0,100.0,150.0,200.0
+3130b262-c8b6-42b9-8489-5dfe1bfc2a14,,Taperebá,1.61,1.0,80.0,80.0,90.0,100.0
+980f82fb-5d68-4231-b96f-f2aa31202d09,,"Tomate, com semente, cru",1.25,1.0,15.0,25.0,30.0,37.0
+4aa3df6d-8fd7-4183-b6a8-16afa3f6244f,,"Tomate, extrato",1.0,1.0,5.0,7.0,10.0,15.0
+979959e4-3c5e-45d5-bb39-b10f230617f6,,"Tomate, purê",1.0,1.0,5.0,7.0,10.0,15.0
+55f0d15b-80e7-4d2e-8e8c-84e542985f5d,,"Tomate, salada",1.25,1.0,15.0,25.0,30.0,37.0
+7e6c2e54-1394-4d08-a249-402d288da944,,Tomate seco,1.0,1.0,10.0,15.0,30.0,50.0
+71ee9bf8-e82d-4ed2-b907-a94ae1cce7e4,,"Torrada, pão francês",1.0,1.0,25.0,50.0,50.0,75.0
+152d7314-6eb4-410c-a3b6-b94e3c2fb8b2,,"Torrada, trigo, tradicional",1.0,1.0,,50.0,50.0,75.0
+5d469a4f-7fd2-4795-8705-d66ae51f78c2,,Tortas salgadas de qualquer sabor,1.0,1.0,45.0,50.0,100.0,150.0
+ec719c4a-ca80-4388-b051-8382f3683fe9,,"Tremoço, cru",1.88,1.94,15.0,20.0,32.0,40.0
+5c52ec65-4edb-4662-b7a7-2ff693f12bf0,,"Tremoço, em conserva",1.0,1.0,30.0,40.0,65.0,80.0
+ba2a84b2-0af2-4747-ba9e-a75e32c4cb8e,,"Trigo, farelo",1.0,1.0,10.0,15.0,30.0,35.0
+7fff0812-c6b6-4d33-9246-a4b78307efe9,,"Trigo para quibe, cru, Triticum spp.",1.0,1.0,20.0,20.0,25.0,30.0
+fbc086cc-2a72-43bc-8859-c957ecc37c54,,"Tucumã, cru",1.0,1.0,80.0,80.0,90.0,100.0
+b94c875f-5c70-4a1c-afd0-268e79295c18,,"Tucunaré, filé, congelado, cru",1.0,0.8,45.0,50.0,85.0,120.0
+d26c5e04-23ec-4d3a-88fe-f8ee3538eda3,,"Umbu, cru",1.0,1.0,80.0,80.0,90.0,100.0
+3e4c4fb3-486e-4345-b3c1-f3f94495cb34,,"Umbu, polpa, congelada",1.0,1.0,15.0,15.0,60.0,60.0
+c941223f-e15d-49f2-a6db-3e1773237f5e,,"Uva, Itália, crua",1.11,1.0,40.0,80.0,90.0,100.0
+85a0452f-a8ee-4524-8ca3-8938159e5f4b,,Uva passa,1.0,1.0,5.0,5.0,10.0,10.0
+d1dc2991-dbd3-4677-a845-e2c5b7d007fa,,"Uva, Rubi, crua",1.11,1.0,40.0,80.0,90.0,100.0
+2f91c430-db83-4682-90e2-66f4bf98dc10,,"Uva, suco concentrado, envasado",1.0,1.0,15.0,15.0,60.0,60.0
+8e140a35-2ec0-46b5-9778-65a951bb5169,,"Vagem, crua",1.41,1.02,20.0,30.0,40.0,55.0
+d6002c51-98e0-4011-9038-3311693699fc,,"Vinagre, maçã",1.0,1.0,5.0,5.0,10.0,10.0
+b7fd35fb-255f-4983-a3b8-ab02801920f3,,Víscera bovina,1.07,0.74,50.0,50.0,80.0,100.0
+9a087582-3fc7-4ccb-80da-f6a1dff580ef,,Xérem de milho,1.0,1.49,35.0,40.0,60.0,62.0

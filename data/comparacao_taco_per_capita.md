@@ -1,0 +1,425 @@
+# Compara??o TACO x per capita
+
+Fontes: `db/taco_final.sql` e `data/manual_per_capita.pdf`.
+
+Crit?rio: compara??o exata ap?s normalizar caixa, acentos e espa?os repetidos. N?o foi feita equival?ncia sem?ntica entre varia??es como cru/cozido, p?/UHT, com/sem gordura ou descri??es truncadas do PDF.
+
+## Resumo
+
+- TACO: 597 linhas, 597 nomes ?nicos normalizados.
+- Per capita: 472 linhas, 471 nomes ?nicos normalizados.
+- Em ambos: 334 nomes.
+- Na TACO e n?o no per capita: 263 nomes.
+- No per capita e n?o na TACO: 137 nomes.
+- Duplicatas normalizadas no per capita: 1.
+- Duplicatas normalizadas na TACO: 0.
+
+## Duplicatas no per capita
+
+- Iogurte de qualquer (2 ocorr?ncias)
+
+## Na TACO e n?o no per capita
+
+- Abadejo, filé, congelado, assado
+- Abadejo, filé, congelado, grelhado
+- Abadejo, filé, congelado,cozido
+- Abóbora, cabotian, cozida
+- Abóbora, moranga, refogada
+- Abobrinha, italiana, cozida
+- Abobrinha, italiana, refogada
+- Açaí, polpa, com xarope de guaraná e glucose
+- Acarajé
+- Almeirão, refogado
+- Ameixa, em calda, enlatada, drenada
+- Arroz carreteiro
+- Arroz, integral, cozido
+- Arroz, tipo 1, cozido
+- Arroz, tipo 2, cozido
+- Arroz, tipo 2, cru
+- Azeitona, preta, conserva
+- Azeitona, verde, conserva
+- Bacalhau, salgado, refogado
+- Baião de dois, arroz e feijão-de-corda
+- Barreado
+- Batata, baroa, cozida
+- Batata, doce, cozida
+- Batata, frita, tipo chips, industrializada
+- Batata, inglesa, cozida
+- Batata, inglesa, frita
+- Batata, inglesa, sauté
+- Bebida isotônica, sabores variados
+- Bebida láctea, pêssego
+- Berinjela, cozida
+- Beterraba, cozida
+- Bife à cavalo, com contra filé
+- Biscoito, doce, recheado com chocolate
+- Biscoito, doce, recheado com morango
+- Biscoito, doce, wafer, recheado de chocolate
+- Biscoito, doce, wafer, recheado de morango
+- Biscoito, polvilho doce
+- Biscoito, salgado, cream cracker
+- Bolinho de arroz
+- Bolo, mistura para
+- Bolo, pronto, aipim
+- Bolo, pronto, chocolate
+- Bolo, pronto, coco
+- Bolo, pronto, milho
+- Brócolis, cozido
+- Cação, posta, com farinha de trigo, frita
+- Cação, posta, cozida
+- Café, infusão 10%
+- Caldo de carne, tablete
+- Caldo de galinha, tablete
+- Camarão à baiana
+- Camarão, Rio Grande, grande, cru
+- Camarão, Sete Barbas, sem cabeça, com casca, frito
+- Cana, aguardente 1
+- Cana, caldo de
+- Canjica, com leite integral
+- Capuccino, pó
+- Cará, cozido
+- Carne, bovina, acém, moído, cozido
+- Carne, bovina, acém, sem gordura, cozido
+- Carne, bovina, almôndegas, fritas
+- Carne, bovina, bucho, cozido
+- Carne, bovina, capa de contra-filé, com gordura, grelhada
+- Carne, bovina, capa de contra-filé, sem gordura, grelhada
+- Carne, bovina, charque, cozido
+- Carne, bovina, contra-filé de costela, cru
+- Carne, bovina, contra-filé de costela, grelhado
+- Carne, bovina, contra-filé, à milanesa
+- Carne, bovina, contra-filé, com gordura, cru
+- Carne, bovina, contra-filé, com gordura, grelhado
+- Carne, bovina, contra-filé, sem gordura, cru
+- Carne, bovina, contra-filé, sem gordura, grelhado
+- Carne, bovina, costela, assada
+- Carne, bovina, coxão duro, sem gordura, cozido
+- Carne, bovina, coxão mole, sem gordura, cozido
+- Carne, bovina, cupim, assado
+- Carne, bovina, fígado, grelhado
+- Carne, bovina, filé mingnon, sem gordura, grelhado
+- Carne, bovina, flanco, sem gordura, cozido
+- Carne, bovina, fraldinha, com gordura, cozida
+- Carne, bovina, lagarto, cozido
+- Carne, bovina, língua, cozida
+- Carne, bovina, maminha, grelhada
+- Carne, bovina, miolo de alcatra, sem gordura, grelhado
+- Carne, bovina, músculo, sem gordura, cozido
+- Carne, bovina, paleta, sem gordura, cozida
+- Carne, bovina, patinho, sem gordura, grelhado
+- Carne, bovina, peito, sem gordura, cozido
+- Carne, bovina, picanha, com gordura, grelhada
+- Carne, bovina, picanha, sem gordura, grelhada
+- Carne, bovina, seca, cozida
+- Catalonha, refogada
+- Cenoura, cozida
+- Cereais, mingau, milho, infantil
+- Cereais, mistura para vitamina, trigo, cevada e aveia
+- Cereal matinal, milho, açúcar
+- Cerveja, pilsen 2
+- Chá, erva-doce, infusão 5%
+- Chá, mate, infusão 5%
+- Chá, preto, infusão 5%
+- Chantilly, spray, com gordura vegetal
+- Charuto, de repolho
+- Chocolate, ao leite
+- Chocolate, ao leite, com castanha do Pará
+- Chocolate, ao leite, dietético
+- Chocolate, meio amargo
+- Chuchu, cozido
+- Coco, água de
+- Coco,  verde, cru
+- Corimbatá, assado
+- Corimbatá, cozido
+- Corvina grande, assada
+- Corvina grande, cozida
+- Couve, manteiga, refogada
+- Couve-flor, cozida
+- Coxinha de frango, frita
+- Creme de arroz, pó
+- Creme de milho, pó
+- Croquete, de carne, cru
+- Croquete, de carne, frito
+- Curau, milho verde
+- Curau, milho verde, mistura para
+- Cuscuz, de milho, cozido com sal
+- Cuscuz, paulista
+- Cuxá, molho
+- Dobradinha
+- Doce, de abóbora, cremoso
+- Empada de frango, pré-cozida, assada
+- Empada, de frango, pré-cozida
+- Ervilha, enlatada, drenada
+- Espinafre, Nova Zelândia, refogado
+- Estrogonofe de carne
+- Estrogonofe de frango
+- Farinha, de puba
+- Farinha, láctea, de cereais
+- Feijão tropeiro mineiro
+- Feijão, carioca, cozido
+- Feijão, fradinho, cozido
+- Feijão, jalo, cozido
+- Feijão, preto, cozido
+- Feijão, rajado, cozido
+- Feijão, rosinha, cozido
+- Feijão, roxo, cozido
+- Frango, caipira, inteiro, com pele, cozido
+- Frango, caipira, inteiro, sem pele, cozido
+- Frango, com açafrão
+- Frango, coração, grelhado
+- Frango, coxa, com pele, assada
+- Frango, coxa, sem pele, cozida
+- Frango, filé, à milanesa
+- Frango, inteiro, sem pele, assado
+- Frango, inteiro, sem pele, cozido
+- Frango, peito, com pele, assado
+- Frango, peito, sem pele, cozido
+- Frango, peito, sem pele, grelhado
+- Frango, sobrecoxa, com pele, assada
+- Frango, sobrecoxa, sem pele, assada
+- Gelatina, sabores variados, pó
+- Glicose de milho
+- Hambúrguer, bovino, frito
+- Hambúrguer, bovino, grelhado
+- Iogurte, natural
+- Iogurte, natural, desnatado
+- Iogurte, sabor abacaxi
+- Iogurte, sabor morango
+- Iogurte, sabor pêssego
+- L
+- Lambari, congelado, frito
+- Leite, de vaca, achocolatado
+- Lentilha, cozida
+- Lingüiça, frango, frita
+- Lingüiça, frango, grelhada
+- Lingüiça, porco, frita
+- Lingüiça, porco, grelhada
+- Macarrão, instantâneo
+- Macarrão, molho bolognesa
+- Maionese, tradicional com ovos
+- Mamão verde, doce em calda, drenado
+- Mamão, doce em calda, drenado
+- Mandioca, cozida
+- Mandioca, frita
+- Manga, Tommy Atkins, crua
+- Maniçoba
+- Manjuba, com farinha de trigo, frita
+- Manjuba, frita
+- Margarina, com óleo hidrogenado, com sal (65% de lipids)
+- Margarina, com óleo hidrogenado, sem sal (80% de lipids)
+- Margarina, com óleo interesterificado, com sal (65%de lipids)
+- Margarina, com óleo interesterificado, sem sal (65% de lipids)
+- Maria mole, coco queimado
+- Merluza, filé, assado
+- Merluza, filé, frito
+- Milho, verde, enlatado, drenado
+- Mingau tradicional, pó
+- Nhoque, batata, cozido
+- Omelete, de queijo
+- Ovo, de galinha, clara, cozida/10minutos
+- Ovo, de galinha, gema, cozida/10minutos
+- Ovo, de galinha, inteiro, cozido/10minutos
+- Ovo, de galinha, inteiro, frito
+- Palmito, juçara, em conserva
+- Palmito, pupunha, em conserva
+- Pamonha, barra para cozimento, pré-cozida
+- Pão, de queijo, cru
+- Pastel, de carne, cru
+- Pastel, de carne, frito
+- Pastel, de queijo, cru
+- Pastel, de queijo, frito
+- Pastel, massa, crua
+- Pastel, massa, frita
+- Pé-de-moleque, amendoim
+- Peru, congelado, assado
+- Pescada, branca, frita
+- Pescada, filé, com farinha de trigo, frito
+- Pescada, filé, frito
+- Pescada, filé, molho escabeche
+- Pêssego, enlatado, em calda
+- Pinhão, cozido
+- Pintado, grelhado
+- Pipoca, com óleo de soja, sem sal
+- Porco, bisteca, grelhada
+- Porco, costela, assada
+- Porco, lombo, assado
+- Porco, pernil, assado
+- Presunto, com capa de gordura
+- Presunto, sem capa de gordura
+- Pupunha, cozida
+- Queijo, petit suisse, morango
+- Quibe, assado
+- Quibe, cru
+- Quibe, frito
+- Quibebe
+- Refrigerante, tipo água tônica
+- Refrigerante, tipo cola
+- Refrigerante, tipo guaraná
+- Refrigerante, tipo laranja
+- Refrigerante, tipo limão
+- Repolho, roxo, refogado
+- Sal, dietético
+- Salada, de legumes, com maionese
+- Salada, de legumes, cozida no vapor
+- Salmão, filé, com pele, fresco,  grelhado
+- Salmão, sem pele, fresco, grelhado
+- Salpicão, de frango
+- Sarapatel
+- Sardinha, assada
+- Sardinha, conserva em óleo
+- Sardinha, frita
+- Seleta de legumes, enlatada
+- Shoyu
+- Soja, extrato solúvel, natural, fluido
+- Tabule
+- Tacacá
+- Tapioca, com manteiga
+- Tempero a base de sal
+- Tomate, molho industrializado
+- Toucinho, cru
+- Toucinho, frito
+- Tucupi, com pimenta-de-cheiro
+- Vaca atolada
+- Vatapá
+- Virado à paulista
+- Yakisoba
+
+## No per capita e n?o na TACO
+
+- Açafrão, pó
+- Achocolatado em pó diet
+- Adoçante artificial
+- Água de coco
+- Almôndega ao molho em
+- Almôndega, frango, crua
+- Araçá
+- Arroz, farelo
+- Aspargo, cru
+- Azeitona, preta,
+- Azeitona, verde,
+- Bacuri
+- Banha suína
+- Batata palha
+- Bebida láctea
+- Biscoito de polvilho
+- Biscoito de polvilho doce
+- Biscoito salgado
+- Biscoito, salgado, cream
+- Bisteca bovina (crua)
+- Broto de alfafa
+- Butiá
+- Café
+- Café solúvel capuccino
+- Cajuína
+- Canela em pó
+- Carne de bode/caprino
+- Carne de caprino
+- Carne de ovelha
+- Carne de pato
+- Carne de sol
+- Carne moída
+- Carne, avestruz, crua (média de diferentes cortes)
+- Carne, bovina, contra- filé de costela, cru
+- Carne, bovina, contra- filé, com gordura, cru
+- Carne, bovina, contra- filé, sem gordura, cru
+- Carne, frango, caipira, inteiro, c/ pele, cozida, Gallus gallus
+- Carne, frango, caipira, inteiro, s/ pele, cozida, Gallus gallus
+- Chá (preto, camomila, erva-cidreira, capim- limão, etc.)
+- Chá mate orgânico
+- Chambaril
+- Chantilly
+- Cheiro verde (50% cebolinha verde, 50% salsa), cru
+- Chocolate em pó de
+- Coco fresco ralado
+- Coco seco ralado
+- Coentro
+- Cogumelo/champignon em conserva
+- Doce de frutas
+- Doce de frutas em calda
+- Doce de frutas em pasta
+- Doce, de abóbora,
+- Doce, leite, cremoso,
+- Ervilha em grão
+- Farinha de tapioca/beiju
+- Farinha, de fubá
+- Fava (em grão)
+- Feijão (preto, mulatinho, roxo, rosinha, etc.)
+- Feijão-verde
+- Fibra de trigo
+- Filé de frango
+- Geleia de frutas, diversos sabores
+- Geleias, (média diferentes amostras)
+- Hortelã
+- Iogurte de qualquer
+- Iogurte natural
+- Jenipapo
+- Leite achocolatado diet
+- Leite de soja em pó
+- Leite, de vaca,
+- Linguiça (suína, bovina,
+- Linguiça, calabresa,
+- Mamão verde, doce em
+- Mamão, doce em calda,
+- Mangaba
+- Margarina, com óleo
+- Maria mole, coco
+- Massa, fresca, crua
+- Melão, suco natural (néctar), s/ açúcar
+- Milho (em grão) cru
+- Milho, pipoca, grãos cru
+- Milho, verde, enlatado,
+- Mini pizza semi pronta (crua)
+- Moela de galinha ou frango
+- Molho, p/ salada, c/ salsa, suco de limão, azeite de oliva, c/ sal
+- Molho, p/ salada, c/ salsa, vinagre de maçã, azeite de oliva, c/ sal
+- Nata
+- Nectarina
+- Nuggets de frango
+- Orégano
+- Ovo, galinha, clara, desidratada, pasteurizada
+- Ovo, galinha, gema, desidratada, pasteurizada
+- Ovo, galinha, integral, desidratada, pasteurizada
+- Palmito in natura cru
+- Palmito, juçara, em
+- Palmito, pupunha, em
+- Pamonha
+- Pão de hambúrguer
+- Pão de queijo pronto para o consumo
+- Pão doce
+- Pão, trigo/centeio, preto, forma
+- Pastel (queijo, carne, palmito, etc.)
+- Patê (fígado, calabresa, frango, presunto, etc.)
+- Pé-de-moleque,
+- Peixe, água doce, tilápia, filé, cru, Oreochromis niloticus
+- Peixe, água salgada,
+- Pêssego, enlatado, em
+- Pimenta em pó
+- Pinhão
+- Pipoca doce ou salgada
+- Presunto, com capa de
+- Presunto, sem capa de
+- Queijo colonial
+- Queijo de coalho
+- Queijo ralado
+- Queijo, petit suisse,
+- Quinoa, crua
+- Quirera não especificada
+- Salsicha em conserva
+- Salsicha no varejo crua
+- Salsinha
+- Salsinha seca
+- Sapoti
+- Sardinha, conserva em
+- Seleta de legumes,
+- Sonho
+- Sorvete de qualquer
+- Taperebá
+- Tomate seco
+- Torrada, trigo,
+- Tortas salgadas de qualquer sabor
+- Trigo para quibe, cru, Triticum spp.
+- Trigo, farelo
+- Uva passa
+- Vinagre, maçã
+- Víscera bovina
+- Xérem de milho
