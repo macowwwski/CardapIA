@@ -1,5 +1,5 @@
 
-from ai_service import gerar_cardapio
+from src.ai_service import gerar_cardapio
 
 cardapio = gerar_cardapio(
     etapa="creche",

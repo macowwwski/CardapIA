@@ -12,6 +12,11 @@ from pydantic import BaseModel
 from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import Session
 from db.models import Taco, PerCapita
+from prompt_templates import (
+      montar_mensagem_conversao_json,
+      montar_prompt_conversao_json,
+      montar_prompt_geracao_cardapio,
+  )
 
 
 load_dotenv()
@@ -21,58 +26,15 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 
 
 # ---------------------------------------------------------
-# Schema Pydantic do cardápio
+# Import do Schema Pydantic do cardápio
 # ---------------------------------------------------------
-
-class IngredienteSchema(BaseModel):
-    nome_taco: str
-    quantidade_g: float
-
-class PratoSchema(BaseModel):
-    nome: str
-    estado_preparacao: str
-    ingredientes: list[IngredienteSchema]
-
-class TipoRefeicao(str, Enum):
-    desjejum = "desjejum"
-    almoco = "almoço"
-    reforco = "reforço"
-    lanche_tarde = "lanche da tarde"
-    jantar = "jantar"
-
-class RefeicaoSchema(BaseModel):
-    tipo: TipoRefeicao
-    horario: str
-    pratos: list[PratoSchema]
-
-class DiaSchema(BaseModel):
-    dia_semana: str
-    refeicoes: list[RefeicaoSchema]
-
-class SemanaSchema(BaseModel):
-    numero: int
-    dias: list[DiaSchema]
-
-class CardapioSchema(BaseModel):
-    mes_aplicacao: str
-    semanas: list[SemanaSchema]
-    observacoes: str
-
-
-class InconformidadePNAESchema(BaseModel):
-    escopo: str
-    regra: str
-    detalhe: str
-
-
-TIPOS_REFEICAO_PERMITIDOS = {tipo.value for tipo in TipoRefeicao}
-ORDEM_TIPOS_REFEICAO = [
-    TipoRefeicao.desjejum.value,
-    TipoRefeicao.almoco.value,
-    TipoRefeicao.reforco.value,
-    TipoRefeicao.lanche_tarde.value,
-    TipoRefeicao.jantar.value,
-]
+from schemas_pydantic import (
+      CardapioSchema,
+      InconformidadePNAESchema,
+      ORDEM_TIPOS_REFEICAO,
+      TIPOS_REFEICAO_PERMITIDOS,
+      TipoRefeicao,
+)
 
 
 # ---------------------------------------------------------
@@ -924,22 +886,7 @@ def gerar_cardapio(
         temperature=0.3
     ).bind_tools([listar_opcoes_taco, buscar_cn_ingrediente_taco])
 
-    system_prompt_1 = f"""
-Você é um nutricionista escolar.
-
-Use as ferramentas disponíveis para montar um cardápio mensal.
-
-REGRAS:
-{contexto}
-
-INSTRUÇÕES:
-- Use as tools sempre que necessário
-- Monte o cardápio completo (4 semanas com 5 dias cada)
-- Organize de forma clara por semanas, dias e refeições
-- NÃO gere JSON
-- NÃO use formatação técnica
-- Apenas texto estruturado e organizado
-"""
+    system_prompt_1 = montar_prompt_geracao_cardapio(contexto)
 
     mensagens = [
         SystemMessage(content=system_prompt_1),
@@ -982,86 +929,13 @@ INSTRUÇÕES:
 
     schema_json = json.dumps(CardapioSchema.model_json_schema(), ensure_ascii=False, indent=2)
 
-    prompt_2 = f"""
-Você é um gerador de JSON estrito.
-
-Sua tarefa é gerar um objeto que seja 100% válido de acordo com o schema CardapioSchema.
-
-REGRAS CRÍTICAS (OBRIGATÓRIAS):
-
-1. Retorne APENAS JSON válido.
-   - Não inclua explicações
-   - Não inclua comentários
-   - Não use markdown
-   - Não escreva nada antes ou depois do JSON
-
-2. O JSON deve ser totalmente compatível com validação Pydantic.
-
-SCHEMA PYDANTIC EM JSON:
-{schema_json}
-
-3. Campos enum devem respeitar EXATAMENTE os valores permitidos.
-
-Para o campo "tipo" das refeições, use SOMENTE UM dos valores abaixo:
-- "desjejum"
-- "almoço"
-- "reforço"
-- "lanche da tarde"
-- "jantar"
-
-REGRAS IMPORTANTES:
-- Não invente valores como "Refeição 1", "Refeição 2"
-- Não use abreviações
-- Respeite acentuação exatamente como acima
-
-4. Todos os campos obrigatórios devem estar presentes.
-
-5. Tipos devem ser respeitados:
-- números como números (ex: 0.0)
-- strings como strings
-- listas como listas
-
-6. Antes de responder, execute esta validação mental:
-   - O JSON está válido?
-   - Todos os enums estão corretos?
-   - Existe algum valor fora do permitido?
-   - Se houver erro, CORRIJA antes de responder
-
-7. Se estiver em dúvida entre gerar algo inválido ou corrigir, sempre CORRIJA.
-
----
-
-EXEMPLOS:
-
-Exemplo válido:
-{{
-  "tipo": "almoço"
-}}
-
-Exemplo inválido (NUNCA FAZER):
-{{
-  "tipo": "Refeição 1"
-}}
-
----
-
-SAÍDA:
-Retorne apenas o JSON final válido.
-"""
+    prompt_2 = montar_prompt_conversao_json()
     
     for tentativa in range(3):
         try:
-            resultado = llm_structured.invoke(f"""
-            {prompt_2}
-
-            CONTEÚDO PARA CONVERTER:
-            O texto abaixo deve ser convertido fielmente para o schema.
-            NÃO invente informações novas.
-            NÃO altere o significado.
-            Apenas estruture corretamente.
-
-            {texto_cardapio}
-            """)
+            resultado = llm_structured.invoke(
+                montar_mensagem_conversao_json(prompt_2, texto_cardapio)
+            )
 
             cardapio = validar_cardapio(
                 resultado,

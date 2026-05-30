@@ -1,5 +1,5 @@
 from langchain_ollama import ChatOllama
-from ai_service import CardapioSchema
+from src.ai_service import CardapioSchema
 
 llm = ChatOllama(model="gemma4:31b-cloud", temperature=0)
 

@@ -1,4 +1,4 @@
-from ai_service import listar_opcoes_taco, buscar_cn_ingrediente_taco
+from src.ai_service import listar_opcoes_taco, buscar_cn_ingrediente_taco
 
 # Testa listagem por categoria
 print("=== Frutas ===")
