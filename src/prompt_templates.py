@@ -1,5 +1,5 @@
 import json
-from schemas_pydantic import CardapioSchema
+from src.schemas_pydantic import CardapioSchema
 
 
 def montar_prompt_geracao_cardapio(contexto: str) -> str:

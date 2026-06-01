@@ -12,7 +12,7 @@ from pydantic import BaseModel
 from sqlalchemy import create_engine, or_
 from sqlalchemy.orm import Session
 from db.models import Taco, PerCapita
-from prompt_templates import (
+from src.prompt_templates import (
       montar_mensagem_conversao_json,
       montar_prompt_conversao_json,
       montar_prompt_geracao_cardapio,
@@ -28,7 +28,7 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 # ---------------------------------------------------------
 # Import do Schema Pydantic do cardápio
 # ---------------------------------------------------------
-from schemas_pydantic import (
+from src.schemas_pydantic import (
       CardapioSchema,
       InconformidadePNAESchema,
       ORDEM_TIPOS_REFEICAO,
@@ -378,6 +378,26 @@ def _buscar_taco_por_nome(session: Session, nome_alimento: str) -> Taco | None:
 
     return None
 
+
+CATEGORIAS_NAO_ADOCAVEIS: set[str] = {
+      "cereais e derivados",
+      "verduras hortalicas e derivados",
+      "leguminosas e derivados",
+      "tuberculos e derivados",
+  }
+
+def _categoria_nao_adocavel(categoria: str) -> bool:
+      categoria_normalizada = _texto_normalizado(categoria)
+      return any(
+          categoria_ref in categoria_normalizada
+          for categoria_ref in CATEGORIAS_NAO_ADOCAVEIS
+      )
+
+is_nao_adocavel = _categoria_nao_adocavel(categoria)
+if tokens & {"sorvet", "chocolate", "acucar", "mel", "geleia", "goiabada"}:
+      classes.add("doce")
+elif "doce" in tokens and not eh_categoria_nao_adocavel:
+      classes.add("doce")
 
 def _classificar_alimento(nome: str, categoria: str = "") -> set[str]:
     texto = f"{nome} {categoria}"

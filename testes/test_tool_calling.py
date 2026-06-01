@@ -1,5 +1,7 @@
 from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage, SystemMessage
+import _bootstrap  # noqa: F401
+
 from src.ai_service import listar_opcoes_taco
 
 llm = ChatOllama(model="gemma4:31b-cloud", temperature=0)
