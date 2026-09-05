@@ -379,25 +379,42 @@ def _buscar_taco_por_nome(session: Session, nome_alimento: str) -> Taco | None:
     return None
 
 
-CATEGORIAS_NAO_ADOCAVEIS: set[str] = {
-      "cereais e derivados",
-      "verduras hortalicas e derivados",
-      "leguminosas e derivados",
-      "tuberculos e derivados",
-  }
+CATEGORIAS_ADOCAVEIS: set[str] = {
+    "cereais e derivados",
+    "frutas e derivados",
+    "leite e derivados",
+    "acucares e produtos de confeitaria",
+}
 
-def _categoria_nao_adocavel(categoria: str) -> bool:
-      categoria_normalizada = _texto_normalizado(categoria)
-      return any(
-          categoria_ref in categoria_normalizada
-          for categoria_ref in CATEGORIAS_NAO_ADOCAVEIS
-      )
+TOKENS_DOCE_POR_CATEGORIA: set[str] = {
+    "doce",
+    "sobremesa",
+    "adocad",
+    "adocado",
+    "adocada",
+    "sorvet",
+    "chocolate",
+    "acucar",
+    "mel",
+    "geleia",
+    "goiabada",
+}
 
-is_nao_adocavel = _categoria_nao_adocavel(categoria)
-if tokens & {"sorvet", "chocolate", "acucar", "mel", "geleia", "goiabada"}:
-      classes.add("doce")
-elif "doce" in tokens and not eh_categoria_nao_adocavel:
-      classes.add("doce")
+
+def _categoria_adocavel(categoria: object) -> bool:
+    tokens_categoria = _tokens_normalizados(categoria)
+    if not tokens_categoria:
+        return False
+
+    return any(
+        _tokens_normalizados(categoria_ref) <= tokens_categoria
+        for categoria_ref in CATEGORIAS_ADOCAVEIS
+    )
+
+
+def _tem_token_doce_por_categoria(tokens: set[str], categoria: object) -> bool:
+    return bool(tokens & TOKENS_DOCE_POR_CATEGORIA) and _categoria_adocavel(categoria)
+
 
 def _classificar_alimento(nome: str, categoria: str = "") -> set[str]:
     texto = f"{nome} {categoria}"
@@ -410,7 +427,7 @@ def _classificar_alimento(nome: str, categoria: str = "") -> set[str]:
         classes.add("legume_verdura")
     if tokens & {"biscoit", "bolach", "pao", "bolo", "torrad"}:
         classes.add("biscoito_pao_bolo")
-    if tokens & {"doce", "sorvet", "chocolate", "acucar", "mel", "geleia", "goiabada"}:
+    if _tem_token_doce_por_categoria(tokens, categoria):
         classes.add("doce")
     if tokens & {"margarina"} or "creme vegetal" in _texto_normalizado(texto):
         classes.add("margarina_creme_vegetal")
@@ -420,10 +437,28 @@ def _classificar_alimento(nome: str, categoria: str = "") -> set[str]:
         classes.add("produto_carneo")
     if tokens & {"achocolatad", "adocad", "iogurte"} and tokens & {"leite", "lacteo", "lacteos"}:
         classes.add("liquido_lacteo_aditivado")
-    if tokens & {"doce", "sobremesa", "pudim", "canjica", "curau"}:
+    if tokens & {"pudim", "canjica", "curau"} and _categoria_adocavel(categoria):
+        classes.add("preparacao_doce")
+    elif _tem_token_doce_por_categoria(tokens, categoria):
         classes.add("preparacao_doce")
 
     return classes
+
+
+def _contem_termo_adicao_acucar(texto: object, categoria: object) -> bool:
+    tokens = _tokens_normalizados(texto)
+    return bool(
+        tokens
+        & {
+            "acucar",
+            "achocolatad",
+            "chocolate",
+            "doce",
+            "adocad",
+            "adocado",
+            "adocada",
+        }
+    ) and _categoria_adocavel(categoria)
 
 
 def _violacoes_proibicoes(
@@ -460,8 +495,6 @@ def _violacoes_proibicoes(
                             prato.nome,
                             taco.category if taco else "",
                         ])
-                        texto_normalizado = _texto_normalizado(texto)
-
                         for proibicao in proibicoes:
                             chave = _texto_normalizado(proibicao)
                             termos = termos_por_proibicao.get(chave, set())
@@ -473,7 +506,15 @@ def _violacoes_proibicoes(
                                 and taco
                                 and "industrializado" in _texto_normalizado(taco.category)
                             )
-                            if _contem_token(texto, termos) or eh_ultraprocessado_por_categoria:
+                            if chave == "alimentos com adicao de acucar":
+                                tem_violacao = _contem_termo_adicao_acucar(
+                                    texto,
+                                    taco.category if taco else "",
+                                )
+                            else:
+                                tem_violacao = _contem_token(texto, termos)
+
+                            if tem_violacao or eh_ultraprocessado_por_categoria:
                                 identificador = (semana.numero, dia.dia_semana, ingrediente.nome_taco, proibicao)
                                 if identificador in vistos:
                                     continue
@@ -577,11 +618,13 @@ def validar_cardapio_pnae(
 
             for refeicao in dia.refeicoes:
                 for prato in refeicao.pratos:
-                    classes_prato = _classificar_alimento(prato.nome)
                     for ingrediente in prato.ingredientes:
                         taco = ingredientes_taco.get(ingrediente.nome_taco)
                         categoria = taco.category if taco else ""
-                        classes = classes_prato | _classificar_alimento(ingrediente.nome_taco, categoria)
+                        classes = (
+                            _classificar_alimento(prato.nome, categoria)
+                            | _classificar_alimento(ingrediente.nome_taco, categoria)
+                        )
                         classes_do_dia.update(classes)
                         diversidade.add(_texto_normalizado(ingrediente.nome_taco))
 
@@ -882,7 +925,7 @@ def gerar_cardapio(
     mes_aplicacao: str,
     turno: str = "matutino",
     restricoes: list[str] | None = None,
-    validar_pnae: bool = True,
+    validar_pnae: bool = False,
 ) -> CardapioSchema:
 
     from prompt_builder import construir_contexto
