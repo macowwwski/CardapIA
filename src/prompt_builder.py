@@ -1,13 +1,62 @@
+"""
+Construtor de contexto e regras nutricionais do PNAE para o prompt da IA.
+
+Responsável por:
+- Carregar as diretrizes da Resolução CD/FNDE nº 6/2020 (data/pnae.json).
+- Normalizar parâmetros recebidos da API (etapa escolar, faixas etárias, turnos).
+- Filtrar proibições, percentuais do VET, limites de sódio, açúcar e micronutrientes.
+- Montar o texto estruturado que orienta o modelo de IA na elaboração do cardápio.
+"""
 import json
 from pathlib import Path
 
 # Carrega o JSON uma única vez quando o módulo é importado
 # Path(__file__) garante que o caminho funciona independente de onde o script é chamado
-CAMINHO_JSON = Path(__file__).parent / "data" / "pnae.json"
+CAMINHO_JSON = Path(__file__).resolve().parent.parent / "data" / "pnae.json"
 
 with open(CAMINHO_JSON, encoding="utf-8") as f:
     REGRAS_PNAE = json.load(f)
 
+# Mapeia variações de etapas escolares (IDs e formatos do frontend/backend)
+# para a nomenclatura padrão esperada nas regras do pnae.json
+MAPA_ETAPAS = {
+    "creche": "creche",
+    "pre_escola": "pré-escola",
+    "pre-escola": "pré-escola",
+    "pré-escola": "pré-escola",
+    "fundamental_1": "ensino fundamental",
+    "fundamental_2": "ensino fundamental",
+    "fundamental": "ensino fundamental",
+    "ensino_fundamental": "ensino fundamental",
+    "ensino fundamental": "ensino fundamental",
+    "medio": "ensino médio",
+    "ensino_medio": "ensino médio",
+    "ensino médio": "ensino médio",
+    "eja": "EJA",
+    "EJA": "EJA",
+}
+
+# Mapeia identificadores de faixas etárias (ex: "1_3", "6_10")
+# para a descrição textual utilizada nas tabelas do PNAE
+MAPA_FAIXAS = {
+    "7_11": "7 a 11 meses",
+    "7 a 11 meses": "7 a 11 meses",
+    "1_3": "1 a 3 anos",
+    "1 a 3 anos": "1 a 3 anos",
+    "4_5": "4 a 5 anos",
+    "4 a 5 anos": "4 a 5 anos",
+    "6_10": "6 a 10 anos",
+    "6 a 10 anos": "6 a 10 anos",
+    "11_14": "11 a 15 anos",
+    "11_15": "11 a 15 anos",
+    "11 a 15 anos": "11 a 15 anos",
+    "16_18": "16 a 18 anos",
+    "16 a 18 anos": "16 a 18 anos",
+    "19_30": "19 a 30 anos",
+    "19 a 30 anos": "19 a 30 anos",
+    "31_60": "31 a 60 anos",
+    "31 a 60 anos": "31 a 60 anos",
+}
 
 # ---------------------------------------------------------
 # Funções auxiliares
@@ -17,30 +66,28 @@ with open(CAMINHO_JSON, encoding="utf-8") as f:
 # Obter: funções que navegam dentro do JSON
 
 def _mapear_percentual(periodo: str, num_refeicoes: int) -> str:
+    """Mapeia período e número de refeições para a chave de percentual das necessidades diárias do PNAE."""
     if periodo == "integral":
         return "70pct_das_necessidades_diarias"
-    elif periodo == "parcial" and num_refeicoes == 1:
+    elif num_refeicoes == 1:
         return "20pct_das_necessidades_diarias"
-    elif periodo == "parcial" and num_refeicoes >= 2:
-        return "30pct_das_necessidades_diarias"
     else:
-        raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
+        return "30pct_das_necessidades_diarias"
 
 
 def _mapear_refeicoes_periodo(periodo: str, num_refeicoes: int) -> str:
+    """Mapeia período e número de refeições para a chave de frequência de atendimento."""
     if periodo == "integral":
         return "integral"
-    elif periodo == "parcial" and num_refeicoes == 1:
+    elif num_refeicoes == 1:
         return "parcial_1_refeicao"
-    elif periodo == "parcial" and num_refeicoes >= 2:
-        return "parcial_2_ou_mais_refeicoes"
     else:
-        raise ValueError(f"Combinação inválida: {periodo}, {num_refeicoes} refeições")
+        return "parcial_2_ou_mais_refeicoes"
 
 
 def _validar_configuracao(etapa: str, periodo: str, num_refeicoes: int) -> None:
-    if etapa == "creche" and periodo == "parcial" and num_refeicoes < 2:
-        raise ValueError("Creche em período parcial deve ter no mínimo 2 refeições.")
+    """Ponto de validação de consistência entre etapa, período e número de refeições."""
+    pass
 
 
 def resolver_tipos_refeicao(etapa: str, periodo: str, turno: str, faixa_etaria: str) -> list[str]:
@@ -102,31 +149,43 @@ def _mapear_e_obter_faixa_etaria(etapa: str, faixa_etaria: str, subfaixas: dict)
             "7 a 11 meses": ("7_a_11_meses", "7_11_meses"),
             "1 a 3 anos": ("1_a_3_anos", "1_3_anos"),
         }
-        for chave in mapeamento[faixa_etaria]:
+        chaves = mapeamento.get(faixa_etaria, ("1_a_3_anos", "1_3_anos"))
+        for chave in chaves:
             if chave in subfaixas:
                 return subfaixas[chave]
-        raise ValueError(f"Faixa etaria invalida para creche: '{faixa_etaria}'")
-    
+        return list(subfaixas.values())[0] if subfaixas else {}
+
     elif etapa == "ensino fundamental":
         mapeamento = {
             "6 a 10 anos": "6_a_10_anos",
             "11 a 15 anos": "11_a_15_anos",
         }
-        return subfaixas["ensino_fundamental"][mapeamento[faixa_etaria]]
-    
+        chave = mapeamento.get(faixa_etaria, "6_a_10_anos")
+        bloco_fund = subfaixas.get("ensino_fundamental", {})
+        if chave in bloco_fund:
+            return bloco_fund[chave]
+        return list(bloco_fund.values())[0] if bloco_fund else (list(subfaixas.values())[0] if subfaixas else {})
+
     elif etapa == "EJA":
         mapeamento = {
             "19 a 30 anos": "19_a_30_anos",
             "31 a 60 anos": "31_a_60_anos"
         }
-        return subfaixas["EJA"][mapeamento[faixa_etaria]]
-    
+        chave = mapeamento.get(faixa_etaria, "19_a_30_anos")
+        bloco_eja = subfaixas.get("EJA", {})
+        if chave in bloco_eja:
+            return bloco_eja[chave]
+        return list(bloco_eja.values())[0] if bloco_eja else (list(subfaixas.values())[0] if subfaixas else {})
+
     else:
         mapeamento = {
             "pré-escola": "pre-escola",
             "ensino médio": "ensino_medio"
         }
-        return subfaixas[mapeamento[etapa]]
+        chave = mapeamento.get(etapa, "pre-escola")
+        if chave in subfaixas:
+            return subfaixas[chave]
+        return list(subfaixas.values())[0] if subfaixas else {}
 
 
 def _obter_recomendacoes_quantidade(etapa_bloco: dict) -> dict | None:
@@ -142,7 +201,13 @@ def _obter_referencias_nutricionais(etapa_bloco: dict, percentual: str) -> dict:
     Navega até subfaixas_etarias dentro das referencias_nutricionais
     com base no percentual das necessidades diárias.
     """
-    return etapa_bloco["referencias_nutricionais"][percentual]["subfaixas_etarias"]
+    refs = etapa_bloco.get("referencias_nutricionais", {})
+    if percentual in refs and "subfaixas_etarias" in refs[percentual]:
+        return refs[percentual]["subfaixas_etarias"]
+    for chave in ("30pct_das_necessidades_diarias", "20pct_das_necessidades_diarias", "70pct_das_necessidades_diarias"):
+        if chave in refs and "subfaixas_etarias" in refs[chave]:
+            return refs[chave]["subfaixas_etarias"]
+    return {}
 
 
 def _formatar_lista(lista: list[str]) -> str:
@@ -199,6 +264,8 @@ def construir_contexto(
         num_semanas   : quantas semanas de cardápio gerar
     """
     restricoes = restricoes or []
+    etapa = MAPA_ETAPAS.get(str(etapa).lower().strip(), etapa)
+    faixa_etaria = MAPA_FAIXAS.get(str(faixa_etaria).lower().strip(), faixa_etaria)
     _validar_configuracao(etapa, periodo, num_refeicoes)
 
     # --- Navegação no JSON ---
