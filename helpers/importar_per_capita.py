@@ -1,8 +1,15 @@
+"""
+Script utilitário para importação de dados de per capita a partir do manual PDF.
+
+Lê as tabelas do arquivo data/manual_per_capita.pdf utilizando pdfplumber,
+extrai as porções recomendadas para cada etapa escolar (creche, pré-escola,
+ensino fundamental e médio/EJA) e persiste registros novos na tabela per_capita.
+"""
 import sys
 from pathlib import Path
 
-# Adiciona a raiz do projeto ao path
-sys.path.append(str(Path(__file__).parent.parent))
+DIR_RAIZ = Path(__file__).resolve().parent.parent
+sys.path.append(str(DIR_RAIZ))
 
 import pdfplumber
 import re
@@ -24,6 +31,10 @@ def parse_valor(valor: str) -> float | None:
         return None
 
 def importar():
+    """
+    Extrai as tabelas de alimentos do PDF manual_per_capita.pdf, filtra
+    linhas de cabeçalho ou fragmentos inválidos e insere registros inéditos no banco.
+    """
     fragmentos_invalidos = {
         "conserva", "drenado", "drenada", "gordura", "sabor",
         "cremoso", "amostras)", "calda", "amendoim", "queimado",
@@ -33,7 +44,8 @@ def importar():
 
     registros = []
 
-    with pdfplumber.open("data/manual_per_capita.pdf") as pdf:
+    caminho_pdf = DIR_RAIZ / "data" / "manual_per_capita.pdf"
+    with pdfplumber.open(caminho_pdf) as pdf:
         for page in pdf.pages:
             tabela = page.extract_table()
             if not tabela:
@@ -79,21 +91,14 @@ def importar():
                 ))
 
     with Session(engine) as session:
-        session.add_all(registros)
-
-        # Debug
-#        nomes = [r.nome_alimento for r in registros]
-#        duplicatas = [n for n in nomes if nomes.count(n) > 1]
-#        print(f"Total de registros: {len(registros)}")
-#        print(f"Duplicatas encontradas: {set(duplicatas)}")
-
-#        for r in registros:
-#            if len(r.nome_alimento) < 10:
-#                print(f"Nome suspeito: '{r.nome_alimento}' | FC: {r.fator_correcao} | creche: {r.per_capita_creche}")
-
-
-        session.commit()
-        print(f"{len(registros)} registros importados.")
+        existentes = {r[0] for r in session.query(PerCapita.nome_alimento).all()}
+        novos = [r for r in registros if r.nome_alimento not in existentes]
+        if novos:
+            session.add_all(novos)
+            session.commit()
+            print(f"{len(novos)} novos registros importados (de {len(registros)} encontrados no manual).")
+        else:
+            print(f"Todos os {len(registros)} registros do manual já estão presentes no banco.")
 
 if __name__ == "__main__":
     importar()
