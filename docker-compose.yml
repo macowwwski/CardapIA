@@ -10,5 +10,16 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: cardapia_qdrant
+    restart: always
+    ports:
+      - "6333:6333"   # Dashboard
+      - "6334:6334"   # gRPC
+    volumes:
+      - qdrant_data:/qdrant/storage
+      
 volumes:
   postgres_data:
+  qdrant_data:
