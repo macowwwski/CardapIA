@@ -5,8 +5,7 @@ import re
 import unicodedata
 from dotenv import load_dotenv
 from enum import Enum
-from langchain_core.tools import tool
-from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_ollama import ChatOllama
 from pydantic import BaseModel
 from sqlalchemy import create_engine, or_
@@ -20,13 +19,11 @@ from src.prompt_templates import (
 
 
 load_dotenv()
-print("\n dotenv loaded \n")
 
 engine = create_engine(os.getenv("DATABASE_URL"))
 
-
 # ---------------------------------------------------------
-# Import do Schema Pydantic do cardápio
+# Schemas Pydantic do Cardápio e Regras do PNAE
 # ---------------------------------------------------------
 from src.schemas_pydantic import (
       CardapioSchema,
@@ -37,74 +34,9 @@ from src.schemas_pydantic import (
 )
 
 
-# ---------------------------------------------------------
-# Tools de consulta à TACO
-# ---------------------------------------------------------
-
-@tool
-def listar_opcoes_taco(categoria: str) -> list[str]:
-    """
-    Lista os alimentos disponíveis na TACO para UMA categoria por vez.
-    Chame essa tool separadamente para cada categoria que precisar consultar.
-    NÃO passe uma lista — passe apenas uma string com um nome de categoria.
-
-    Exemplo correto: categoria="Frutas e derivados"
-    Exemplo errado: categoria=["Frutas e derivados", "Cereais e derivados"]
-
-    Categorias disponíveis:
-    - Cereais e derivados
-    - Verduras, hortaliças e derivados
-    - Frutas e derivados
-    - Carnes e derivados
-    - Pescados e frutos do mar
-    - Leite e derivados
-    - Ovos e derivados
-    - Leguminosas e derivados
-    - Gorduras e óleos
-    - Nozes e sementes
-    """
-    with Session(engine) as session:
-        resultados = session.query(Taco.description).filter(
-            Taco.category.ilike(f"%{categoria}%"),
-            Taco.deleted_at == None
-        ).all()
-
-        if not resultados:
-            return [f"Nenhum alimento encontrado para a categoria '{categoria}'"]
-
-        return [r.description for r in resultados]
-    
-
-@tool
-def buscar_cn_ingrediente_taco(nome_alimento: str) -> dict:
-    """
-    Retorna a composição nutricional de um alimento da TACO para 100g.
-    Usar o nome exato retornado por listar_opcoes_taco.
-    """
-
-    with Session(engine) as session:
-        resultado = session.query(Taco).filter(
-            Taco.description == nome_alimento,
-            Taco.deleted_at == None
-        ).first()
-
-        if not resultado:
-            return {"erro": f"Alimento '{nome_alimento}' não encontrado. Use listar_opcoes_taco para ver os nomes exatos."}
-        
-        return {
-            "nome": resultado.description,
-            "categoria": resultado.category,
-            "energia_kcal": resultado.energy_kcal,
-            "proteinas_g": resultado.proteins,
-            "carboidratos_g": resultado.carbohydrates,
-            "lipidios_g": resultado.lipids,
-            "sodio_mg": resultado.sodium,
-            "ferro_mg": resultado.iron,
-            "calcio_mg": resultado.calcium,
-            "vitamina_a_mcg": resultado.retinol,
-            "vitamina_c_mg": resultado.c_vitamin
-        }
-
+# =========================================================
+# Normalização e Sanitização Estrutural do JSON
+# =========================================================
 
 def _texto_normalizado(valor: object) -> str:
     texto = str(valor or "").strip().lower()
@@ -265,12 +197,20 @@ def corrigir_estrutura(
     return dados
 
 
+# =========================================================
+# Validação via Schema Pydantic
+# =========================================================
+
 def validar_cardapio(
     resultado: object,
     mes_aplicacao: str,
     num_refeicoes: int,
     turno: str | None = None,
 ) -> CardapioSchema:
+    """
+    Converte e valida a resposta bruta da LLM contra o CardapioSchema.
+    Aplica a higienização estrutural de corrigir_estrutura antes da validação.
+    """
     if isinstance(resultado, CardapioSchema):
         return resultado
 
@@ -289,6 +229,10 @@ def validar_cardapio(
     )
     return CardapioSchema.model_validate(dados)
 
+
+# =========================================================
+# Motor de Regras e Auditoria PNAE
+# =========================================================
 
 def _tokens_normalizados(valor: object) -> set[str]:
     texto = re.sub(r"[^a-z0-9]+", " ", _texto_normalizado(valor))
@@ -379,6 +323,7 @@ def _buscar_taco_por_nome(session: Session, nome_alimento: str) -> Taco | None:
     return None
 
 
+# Categorias da Tabela TACO elegíveis para controle de adição de açúcar conforme o PNAE
 CATEGORIAS_ADOCAVEIS: set[str] = {
     "cereais e derivados",
     "frutas e derivados",
@@ -386,6 +331,7 @@ CATEGORIAS_ADOCAVEIS: set[str] = {
     "acucares e produtos de confeitaria",
 }
 
+# Termos-chave utilizados para rastrear preparações doces ou sobremesas nas refeições
 TOKENS_DOCE_POR_CATEGORIA: set[str] = {
     "doce",
     "sobremesa",
@@ -558,6 +504,7 @@ def validar_cardapio_pnae(
 
     inconsistencias.extend(_violacoes_proibicoes(cardapio, regras, ingredientes_taco))
 
+    # Limites semanais de ocorrência para grupos alimentares controlados pela Resolução CD/FNDE
     limites_semanais = {
         "biscoito_pao_bolo": {
             "regra": "biscoito/bolacha/pao/bolo",
@@ -577,15 +524,17 @@ def validar_cardapio_pnae(
         },
     }
 
+    # Metas mínimas semanais do PNAE: diversidade de alimentos distintos e oferta de FLV in natura
     min_diversidade = {
         "parcial_1_refeicao": 10,
         "parcial_2_ou_mais_refeicoes": 14,
         "integral": 23,
     }.get(periodo_freq)
-    min_flv_g = 520 if periodo == "integral" else 280
-    min_frutas_dias = 4 if periodo == "integral" else 2
-    min_legumes_verduras_dias = 5 if periodo == "integral" else 3
+    min_flv_g = 520 if periodo == "integral" else 280  # Meta de 520g (integral) ou 280g (parcial)
+    min_frutas_dias = 4 if periodo == "integral" else 2  # Dias mínimos com oferta de frutas na semana
+    min_legumes_verduras_dias = 5 if periodo == "integral" else 3  # Dias mínimos com legumes/verduras
 
+    # Contadores de frequência mensal para alimentos com restrição estrita por mês (ex: carnes processadas)
     contagens_mes = {
         "produto_carneo": 0,
         "conserva": 0,
@@ -764,7 +713,12 @@ def validar_cardapio_pnae(
     return inconsistencias
 
 
+# =========================================================
+# Resolução de Porções Per Capita por Etapa Escolar
+# =========================================================
+
 def _selecionar_registro_per_capita(registros: list[PerCapita], campo: str) -> PerCapita | None:
+    """Retorna o primeiro registro que possua valor definido para o campo da etapa escolar."""
     for registro in registros:
         if getattr(registro, campo) is not None:
             return registro
@@ -904,9 +858,9 @@ def aplicar_per_capita(cardapio: CardapioSchema, etapa: str) -> CardapioSchema:
 
     return cardapio
 
-# ---------------------------------------------------------
-# Função principal
-# ---------------------------------------------------------
+# =========================================================
+# Orquestrador do Pipeline de IA (Geração de Cardápio)
+# =========================================================
 
 def gerar_cardapio(
     etapa: str,
@@ -918,6 +872,8 @@ def gerar_cardapio(
     restricoes: list[str] | None = None,
     num_semanas: int = 1,
     validar_pnae: bool = False,
+    total_dias: int | None = None,
+    dias_letivos: list[str] | None = None,
 ) -> CardapioSchema:
     """
     Gera o cardápio escolar orquestrando o modelo LLM e regras do PNAE.
@@ -925,6 +881,8 @@ def gerar_cardapio(
     Parâmetros:
         num_semanas: Quantidade de semanas de cardápio a planejar.
         validar_pnae: Quando ativado, anexa inconsistências do PNAE às observações sem abortar a geração.
+        total_dias: Quantidade exata de dias letivos a planejar.
+        dias_letivos: Lista de datas específicas dos dias letivos.
     """
 
     try:
@@ -939,52 +897,37 @@ def gerar_cardapio(
         num_refeicoes=num_refeicoes,
         turno=turno,
         restricoes=restricoes,
-        num_semanas=num_semanas
+        num_semanas=num_semanas,
+        total_dias=total_dias,
+        dias_letivos=dias_letivos,
     )
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # ETAPA 1 — Geração com Tools em texto livre
+    # ETAPA 1 — Geração de texto livre do cardápio via LLM
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    llm_tools = ChatOllama(
+    llm = ChatOllama(
         model="gemma4:31b-cloud",
         temperature=0.3
-    ).bind_tools([listar_opcoes_taco, buscar_cn_ingrediente_taco])
+    )
 
-    system_prompt_1 = montar_prompt_geracao_cardapio(contexto)
+    system_prompt_1 = montar_prompt_geracao_cardapio(
+        contexto,
+        total_dias=total_dias,
+        num_semanas=num_semanas
+    )
 
+    dias_txt = f" para {total_dias} dia(s) letivo(s)" if total_dias else ""
     mensagens = [
         SystemMessage(content=system_prompt_1),
-        HumanMessage(content=f"Gere o cardápio de {num_refeicoes} refeições diárias para {mes_aplicacao}.")
+        HumanMessage(content=f"Gere o cardápio de {num_refeicoes} refeições diárias para {mes_aplicacao}{dias_txt}.")
     ]
 
-    while True:
-        resposta = llm_tools.invoke(mensagens)
-        mensagens.append(resposta)
-
-        if not getattr(resposta, "tool_calls", None):
-            texto_cardapio = resposta.content
-            break
-
-        for tool_call in resposta.tool_calls:
-            if tool_call["name"] == "listar_opcoes_taco":
-                resultado = listar_opcoes_taco.invoke(tool_call["args"])
-
-            elif tool_call["name"] == "buscar_cn_ingrediente_taco":
-                resultado = buscar_cn_ingrediente_taco.invoke(tool_call["args"])
-
-            else:
-                resultado = {"erro": "Tool desconhecida"}
-
-            mensagens.append(
-                ToolMessage(
-                    content=json.dumps(resultado, ensure_ascii=False),
-                    tool_call_id=tool_call["id"]
-                )
-            )
+    resposta = llm.invoke(mensagens)
+    texto_cardapio = resposta.content
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # ETAPA 2 — Conversão para JSON estruturado
+    # ETAPA 2 — Conversão para JSON estruturado com Schema Pydantic
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     llm_structured = ChatOllama(
@@ -1017,8 +960,14 @@ def gerar_cardapio(
     else:
         raise RuntimeError("Falha ao converter cardápio para estrutura válida.")
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # ETAPA 3 — Injeção de porções de Per Capita do PNAE
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - -
     cardapio = aplicar_per_capita(cardapio, etapa)
 
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # ETAPA 4 — Auditoria e verificação de regras PNAE
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - -
     if validar_pnae:
         # Validação tolerante: anexa avisos de inconformidades em observações
         # sem lançar exceção nem interromper o retorno do cardápio gerado

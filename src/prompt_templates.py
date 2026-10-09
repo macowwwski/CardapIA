@@ -2,17 +2,25 @@ import json
 from src.schemas_pydantic import CardapioSchema
 
 
-def montar_prompt_geracao_cardapio(contexto: str) -> str:
+def montar_prompt_geracao_cardapio(
+    contexto: str,
+    total_dias: int | None = None,
+    num_semanas: int = 1
+) -> str:
+    if total_dias and total_dias > 0:
+        instrucao_escopo = f"- Planeje o cardápio para EXATAMENTE {total_dias} dia(s) letivo(s) solicitado(s). NÃO gere dias adicionais nem semanas extras."
+    else:
+        instrucao_escopo = f"- Planeje o cardápio para {num_semanas} semana(s) com 5 dias cada."
+
     return f"""
-    Você é um nutricionista escolar.
-    Use as ferramentas disponíveis para montar um cardápio mensal.
+    Você é um nutricionista escolar especialista nas normas do PNAE.
+    Monte o cardápio solicitado seguindo rigorosamente as diretrizes nutricionais.
     
     Siga essas regras:
     {contexto}
 
     INSTRUÇÕES:
-    - Use as tools sempre que necessário
-    - Monte o cardápio completo (4 semanas com 5 dias cada)
+    {instrucao_escopo}
     - Organize de forma clara por semanas, dias e refeições
     - NÃO gere JSON
     - NÃO use formatação técnica

@@ -249,7 +249,9 @@ def construir_contexto(
     num_refeicoes: int,
     turno: str = "matutino",
     restricoes: list[str] | None = None,
-    num_semanas: int = 1
+    num_semanas: int = 1,
+    total_dias: int | None = None,
+    dias_letivos: list[str] | None = None
 ) -> str:
     """
     Monta o bloco de contexto que será injetado no prompt da LLM.
@@ -262,6 +264,8 @@ def construir_contexto(
         num_refeicoes : número de refeições diárias
         restricoes    : lista de restrições alimentares da turma (opcional)
         num_semanas   : quantas semanas de cardápio gerar
+        total_dias    : quantidade exata de dias letivos a planejar (opcional)
+        dias_letivos  : lista de datas específicas dos dias letivos (opcional)
     """
     restricoes = restricoes or []
     etapa = MAPA_ETAPAS.get(str(etapa).lower().strip(), etapa)
@@ -312,6 +316,10 @@ def construir_contexto(
             diversidade_periodo[chave] = valor
 
     # --- Monta o texto ---
+    info_dias = f"- Total de dias letivos a gerar: {total_dias}\n" if total_dias else ""
+    if dias_letivos:
+        info_dias += f"- Datas dos dias letivos: {', '.join(dias_letivos)}\n"
+
     contexto = f"""
 ## REGRAS DO PNAE — CONTEXTO PARA GERAÇÃO DE CARDÁPIO
 
@@ -321,7 +329,7 @@ def construir_contexto(
 - Período: {periodo} ({num_refeicoes} refeição/refeições por dia)
 - Turno: {turno}
 - Semanas a gerar: {num_semanas}
-- Restrições alimentares da turma: {_formatar_lista(restricoes) if restricoes else "nenhuma"}
+{info_dias}- Restrições alimentares da turma: {_formatar_lista(restricoes) if restricoes else "nenhuma"}
 
 ### Tipos de refeição obrigatórios
 {_formatar_lista(tipos_refeicao) if tipos_refeicao else "nenhum tipo específico configurado"}

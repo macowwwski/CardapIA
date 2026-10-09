@@ -46,6 +46,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# =========================================================
+# Modelos de Entrada (DTOs) e Mapeamentos
+# =========================================================
+
+# Mapeamento de números de meses para seus nomes por extenso em português
 MESES_MAPA = {
     1: "janeiro", 2: "fevereiro", 3: "março", 4: "abril",
     5: "maio", 6: "junho", 7: "julho", 8: "agosto",
@@ -71,6 +76,11 @@ class GerarCardapioRequest(BaseModel):
     validar_pnae: Optional[bool] = False
 
 
+# =========================================================
+# Cache em Memória e Resolução de Nutrientes TACO
+# =========================================================
+
+# Dicionário de aliases para desambiguação rápida dos nomes comuns para descrições da TACO
 ALIASES_TACO = {
     "arroz": "Arroz, tipo 1, cozido",
     "arroz branco": "Arroz, tipo 1, cozido",
@@ -168,6 +178,10 @@ def _encontrar_taco(session: Session, nome: str) -> Optional[Taco]:
     candidates = []
     for it in cache:
         if it["base"].startswith(first) or first in it["words"]:
+            # Heurística de pontuação para seleção do alimento mais adequado:
+            # - overlap: quantidade de palavras compartilhadas
+            # - bonus: prioridade para correspondência no nome base do alimento
+            # - state_bonus: preferência por itens no estado cozido/preparado sobre cru
             overlap = len(set(q_words) & it["words"])
             bonus = 2 if it["base"] == first or it["base"].startswith(first) else 0
             state_bonus = 0.5 if "cozid" in it["words"] or "prepar" in it["words"] else 0
@@ -201,6 +215,10 @@ def _buscar_nutrientes_taco(session: Session, nome_taco: str, qtd_g: float) -> d
         "vitaminaCMg": round(float(taco.c_vitamin or 0) * fator, 1),
     }
 
+
+# =========================================================
+# Persistência Relacional no PostgreSQL
+# =========================================================
 
 def salvar_cardapio_db(
     cardapio_schema,
@@ -272,6 +290,10 @@ def salvar_cardapio_db(
         return None
 
 
+# =========================================================
+# Endpoints da API HTTP (Rotas FastAPI)
+# =========================================================
+
 @app.get("/health")
 def health_check():
     """Verifica se a API do CardapIA está ativa e respondendo."""
@@ -282,12 +304,15 @@ def health_check():
 def api_gerar_cardapio(payload: GerarCardapioRequest):
     """
     Endpoint principal para geração de cardápio escolar:
-    1. Trata parâmetros de data, turno e semanas necessárias.
-    2. Aciona o LLM via IA Service para estruturar o cardápio.
-    3. Consulta a TACO para enriquecer cada alimento com dados nutricionais.
-    4. Gera descrições das refeições e formata a resposta para o CooperaAgro-Back.
+    - Fase 1: Trata parâmetros de data, turno e semanas necessárias.
+    - Fase 2: Aciona o pipeline de Inteligência Artificial para estruturar o cardápio.
+    - Fase 3: Consulta a TACO para enriquecer cada alimento com dados nutricionais.
+    - Fase 4: Higieniza observações e persiste o histórico no PostgreSQL.
     """
     try:
+        # ---------------------------------------------------------
+        # FASE 1: Sanitização de parâmetros de data, turno e dias
+        # ---------------------------------------------------------
         ano_atual = datetime.now().year
         lista_meses_str = []
         meses_para_processar = payload.meses_numeros or payload.meses_aplicacao
@@ -316,12 +341,19 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
             turnos_lista = [t.strip() for t in str(payload.turno.value if hasattr(payload.turno, "value") else payload.turno).split(",") if t.strip()]
         turno_str = turnos_lista[0] if turnos_lista else "matutino"
 
-        num_semanas = 1
+        limite_dias = None
         if payload.dias_letivos and len(payload.dias_letivos) > 0:
-            num_semanas = max(1, math.ceil(len(payload.dias_letivos) / 5))
+            limite_dias = len(payload.dias_letivos)
         elif payload.total_dias and payload.total_dias > 0:
-            num_semanas = max(1, math.ceil(payload.total_dias / 5))
+            limite_dias = payload.total_dias
 
+        num_semanas = 1
+        if limite_dias:
+            num_semanas = max(1, math.ceil(limite_dias / 5))
+
+        # ---------------------------------------------------------
+        # FASE 2: Invocação do pipeline de IA (LLM + PNAE)
+        # ---------------------------------------------------------
         cardapio = gerar_cardapio(
             etapa=str(payload.etapa),
             faixa_etaria=str(payload.faixa_etaria),
@@ -331,18 +363,26 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
             turno=turno_str,
             restricoes=payload.restricoes or [],
             num_semanas=num_semanas,
-            validar_pnae=bool(payload.validar_pnae)
+            validar_pnae=bool(payload.validar_pnae),
+            total_dias=limite_dias,
+            dias_letivos=payload.dias_letivos or [],
         )
 
-        # Formata semanas para o formato esperado pelo frontend / backend
+        # ---------------------------------------------------------
+        # FASE 3: Enriquecimento nutricional com TACO e estruturação
+        # ---------------------------------------------------------
         semanas_formatadas = []
         dias_letivos_flat = []
         contador_dias = 0
 
         with Session(engine) as session:
             for semana in cardapio.semanas:
+                if limite_dias is not None and contador_dias >= limite_dias:
+                    break
                 dias_da_semana = []
                 for dia in semana.dias:
+                    if limite_dias is not None and contador_dias >= limite_dias:
+                        break
                     refeicoes_formatadas = []
                     for refeicao in dia.refeicoes:
                         alimentos_formatados = []
@@ -417,11 +457,15 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
                     })
                     contador_dias += 1
 
-                semanas_formatadas.append({
-                    "numeroSemana": semana.numero,
-                    "dias": dias_da_semana
-                })
+                if dias_da_semana:
+                    semanas_formatadas.append({
+                        "numeroSemana": semana.numero,
+                        "dias": dias_da_semana
+                    })
 
+        # ---------------------------------------------------------
+        # FASE 4: Higienização de observações e persistência relacional
+        # ---------------------------------------------------------
         # Remove avisos internos de per capita e PNAE do campo observacoes
         # para que apenas as notas nutricionais geradas pela IA cheguem ao frontend
         raw_obs = getattr(cardapio, "observacoes", "") or ""
