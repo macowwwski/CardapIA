@@ -23,11 +23,40 @@ def testar():
     queries = ["frango desfiado cozido", "arroz soltinho", "suco de caju natural"]
     for q in queries:
         query_vector = list(embedder.embed([q]))[0].tolist()
-        hits = client.query_points(
-            collection_name="taco_foods",
-            query=query_vector,
-            limit=2
-        ).points
+        hits = None
+        for using_name in ["dense", None]:
+            try:
+                res = client.query_points(
+                    collection_name="taco_foods",
+                    query=query_vector,
+                    using=using_name,
+                    limit=2
+                )
+                if res and res.points:
+                    hits = res.points
+                    break
+            except Exception:
+                pass
+
+        if hits is None:
+            import requests
+            for v_payload in [{"name": "dense", "vector": query_vector}, query_vector]:
+                try:
+                    r = requests.post(
+                        f"http://{QDRANT_HOST}:{QDRANT_PORT}/collections/taco_foods/points/search",
+                        json={"vector": v_payload, "limit": 2, "with_payload": True}
+                    ).json()
+                    data = r.get("result")
+                    if data:
+                        class _Hit:
+                            def __init__(self, item):
+                                self.score = item.get("score", 0.0)
+                                self.payload = item.get("payload", {})
+                        hits = [_Hit(it) for it in data]
+                        break
+                except Exception:
+                    pass
+        hits = hits or []
         print(f"\nBusca por: '{q}'")
         for hit in hits:
             print(f"  -> Score: {hit.score:.4f} | {hit.payload['description']} ({hit.payload['energy_kcal']} kcal)")
