@@ -1,0 +1,56 @@
+"""
+Dicionário de nomes populares e sinônimos para os alimentos da Tabela TACO.
+
+Ajuda o sistema a reconhecer como as pessoas realmente chamam os pratos e ingredientes
+no dia a dia das escolas (como 'iscas de carne', 'frango desfiado' ou 'mandioquinha')
+e ligar automaticamente ao item correto da tabela nutricional oficial.
+"""
+
+SINONIMOS_TACO: dict[str, str] = {
+    "Arroz, tipo 1, cozido": "arroz branco cozido, arroz branco polido, arroz agulhinha, arroz soltinho, arroz cozido",
+    "Arroz, tipo 1, cru": "arroz branco cru, arroz agulhinha cru",
+    "Arroz, tipo 2, cozido": "arroz branco tipo 2 cozido",
+    "Arroz, integral, cozido": "arroz integral cozido",
+    "Feijão, carioca, cozido": "feijão carioca cozido, feijão cozido, caldo de feijão carioca",
+    "Feijão, preto, cozido": "feijão preto cozido, caldo de feijão preto cozido",
+    "Frango, peito, sem pele, cozido": "peito de frango cozido, filé de frango desfiado, frango desfiado cozido, filé de frango cozido, frango cozido, peito de frango, filé de frango, frango em cubos, cubos de frango",
+    "Frango, peito, sem pele, grelhado": "filé de frango grelhado, peito de frango grelhado",
+    "Frango, filé, à milanesa": "filé de frango empanado, frango à milanesa",
+    "Carne, bovina, acém, moído, cozido": "carne moída, carne bovina moída, iscas de carne bovina, carne moída cozida, carne de panela moída, carne bovina cozida",
+    "Carne, bovina, acém, sem gordura, cozido": "carne de panela cozida, cubos de carne bovina, iscas de carne bovina cozida",
+    "Carne, bovina, patinho, sem gordura, grelhado": "bife de patinho grelhado, bife bovino grelhado, bife grelhado",
+    "Pescada, filé, cru": "peixe cru, filé de peixe cru, pescada crua, filé de pescada",
+    "Pescada, filé, frito": "peixe frito, filé de peixe frito, pescada frita",
+    "Batata, baroa, cozida": "mandioquinha, mandioquinha cozida, batata baroa cozida, mandioquinha salsa, purê de mandioquinha",
+    "Batata, baroa, crua": "mandioquinha crua, batata baroa crua, mandioquinha salsa crua",
+    "Batata, inglesa, cozida": "batata inglesa cozida, batata cozida, purê de batata inglesa",
+    "Batata, doce, cozida": "batata doce cozida, batata-doce cozida",
+    "Mandioca, cozida": "mandioca cozida, aipim cozido, macaxeira cozida",
+    "Abóbora, cabotian, cozida": "abóbora cabotiá cozida, abóbora cozida, abóbora refogada",
+    "Cenoura, cozida": "cenoura cozida, cenoura em rodelas cozida, cenoura cozida no vapor",
+    "Cenoura, crua": "cenoura ralada, cenoura crua, salada de cenoura",
+    "Beterraba, cozida": "beterraba cozida, beterraba fatiada cozida",
+    "Beterraba, crua": "beterraba ralada, beterraba crua, salada de beterraba",
+    "Chuchu, cozido": "chuchu cozido, chuchu refogado",
+    "Tomate, com semente, cru": "tomate, tomate cru, salada de tomate, tomate fresco",
+    "Alface, americana, crua": "alface americana, alface americana crua, salada de alface americana",
+    "Alface, crespa, crua": "alface crespa, alface crespa crua, salada de alface, alface",
+    "Ovo, de galinha, inteiro, cozido/10minutos": "ovo cozido, ovo de galinha cozido",
+    "Ovo, de galinha, inteiro, frito": "ovo frito, ovo mexido",
+    "Leite, de vaca, integral": "leite integral, leite de vaca integral, leite",
+    "Iogurte, natural": "iogurte natural, iogurte integral",
+    "Pão, francês": "pão francês, pão de sal",
+    "Macarrão, trigo, cru, com ovos": "macarrão cozido, macarrão espaguete, macarrão, massa com ovos",
+    "Maracujá, suco concentrado, envasado": "suco de maracujá, maracujá suco",
+    "Laranja, pêra, suco": "suco de laranja, suco de laranja pera",
+    "Caju, suco concentrado, envasado": "suco de caju, caju suco",
+    "Uva, suco concentrado, envasado": "suco de uva, suco concentrado de uva",
+    "Banana, prata, crua": "banana prata, banana prata crua, banana",
+    "Maçã, Fuji, com casca, crua": "maçã fuji, maçã fuji com casca, maçã",
+    "Laranja, pera, crua": "laranja pera, laranja pera crua, laranja",
+    "Melancia, crua": "melancia, melancia crua, fatia de melancia",
+    "Mamão, Papaia, cru": "mamão papaya, mamão papaia cru, mamão",
+    "Abacaxi, cru": "abacaxi, abacaxi cru, abacaxi em rodelas",
+    "Óleo, de soja": "óleo de soja, óleo de soja refinado, óleo de cozinha",
+    "Azeite, de oliva, extra virgem": "azeite de oliva, azeite extra virgem",
+}
