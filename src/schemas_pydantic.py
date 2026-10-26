@@ -1,10 +1,12 @@
 from enum import Enum
-from pydantic import BaseModel
+from pydantic import BaseModel, PrivateAttr
 
 
 class IngredienteSchema(BaseModel):
     nome_taco: str
     quantidade_g: float
+    # Preenchido pela resolução semântica (Qdrant); fora do schema enviado à LLM
+    _taco_id: str | None = PrivateAttr(default=None)
 
 
 class PratoSchema(BaseModel):
@@ -47,6 +49,22 @@ class InconformidadePNAESchema(BaseModel):
     escopo: str
     regra: str
     detalhe: str
+    tipo: str = "critico"  # "critico" | "advertencia" | "recomendacao"
+
+
+class StatusValidacao(str, Enum):
+    aprovado = "aprovado"
+    pendente_revisao = "pendente_revisao"
+    reprovado = "reprovado"
+
+
+class RelatorioValidacaoSchema(BaseModel):
+    status: StatusValidacao
+    aprovado: bool
+    total_criticos: int
+    total_advertencias: int
+    inconformidades: list[InconformidadePNAESchema]
+    resumo: str
 
 
 TIPOS_REFEICAO_PERMITIDOS = {tipo.value for tipo in TipoRefeicao}

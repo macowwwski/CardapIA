@@ -7,15 +7,12 @@ Atua como microsserviço de geração de cardápios escolares:
 - Consulta e calcula os valores nutricionais de cada ingrediente na Tabela TACO.
 - Formata a resposta com compatibilidade para o frontend/backend e persiste histórico no banco.
 """
-import os
 import sys
 import uuid
 import math
-import re
-import unicodedata
 from pathlib import Path
 from typing import List, Optional, Union
-from datetime import datetime, time
+from datetime import datetime
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 SRC_DIR = PROJECT_ROOT / "src"
@@ -29,8 +26,19 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, ConfigDict, AliasChoices
 from sqlalchemy.orm import Session
 from db.database import engine
-from db.models import Cardapio, Dia, EtapaEscolar, Ingrediente, Prato, Refeicao, Semana, Taco
+from db.repository import salvar_cardapio_db
 from src.ai_service import gerar_cardapio
+from src.nutrition.calculator import calcular_nutrientes_alimento
+from src.nutrition.classifier import _texto_normalizado
+from src.taco.resolver import resolver_taco, resolver_per_capita
+from src.pipelines import (
+    PerfilNaoSuportadoError,
+    PerfilIncompletoError,
+    DistribuicaoNaoConfiguradaError,
+    DistribuicaoInvalidaError,
+    RefeicaoEsperadaAusenteError,
+)
+
 
 app = FastAPI(
     title="CardapIA - Serviço de Inteligência Artificial",
@@ -77,217 +85,12 @@ class GerarCardapioRequest(BaseModel):
 
 
 # =========================================================
-# Cache em Memória e Resolução de Nutrientes TACO
+# Resolução de Nutrientes TACO e Persistência
 # =========================================================
 
-# Dicionário de aliases para desambiguação rápida dos nomes comuns para descrições da TACO
-ALIASES_TACO = {
-    "arroz": "Arroz, tipo 1, cozido",
-    "arroz branco": "Arroz, tipo 1, cozido",
-    "arroz integral": "Arroz, integral, cozido",
-    "feijao": "Feijão, carioca, cozido",
-    "feijao carioca": "Feijão, carioca, cozido",
-    "feijao preto": "Feijão, preto, cozido",
-    "frango": "Frango, peito, sem pele, cozido",
-    "peito de frango": "Frango, peito, sem pele, cozido",
-    "carne": "Carne, bovina, moída, cozida",
-    "carne moida": "Carne, bovina, moída, cozida",
-    "carne bovina": "Carne, bovina, moída, cozida",
-    "peixe": "Pescada, filé, cru",
-    "leite": "Leite, de vaca, integral",
-    "leite integral": "Leite, de vaca, integral",
-    "banana": "Banana, prata, crua",
-    "banana prata": "Banana, prata, crua",
-    "maca": "Maçã, fuji, com casca, crua",
-    "laranja": "Laranja, pera, crua",
-    "mamao": "Mamão, papaia, cru",
-    "cenoura": "Cenoura, cozida",
-    "alface": "Alface, americana, crua",
-    "tomate": "Tomate, com semente, cru",
-    "ovo": "Ovo, de galinha, inteiro, cozido/10minutos",
-    "ovo cozido": "Ovo, de galinha, inteiro, cozido/10minutos",
-    "batata": "Batata, inglesa, cozida",
-    "batata doce": "Batata, doce, cozida",
-    "macarrao": "Macarrão, trigo, cru",
-    "mandioca": "Mandioca, cozida",
-    "abobora": "Abóbora, cabotian, cozida",
-    "chuchu": "Chuchu, cozido",
-    "beterraba": "Beterraba, cozida",
-    "iogurte": "Iogurte, natural",
-    "pao": "Pão, francês",
-    "pao frances": "Pão, francês",
-    "oleo": "Óleo, de soja",
-    "azeite": "Azeite, de oliva",
-}
+# Mantido como alias para total retrocompatibilidade
+_buscar_nutrientes_taco = calcular_nutrientes_alimento
 
-_TACO_CACHE = None
-
-def _norm_str(text: str) -> str:
-    """Normaliza texto removendo acentos e convertendo para minúsculas."""
-    t = unicodedata.normalize("NFD", str(text or "").lower())
-    return "".join(c for c in t if unicodedata.category(c) != "Mn")
-
-def _obter_taco_cache(session: Session):
-    """Carrega e mantém em memória o cache de itens da Tabela TACO."""
-    global _TACO_CACHE
-    if _TACO_CACHE is None:
-        tacos = session.query(Taco).filter(Taco.deleted_at == None).all()
-        _TACO_CACHE = []
-        for t in tacos:
-            dn = _norm_str(t.description)
-            base_name = dn.split(",")[0].strip()
-            words = set(re.findall(r"\b[a-z0-9]+\b", dn))
-            _TACO_CACHE.append({
-                "taco": t,
-                "norm": dn,
-                "base": base_name,
-                "words": words
-            })
-    return _TACO_CACHE
-
-def _encontrar_taco(session: Session, nome: str) -> Optional[Taco]:
-    """Busca o melhor registro correspondente na TACO por aliases e similaridade."""
-    if not nome:
-        return None
-    cache = _obter_taco_cache(session)
-    q = _norm_str(nome).strip()
-    if not q:
-        return None
-
-    if q in ALIASES_TACO:
-        target = _norm_str(ALIASES_TACO[q])
-        for it in cache:
-            if it["norm"] == target:
-                return it["taco"]
-
-    for it in cache:
-        if q == it["norm"]:
-            return it["taco"]
-
-    q_words = [w for w in re.findall(r"\b[a-z0-9]+\b", q) if w not in {"de", "da", "do", "e", "com", "sem", "ao", "a", "o", "em"}]
-    if not q_words:
-        return None
-    first = q_words[0]
-
-    if first in ALIASES_TACO:
-        target = _norm_str(ALIASES_TACO[first])
-        for it in cache:
-            if it["norm"] == target:
-                return it["taco"]
-
-    candidates = []
-    for it in cache:
-        if it["base"].startswith(first) or first in it["words"]:
-            # Heurística de pontuação para seleção do alimento mais adequado:
-            # - overlap: quantidade de palavras compartilhadas
-            # - bonus: prioridade para correspondência no nome base do alimento
-            # - state_bonus: preferência por itens no estado cozido/preparado sobre cru
-            overlap = len(set(q_words) & it["words"])
-            bonus = 2 if it["base"] == first or it["base"].startswith(first) else 0
-            state_bonus = 0.5 if "cozid" in it["words"] or "prepar" in it["words"] else 0
-            candidates.append((overlap + bonus + state_bonus, it["taco"]))
-
-    if candidates:
-        candidates.sort(key=lambda x: x[0], reverse=True)
-        return candidates[0][1]
-
-    return session.query(Taco).filter(Taco.description.ilike(f"%{first}%"), Taco.deleted_at == None).first()
-
-def _buscar_nutrientes_taco(session: Session, nome_taco: str, qtd_g: float) -> dict:
-    """Calcula os valores nutricionais escalados pela quantidade em gramas (per capita)."""
-    fator = (qtd_g or 0) / 100.0
-    taco = _encontrar_taco(session, nome_taco)
-    if not taco:
-        return {
-            "energiaKcal": 0.0, "carboidratosG": 0.0, "proteinasG": 0.0,
-            "lipidiosG": 0.0, "sodioMg": 0.0, "ferroMg": 0.0,
-            "calcioMg": 0.0, "vitaminaAMcg": 0.0, "vitaminaCMg": 0.0
-        }
-    return {
-        "energiaKcal": round(float(taco.energy_kcal or 0) * fator, 1),
-        "carboidratosG": round(float(taco.carbohydrates or 0) * fator, 1),
-        "proteinasG": round(float(taco.proteins or 0) * fator, 1),
-        "lipidiosG": round(float(taco.lipids or 0) * fator, 1),
-        "sodioMg": round(float(taco.sodium or 0) * fator, 1),
-        "ferroMg": round(float(taco.iron or 0) * fator, 2),
-        "calcioMg": round(float(taco.calcium or 0) * fator, 1),
-        "vitaminaAMcg": round(float(taco.retinol or 0) * fator, 1),
-        "vitaminaCMg": round(float(taco.c_vitamin or 0) * fator, 1),
-    }
-
-
-# =========================================================
-# Persistência Relacional no PostgreSQL
-# =========================================================
-
-def salvar_cardapio_db(
-    cardapio_schema,
-    etapa: str,
-    faixa_etaria: str,
-    periodo: str,
-    num_refeicoes: int,
-    mes_aplicacao: str,
-    observacoes: Optional[str] = None
-) -> Optional[str]:
-    """Persiste a estrutura do cardápio gerado (semanas, dias, refeições, pratos) no PostgreSQL."""
-    try:
-        with Session(engine) as session:
-            etapa_obj = session.query(EtapaEscolar).filter(
-                EtapaEscolar.etapa == etapa,
-                EtapaEscolar.faixa_etaria == faixa_etaria
-            ).first()
-            if not etapa_obj:
-                etapa_obj = EtapaEscolar(id=uuid.uuid4(), etapa=etapa, faixa_etaria=faixa_etaria)
-                session.add(etapa_obj)
-                session.flush()
-
-            cardapio_id = uuid.uuid4()
-            num_semanas = len(cardapio_schema.semanas)
-            cardapio_db = Cardapio(
-                id=cardapio_id,
-                etapa_escolar_id=etapa_obj.id,
-                periodo=periodo,
-                mes_aplicacao=mes_aplicacao,
-                num_refeicoes=num_refeicoes,
-                num_semanas=num_semanas,
-                data_geracao=datetime.now(),
-                aprovado=False,
-                observacoes=observacoes or getattr(cardapio_schema, "observacoes", None)
-            )
-            session.add(cardapio_db)
-
-            for semana in cardapio_schema.semanas:
-                semana_db = Semana(id=uuid.uuid4(), cardapio_id=cardapio_id, numero=semana.numero)
-                session.add(semana_db)
-                session.flush()
-
-                for dia in semana.dias:
-                    dia_db = Dia(id=uuid.uuid4(), semana_id=semana_db.id, dia_semana=dia.dia_semana)
-                    session.add(dia_db)
-                    session.flush()
-
-                    for refeicao in dia.refeicoes:
-                        tipo_valor = str(refeicao.tipo.value if hasattr(refeicao.tipo, "value") else refeicao.tipo)
-                        refeicao_db = Refeicao(id=uuid.uuid4(), dia_id=dia_db.id, tipo=tipo_valor, horario=None)
-                        session.add(refeicao_db)
-                        session.flush()
-
-                        for prato in refeicao.pratos:
-                            prato_db = Prato(id=uuid.uuid4(), refeicao_id=refeicao_db.id, nome=prato.nome, estado_preparacao=getattr(prato, "estado_preparacao", None))
-                            session.add(prato_db)
-                            session.flush()
-
-                            for ingrediente in prato.ingredientes:
-                                taco = session.query(Taco).filter(Taco.description.ilike(f"%{ingrediente.nome_taco}%"), Taco.deleted_at == None).first()
-                                if taco:
-                                    ing_db = Ingrediente(id=uuid.uuid4(), prato_id=prato_db.id, taco_id=taco.id, quantidade_g=ingrediente.quantidade_g)
-                                    session.add(ing_db)
-
-            session.commit()
-            return str(cardapio_id)
-    except Exception as e:
-        print(f"Aviso: Não foi possível persistir no PostgreSQL: {e}")
-        return None
 
 
 # =========================================================
@@ -375,7 +178,13 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
         dias_letivos_flat = []
         contador_dias = 0
 
-        with Session(engine) as session:
+        session = None
+        try:
+            session = Session(engine)
+        except Exception:
+            session = None
+
+        try:
             for semana in cardapio.semanas:
                 if limite_dias is not None and contador_dias >= limite_dias:
                     break
@@ -398,8 +207,11 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
                                 nomes_pratos.append(prato.nome.strip())
                             if prato.ingredientes:
                                 for ing in prato.ingredientes:
-                                    qtd = ing.quantidade_g if ing.quantidade_g and ing.quantidade_g > 0 else 50.0
-                                    nutri = _buscar_nutrientes_taco(session, ing.nome_taco or prato.nome, qtd)
+                                    # Quantidade já definida pelo per capita oficial; sem fallback fixo
+                                    if not ing.quantidade_g or ing.quantidade_g <= 0:
+                                        continue
+                                    qtd = ing.quantidade_g
+                                    nutri = _buscar_nutrientes_taco(session, ing.nome_taco or prato.nome, qtd, getattr(ing, "_taco_id", None))
                                     for k in totais:
                                         totais[k] = round(totais[k] + nutri[k], 2)
                                     alimentos_formatados.append({
@@ -409,16 +221,37 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
                                         "totaisNutricionais": nutri
                                     })
                             else:
-                                qtd = 50.0
-                                nutri = _buscar_nutrientes_taco(session, prato.nome, qtd)
-                                for k in totais:
-                                    totais[k] = round(totais[k] + nutri[k], 2)
-                                alimentos_formatados.append({
-                                    "nome": prato.nome,
-                                    "quantidadeG": qtd,
-                                    "nutrientes": nutri,
-                                    "totaisNutricionais": nutri
-                                })
+                                nome_norm = _texto_normalizado(prato.nome)
+                                eh_composta = any(
+                                    termo in nome_norm
+                                    for termo in [
+                                        "galinhada", "baiao", "feijoada", "escondidinho", "risoto",
+                                        "estrogonofe", "strogonoff", "lasanha", "panqueca", "nhoque",
+                                        "torta", "quibe", "salpicao", "yakisoba", "salada de fruta",
+                                        "com ", "ao molho", "a bolonhesa", "à bolonhesa", "rechead"
+                                    ]
+                                )
+                                if not eh_composta:
+                                    match_prato = None
+                                    try:
+                                        match_prato = resolver_taco(prato.nome)
+                                    except Exception:
+                                        match_prato = None
+                                    qtd = None
+                                    try:
+                                        qtd = resolver_per_capita(prato.nome, str(payload.etapa), taco_id=match_prato.taco_id if match_prato else None)
+                                    except Exception:
+                                        qtd = None
+                                    if qtd and qtd > 0:
+                                        nutri = _buscar_nutrientes_taco(session, prato.nome, qtd, match_prato.taco_id if match_prato else None)
+                                        for k in totais:
+                                            totais[k] = round(totais[k] + nutri[k], 2)
+                                        alimentos_formatados.append({
+                                            "nome": prato.nome,
+                                            "quantidadeG": qtd,
+                                            "nutrientes": nutri,
+                                            "totaisNutricionais": nutri
+                                        })
 
                         tipo_str = str(refeicao.tipo.value if hasattr(refeicao.tipo, "value") else refeicao.tipo)
                         # Gera a descricao unindo os nomes de todos os alimentos por virgula
@@ -462,23 +295,31 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
                         "numeroSemana": semana.numero,
                         "dias": dias_da_semana
                     })
+        finally:
+            if session is not None:
+                try:
+                    session.close()
+                except Exception:
+                    pass
 
         # ---------------------------------------------------------
         # FASE 4: Higienização de observações e persistência relacional
         # ---------------------------------------------------------
-        # Remove avisos internos de per capita e PNAE do campo observacoes
-        # para que apenas as notas nutricionais geradas pela IA cheguem ao frontend
         raw_obs = getattr(cardapio, "observacoes", "") or ""
-        clean_obs = re.split(r"(?i)\n*(?:per capita nao aplicado|avisos pnae):?", raw_obs)[0].strip()
+        status_validacao = getattr(cardapio, "_status_validacao_nome", "pendente_revisao")
+        aprovado_flag = bool(getattr(cardapio, "_aprovado", False))
+        inconformidades_lista = getattr(cardapio, "_inconformidades_json", [])
+        resumo_validacao = getattr(cardapio, "_resumo_validacao", "")
 
-        salvar_cardapio_db(
+        db_cardapio_id = salvar_cardapio_db(
             cardapio_schema=cardapio,
             etapa=str(payload.etapa),
             faixa_etaria=str(payload.faixa_etaria),
             periodo=str(payload.periodo),
             num_refeicoes=payload.num_refeicoes,
             mes_aplicacao=mes_final,
-            observacoes=clean_obs
+            observacoes=raw_obs,
+            aprovado=aprovado_flag,
         )
 
         nome_mes = MESES_MAPA.get(payload.meses_numeros[0], "Maio").capitalize() if payload.meses_numeros else "Maio"
@@ -496,19 +337,28 @@ def api_gerar_cardapio(payload: GerarCardapioRequest):
         }
 
         return {
-            "id": str(uuid.uuid4()),
+            "id": db_cardapio_id or str(uuid.uuid4()),
             "dataCriacao": datetime.utcnow().strftime("%Y-%m-%d"),
             "especificacao": especificacao,
-            "observacoes": clean_obs,
+            "observacoes": raw_obs,
+            "statusValidacao": status_validacao,
+            "aprovado": aprovado_flag,
+            "inconformidades": inconformidades_lista,
+            "resumoValidacao": resumo_validacao,
             "semanas": semanas_formatadas,
             "diasLetivos": dias_letivos_flat,
             "totalDias": contador_dias
         }
 
+    except PerfilNaoSuportadoError as pe:
+        raise HTTPException(status_code=400, detail=str(pe))
+    except (PerfilIncompletoError, DistribuicaoNaoConfiguradaError, DistribuicaoInvalidaError, RefeicaoEsperadaAusenteError) as de:
+        raise HTTPException(status_code=422, detail=str(de))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Erro durante a geração de cardápio: {str(e)}")
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8005))
-    uvicorn.run("api_server:app", host="0.0.0.0", port=port, reload=True)
+    from src.config import SERVER_PORT
+    uvicorn.run("api_server:app", host="0.0.0.0", port=SERVER_PORT, reload=True)
+
