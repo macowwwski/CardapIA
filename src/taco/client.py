@@ -4,7 +4,6 @@ Conexão com a base de busca e modelos de linguagem para encontrar alimentos.
 Reúne em um só lugar o acesso ao banco de busca de alimentos e aos modelos
 que entendem tanto o significado das palavras quanto a escrita exata dos pratos.
 """
-from typing import Optional
 from src.config import (
     QDRANT_HOST,
     QDRANT_PORT,

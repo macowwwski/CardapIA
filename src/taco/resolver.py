@@ -43,7 +43,6 @@ STOPWORDS = {
     "de", "da", "do", "das", "dos", "e", "ou", "com", "sem", "ao", "a", "o",
     "em", "na", "no", "para", "alimento", "alimentos", "ingrediente", "ingredientes"
 }
-TOKENS_PREPARO = {"cozid", "cozido", "cozida", "preparad", "grelhad", "assad"}
 
 PRATOS_COMPOSTOS = {
     "estrogonofe", "coxinha", "empada", "pastel", "bolinho", "croquete",

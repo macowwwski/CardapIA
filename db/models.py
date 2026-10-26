@@ -14,7 +14,7 @@ Define como as informações são guardadas no PostgreSQL:
 """
 
 import uuid
-from datetime import datetime, time
+from datetime import datetime
 from sqlalchemy import (
     Boolean, CheckConstraint, Column, DateTime,
     Float, ForeignKey, Integer, String, Text, Time, UniqueConstraint
