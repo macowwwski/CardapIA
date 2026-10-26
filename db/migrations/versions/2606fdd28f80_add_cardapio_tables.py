@@ -45,7 +45,7 @@ def upgrade() -> None:
     sa.Column('id', sa.UUID(), nullable=False),
     sa.Column('cardapio_id', sa.UUID(), nullable=False),
     sa.Column('numero', sa.Integer(), nullable=False),
-    sa.CheckConstraint('numero BETWEEN 1 AND 4'),
+    sa.CheckConstraint('numero BETWEEN 1 AND 6'),
     sa.ForeignKeyConstraint(['cardapio_id'], ['cardapio.id'], ),
     sa.PrimaryKeyConstraint('id')
     )

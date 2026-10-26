@@ -1,5 +1,6 @@
 """
-Teste de verificação da conexão e busca semântica no Qdrant.
+Teste prático para verificar se o banco de busca inteligente (Qdrant) está funcionando
+e encontrando os alimentos corretamente pelo significado do nome.
 """
 import os
 from qdrant_client import QdrantClient

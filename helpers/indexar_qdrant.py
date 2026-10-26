@@ -1,17 +1,22 @@
 """
-Script de Ingestão e Indexação Vetorial no Qdrant.
-Gera embeddings e popula as coleções:
-1. 'taco_foods' (alimentos e nutrientes da TACO)
-2. 'per_capita_items' (porções oficiais por etapa escolar)
+Carrega os alimentos da Tabela TACO e as porções recomendadas para dentro da busca inteligente (Qdrant).
+
+Prepara duas listas de busca:
+1. 'taco_foods': alimentos com suas informações nutricionais (calorias, proteínas, ferro, etc.).
+2. 'per_capita_items': peso oficial de cada alimento por aluno e etapa escolar.
 """
 import os
 import sys
+import unicodedata
 from pathlib import Path
 from dotenv import load_dotenv
 from sqlalchemy.orm import Session
 from qdrant_client import QdrantClient
-from qdrant_client.models import Distance, VectorParams, PointStruct
-from fastembed import TextEmbedding
+from qdrant_client.models import (
+    Distance, VectorParams, SparseVectorParams, SparseIndexParams,
+    PointStruct, SparseVector
+)
+from fastembed import TextEmbedding, SparseTextEmbedding
 
 # Adiciona a raiz do projeto ao path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -23,19 +28,24 @@ from db.models import Taco, PerCapita
 
 load_dotenv()
 
-# Configurações de conexão com o nó Qdrant e modelo de embedding local
+# Endereço e porta para conectar no banco de busca inteligente
 QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
 QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))
 
-# Modelo multilíngue leve otimizado para inferência rápida em CPU via FastEmbed (384 dimensões)
+# Modelo de inteligência para entender o significado dos nomes de alimentos em português
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+
+# Apelidos e nomes populares dos alimentos para ajudar a encontrar a opção certa
+from src.taco.synonyms import SINONIMOS_TACO
+
 
 def main():
     print(f" Conectando ao Qdrant em {QDRANT_HOST}:{QDRANT_PORT}...")
     client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
 
-    print(f" Carregando modelo de embeddings ({MODEL_NAME})...")
-    embedding_model = TextEmbedding(model_name=MODEL_NAME)
+    print(f" Carregando modelos de embeddings ({MODEL_NAME} e Qdrant/bm25)...")
+    dense_model = TextEmbedding(model_name=MODEL_NAME)
+    sparse_model = SparseTextEmbedding(model_name="Qdrant/bm25")
     vector_size = 384  # Dimensão dos vetores densos gerados pelo MiniLM-L12
 
     with Session(engine) as session:
@@ -43,26 +53,36 @@ def main():
         # 1. INDEXAÇÃO DA TABELA TACO
         # =====================================================
         collection_taco = "taco_foods"
-        print(f"\n Recriando coleção '{collection_taco}' no Qdrant...")
+        print(f"\n Recriando coleção '{collection_taco}' no Qdrant com vetores híbridos...")
         client.recreate_collection(
             collection_name=collection_taco,
-            vectors_config=VectorParams(size=vector_size, distance=Distance.COSINE)
+            vectors_config={"dense": VectorParams(size=vector_size, distance=Distance.COSINE)},
+            sparse_vectors_config={"sparse": SparseVectorParams(index=SparseIndexParams(on_disk=False))}
         )
 
         tacos = session.query(Taco).filter(Taco.deleted_at == None).all()
         print(f" Extraindo {len(tacos)} alimentos da TACO...")
 
+        def _desacentuar(s: str) -> str:
+            t = unicodedata.normalize("NFD", str(s or ""))
+            return "".join(c for c in t if unicodedata.category(c) != "Mn")
+
         textos_taco = [
-            f"{t.description}, categoria: {t.category or 'geral'}"
+            f"{t.description}. {_desacentuar(t.description)}. {SINONIMOS_TACO.get(t.description, '')}. Categoria: {t.category or 'geral'}"
             for t in tacos
         ]
-        vetores_taco = list(embedding_model.embed(textos_taco))
+        dense_taco = list(dense_model.embed(textos_taco))
+        sparse_taco = list(sparse_model.embed(textos_taco))
 
         pontos_taco = []
         for i, t in enumerate(tacos):
+            sp = sparse_taco[i]
             pontos_taco.append(PointStruct(
                 id=str(t.id),
-                vector=vetores_taco[i].tolist(),
+                vector={
+                    "dense": dense_taco[i].tolist(),
+                    "sparse": SparseVector(indices=sp.indices.tolist(), values=sp.values.tolist())
+                },
                 payload={
                     "taco_id": str(t.id),
                     "description": t.description,
@@ -87,23 +107,32 @@ def main():
         # 2. INDEXAÇÃO DA BASE DE PER CAPITA
         # =====================================================
         collection_per_capita = "per_capita_items"
-        print(f"\n Recriando coleção '{collection_per_capita}' no Qdrant...")
+        print(f"\n Recriando coleção '{collection_per_capita}' no Qdrant com vetores híbridos...")
         client.recreate_collection(
             collection_name=collection_per_capita,
-            vectors_config=VectorParams(size=vector_size, distance=Distance.COSINE)
+            vectors_config={"dense": VectorParams(size=vector_size, distance=Distance.COSINE)},
+            sparse_vectors_config={"sparse": SparseVectorParams(index=SparseIndexParams(on_disk=False))}
         )
 
         per_capitas = session.query(PerCapita).all()
         print(f" Extraindo {len(per_capitas)} itens de per capita...")
 
-        textos_pc = [pc.nome_alimento for pc in per_capitas]
-        vetores_pc = list(embedding_model.embed(textos_pc))
+        textos_pc = [
+            f"{pc.nome_alimento}. {_desacentuar(pc.nome_alimento)}"
+            for pc in per_capitas
+        ]
+        dense_pc = list(dense_model.embed(textos_pc))
+        sparse_pc = list(sparse_model.embed(textos_pc))
 
         pontos_pc = []
         for i, pc in enumerate(per_capitas):
+            sp = sparse_pc[i]
             pontos_pc.append(PointStruct(
                 id=str(pc.id),
-                vector=vetores_pc[i].tolist(),
+                vector={
+                    "dense": dense_pc[i].tolist(),
+                    "sparse": SparseVector(indices=sp.indices.tolist(), values=sp.values.tolist())
+                },
                 payload={
                     "per_capita_id": str(pc.id),
                     "taco_id": str(pc.taco_id) if pc.taco_id else None,
