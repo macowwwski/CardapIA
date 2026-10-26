@@ -1,0 +1,5278 @@
+{
+  "creche_7_11": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "Carne, bovina, acém, moído, cozido",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve picadinha",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana prata amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mandioca, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido desfiado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Frango, sobrecoxa, sem pele, assada",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Batata, inglesa, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido desfiado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Pescada, filé, assado",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mandioca, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Gema de ovo cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Ovo, de galinha, gema, cozida/10minutos",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 0.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Lentilha, cozida",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "Carne, bovina, acém, moído, cozido",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve picadinha",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana prata amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Batata, inglesa, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido desfiado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Frango, sobrecoxa, sem pele, assada",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mandioca, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido desfiado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Pescada, filé, assado",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Lentilha, cozida",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "Carne, bovina, acém, moído, cozido",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve picadinha",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana prata amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mandioca, cozida",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 31.0
+                }
+              ]
+            },
+            {
+              "prato": "Gema de ovo cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Ovo, de galinha, gema, cozida/10minutos",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre picadinho",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 0.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia raspada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão papaia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 30.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 8.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "Carne, bovina, acém, moído, cozido",
+                  "quantidade_g": 6.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve picadinha",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Azeite de oliva",
+              "ingredientes": [
+                {
+                  "nome_taco": "Azeite, de oliva, extra virgem",
+                  "quantidade_g": 1.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana prata amassada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 20.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "creche_1_3": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite de vaca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 13.5
+                }
+              ]
+            },
+            {
+              "prato": "Mamão fatiado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "Carne, bovina, acém, moído, cozido",
+                  "quantidade_g": 10.5
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Maçã, fuji, com casca, crua",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Pão com queijo",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 14.5
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Frango, sobrecoxa, sem pele, assada",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melão, cru",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Batata, inglesa, cozida",
+                  "quantidade_g": 80.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Espinafre, Nova Zelândia, refogado",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melancia, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Tapioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 13.5
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "Maçã, fuji, com casca, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mandioca, cozida",
+                  "quantidade_g": 32.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Ovo, de galinha, inteiro, cozido/10minutos",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "Abóbora, cabotian, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 35.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Biscoito salgado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 13.5
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Lentilha, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "Laranja, pera, crua",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Batata, inglesa, cozida",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Frango, sobrecoxa, sem pele, assada",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melão, cru",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia em flocos",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 14.5
+                }
+              ]
+            },
+            {
+              "prato": "Cuscuz",
+              "ingredientes": []
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Pão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "Maçã, fuji, com casca, crua",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Macarrão, trigo, cru",
+                  "quantidade_g": 22.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "Batata, inglesa, cozida",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, preto, cozido",
+                  "quantidade_g": 26.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "Maçã, fuji, com casca, crua",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Aveia",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 13.5
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Melão, cru",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "Ovo, de galinha, inteiro, cozido/10minutos",
+                  "quantidade_g": 12.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "Couve, manteiga, refogada",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "Banana, prata, crua",
+                  "quantidade_g": 35.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "desjejum",
+          "pratos": [
+            {
+              "prato": "Leite integral",
+              "ingredientes": [
+                {
+                  "nome_taco": "Leite, de vaca, integral",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Tapioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Aveia, flocos, crua",
+                  "quantidade_g": 13.5
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 45.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "Arroz, tipo 1, cozido",
+                  "quantidade_g": 44.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 3.6
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.35
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "Feijão, carioca, cozido",
+                  "quantidade_g": 24.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 10.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "Cenoura, cozida",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "Mamão, Papaia, cru",
+                  "quantidade_g": 40.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pre_escola": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "carne moída",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 80.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "sobrecoxa de frango",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "abobrinha",
+                  "quantidade_g": 50.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 80.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 20.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "espinafre",
+                  "quantidade_g": 15.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "melancia",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "mandioca",
+                  "quantidade_g": 15.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "abóbora",
+                  "quantidade_g": 50.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 60.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "brócolis",
+                  "quantidade_g": 50.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "laranja",
+                  "quantidade_g": 60.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "peito de frango",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve",
+                  "quantidade_g": 15.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "melão",
+                  "quantidade_g": 85.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "chuchu",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 80.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "macarrão",
+                  "quantidade_g": 40.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "beterraba",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 80.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve-flor",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 60.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "polenta",
+                  "quantidade_g": 30.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 7.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 35.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 18.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 25.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 80.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fund_6_10": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 75.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "carne moída",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 130.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 75.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "sobrecoxa de frango",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "abobrinha",
+                  "quantidade_g": 95.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 100.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "espinafre",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "melancia",
+                  "quantidade_g": 145.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "mandioca",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "abóbora",
+                  "quantidade_g": 95.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 75.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "brócolis",
+                  "quantidade_g": 85.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "laranja",
+                  "quantidade_g": 70.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 41.2
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "peito de frango",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve",
+                  "quantidade_g": 27.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "melão",
+                  "quantidade_g": 95.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 75.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "chuchu",
+                  "quantidade_g": 60.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "macarrão",
+                  "quantidade_g": 13.8
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "beterraba",
+                  "quantidade_g": 90.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 130.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 75.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve-flor",
+                  "quantidade_g": 60.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "polenta",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 8.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 22.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fund_11_15": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 115.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "carne moída",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 130.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 115.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "sobrecoxa de frango",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "abobrinha",
+                  "quantidade_g": 95.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 150.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "espinafre",
+                  "quantidade_g": 20.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "melancia",
+                  "quantidade_g": 145.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "mandioca",
+                  "quantidade_g": 90.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "abóbora",
+                  "quantidade_g": 95.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 115.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "brócolis",
+                  "quantidade_g": 85.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "laranja",
+                  "quantidade_g": 70.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 63.3
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 82.5
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "peito de frango",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve",
+                  "quantidade_g": 27.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "melão",
+                  "quantidade_g": 95.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 115.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "chuchu",
+                  "quantidade_g": 60.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "macarrão",
+                  "quantidade_g": 24.8
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 82.5
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "beterraba",
+                  "quantidade_g": 90.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 130.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 115.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve-flor",
+                  "quantidade_g": 60.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 90.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "polenta",
+                  "quantidade_g": 90.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "medio": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "carne moída",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "sobrecoxa de frango",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "abobrinha",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 200.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 45.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "espinafre",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "melancia",
+                  "quantidade_g": 200.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "mandioca",
+                  "quantidade_g": 120.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "abóbora",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 45.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "brócolis",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "laranja",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 71.5
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "peito de frango",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve",
+                  "quantidade_g": 27.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "melão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 45.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "chuchu",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 110.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "macarrão",
+                  "quantidade_g": 33.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 110.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "beterraba",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve-flor",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "polenta",
+                  "quantidade_g": 120.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 12.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 28.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "eja": [
+    {
+      "dia": "Segunda-feira (S1)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne moída",
+              "ingredientes": [
+                {
+                  "nome_taco": "carne moída",
+                  "quantidade_g": 30.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã fresca",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S1 - Frango)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz branco",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "sobrecoxa de frango",
+                  "quantidade_g": 30.0
+                }
+              ]
+            },
+            {
+              "prato": "Abobrinha refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "abobrinha",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S1 - Peixe + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Batata cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 50.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão carioca",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de pescada",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Espinafre refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "espinafre",
+                  "quantidade_g": 40.0
+                }
+              ]
+            },
+            {
+              "prato": "Melancia",
+              "ingredientes": [
+                {
+                  "nome_taco": "melancia",
+                  "quantidade_g": 200.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S1 - Ovo + Mandioca)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Mandioca cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "mandioca",
+                  "quantidade_g": 35.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Abóbora cabotiá",
+              "ingredientes": [
+                {
+                  "nome_taco": "abóbora",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S1 - Suína + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne suína",
+              "ingredientes": [
+                {
+                  "nome_taco": "lombo suíno",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Brócolis cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "brócolis",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Laranja",
+              "ingredientes": [
+                {
+                  "nome_taco": "laranja",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Segunda-feira (S2 - Frango + Batata + Arroz)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata corada",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 50.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Frango grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "peito de frango",
+                  "quantidade_g": 30.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve refogada",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve",
+                  "quantidade_g": 27.0
+                }
+              ]
+            },
+            {
+              "prato": "Melão",
+              "ingredientes": [
+                {
+                  "nome_taco": "melão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Terça-feira (S2 - Peixe + Lentilha)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Lentilha",
+              "ingredientes": [
+                {
+                  "nome_taco": "lentilha",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Peixe grelhado",
+              "ingredientes": [
+                {
+                  "nome_taco": "filé de tilápia",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Chuchu refogado",
+              "ingredientes": [
+                {
+                  "nome_taco": "chuchu",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Pera",
+              "ingredientes": [
+                {
+                  "nome_taco": "pera",
+                  "quantidade_g": 110.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quarta-feira (S2 - Macarrão + Batata)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Macarrão cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "macarrão",
+                  "quantidade_g": 50.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Batata sautê",
+              "ingredientes": [
+                {
+                  "nome_taco": "batata",
+                  "quantidade_g": 50.0
+                }
+              ]
+            },
+            {
+              "prato": "Feijão preto",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão preto",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "acém moído",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Beterraba",
+              "ingredientes": [
+                {
+                  "nome_taco": "beterraba",
+                  "quantidade_g": 100.0
+                }
+              ]
+            },
+            {
+              "prato": "Maçã",
+              "ingredientes": [
+                {
+                  "nome_taco": "maçã",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Quinta-feira (S2 - Ovo + Couve-flor)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Arroz cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "arroz",
+                  "quantidade_g": 130.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Ovo cozido",
+              "ingredientes": [
+                {
+                  "nome_taco": "ovo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Couve-flor cozida",
+              "ingredientes": [
+                {
+                  "nome_taco": "couve-flor",
+                  "quantidade_g": 80.0
+                }
+              ]
+            },
+            {
+              "prato": "Banana",
+              "ingredientes": [
+                {
+                  "nome_taco": "banana",
+                  "quantidade_g": 100.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dia": "Sexta-feira (S2 - Polenta + Bovina)",
+      "refeicoes": [
+        {
+          "tipo": "almoço",
+          "pratos": [
+            {
+              "prato": "Polenta cremosa",
+              "ingredientes": [
+                {
+                  "nome_taco": "polenta",
+                  "quantidade_g": 60.0
+                },
+                {
+                  "nome_taco": "Óleo de soja",
+                  "quantidade_g": 11.0
+                },
+                {
+                  "nome_taco": "sal",
+                  "quantidade_g": 0.75
+                }
+              ]
+            },
+            {
+              "prato": "Feijão carioca",
+              "ingredientes": [
+                {
+                  "nome_taco": "feijão",
+                  "quantidade_g": 65.0
+                }
+              ]
+            },
+            {
+              "prato": "Carne bovina",
+              "ingredientes": [
+                {
+                  "nome_taco": "músculo",
+                  "quantidade_g": 32.0
+                }
+              ]
+            },
+            {
+              "prato": "Cenoura ralada",
+              "ingredientes": [
+                {
+                  "nome_taco": "cenoura",
+                  "quantidade_g": 55.0
+                }
+              ]
+            },
+            {
+              "prato": "Mamão",
+              "ingredientes": [
+                {
+                  "nome_taco": "mamão",
+                  "quantidade_g": 150.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

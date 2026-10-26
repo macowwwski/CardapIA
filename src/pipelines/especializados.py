@@ -297,6 +297,12 @@ class CrechePipeline(BasePipeline):
                     if any(k in _texto_normalizado(str(getattr(ref, "tipo", "") or getattr(ref, "categoria", ""))) for k in ("almoco", "jantar", "refeicao"))
                     for p in ref.pratos for ing in p.ingredientes
                 )
+                tem_batata_dia = any(
+                    any("batat" in _texto_normalizado(ing.nome_taco or p.nome) for ing in p.ingredientes) or "batat" in _texto_normalizado(p.nome)
+                    for ref in dia.refeicoes
+                    if any(k in _texto_normalizado(str(getattr(ref, "tipo", "") or getattr(ref, "categoria", ""))) for k in ("almoco", "jantar", "refeicao"))
+                    for p in ref.pratos
+                )
 
                 for refeicao in dia.refeicoes:
                     tipo_ref = str(getattr(refeicao, "tipo", "") or getattr(refeicao, "categoria", ""))
@@ -317,7 +323,10 @@ class CrechePipeline(BasePipeline):
                                 elif any(c in nome_norm for c in ("aveia", "cuscuz", "pao", "farinha", "amido", "milho", "tapioca", "polvilho", "torrada", "biscoito")):
                                     tem_cereal = True
                                     ing.nome_taco = "Aveia, flocos, crua"
-                                    ing.quantidade_g = 14.5 if (tem_frango_dia or tem_peixe_dia) else qtd_cereal_lanche
+                                    if tem_batata_dia:
+                                        ing.quantidade_g = 18.0
+                                    else:
+                                        ing.quantidade_g = 14.5 if (tem_frango_dia or tem_peixe_dia) else qtd_cereal_lanche
                                 elif any(f in nome_norm for f in ("mamao", "banana", "maca", "melao", "pera", "laranja", "manga")):
                                     if "mamao" in nome_norm:
                                         ing.nome_taco = "Mamão, Papaia, cru"
@@ -343,7 +352,10 @@ class CrechePipeline(BasePipeline):
                             ))
 
                         if not tem_cereal and self.perfil.num_refeicoes >= 2:
-                            qtd_c = 14.5 if (tem_frango_dia or tem_peixe_dia) else qtd_cereal_lanche
+                            if tem_batata_dia:
+                                qtd_c = 18.0
+                            else:
+                                qtd_c = 14.5 if (tem_frango_dia or tem_peixe_dia) else qtd_cereal_lanche
                             ing_aveia = IngredienteSchema(
                                 nome_taco="Aveia, flocos, crua",
                                 quantidade_g=qtd_c,
@@ -367,7 +379,7 @@ class CrechePipeline(BasePipeline):
                                         ing.quantidade_g = 32.0
                                     elif "batata" in nome_norm:
                                         ing.nome_taco = "Batata, inglesa, cozida"
-                                        ing.quantidade_g = 50.0
+                                        ing.quantidade_g = 80.0
                                     elif "macarrao" in nome_norm:
                                         ing.nome_taco = "Macarrão, trigo, cru"
                                         ing.quantidade_g = 22.0
