@@ -23,7 +23,7 @@ class Taco(Base):
     alternative_id = Column(Integer)
     description    = Column(String) # nome do alimento
     category       = Column(String)
-    humidity       = Column(Float, nullable=True)
+    moisture       = Column(Float, nullable=True)
     energy_kcal    = Column(Float, nullable=True)
     energy_kj      = Column(Float, nullable=True)
     proteins       = Column(Float, nullable=True)
@@ -31,11 +31,11 @@ class Taco(Base):
     cholesterol    = Column(Float, nullable=True)
     carbohydrates  = Column(Float, nullable=True)
     dietary_fiber  = Column(Float, nullable=True)
-    ashe           = Column(Float, nullable=True)
+    ash            = Column(Float, nullable=True)
     calcium        = Column(Float, nullable=True)
     magnesium      = Column(Float, nullable=True)
     manganese      = Column(Float, nullable=True)
-    phosphoru      = Column(Float, nullable=True)
+    phosphorus     = Column(Float, nullable=True)
     iron           = Column(Float, nullable=True)
     sodium         = Column(Float, nullable=True)
     potassium      = Column(Float, nullable=True)
@@ -48,7 +48,7 @@ class Taco(Base):
     riboflavin     = Column(Float, nullable=True)
     pyridoxine     = Column(Float, nullable=True)
     niacin         = Column(Float, nullable=True)
-    c_vitamin      = Column(Float, nullable=True)
+    vitamin_c      = Column(Float, nullable=True)
 
     # Relacionamento reverso
     ingredientes    = relationship("Ingrediente", back_populates="taco")
