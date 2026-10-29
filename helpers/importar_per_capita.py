@@ -12,7 +12,6 @@ DIR_RAIZ = Path(__file__).resolve().parent.parent
 sys.path.append(str(DIR_RAIZ))
 
 import pdfplumber
-import re
 from sqlalchemy.orm import Session
 from db.database import engine
 from db.models import PerCapita

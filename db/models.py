@@ -1,7 +1,20 @@
-# Equivalente ao schema
+"""
+Tabelas e modelos do banco de dados do CardapIA.
+
+Define como as informações são guardadas no PostgreSQL:
+- Taco: lista oficial de alimentos e seus nutrientes (calorias, ferro, cálcio, etc.).
+- EtapaEscolar: nível de ensino e idade dos alunos (ex: creche, pré-escola).
+- Cardapio: dados gerais do cardápio gerado (período, mês, observações da nutricionista).
+- Semana: semanas letivas do cardápio (permite de 1 até 6 semanas).
+- Dia: cada dia da semana com suas refeições programadas.
+- Refeicao: momento da alimentação (desjejum, almoço, lanche).
+- Prato: comida servida na refeição (ex: arroz, feijão, frango desfiado).
+- Ingrediente: itens que compõem o prato, com peso em gramas e código na tabela TACO.
+- PerCapita: peso oficial recomendado em gramas para cada alimento e etapa escolar.
+"""
 
 import uuid
-from datetime import datetime, time
+from datetime import datetime
 from sqlalchemy import (
     Boolean, CheckConstraint, Column, DateTime,
     Float, ForeignKey, Integer, String, Text, Time, UniqueConstraint
@@ -89,7 +102,7 @@ class Cardapio(Base):
 class Semana(Base):
     __tablename__ = "semana"
     __table_args__ = (
-        CheckConstraint("numero BETWEEN 1 AND 4"),
+        CheckConstraint("numero BETWEEN 1 AND 6"),
     )
  
     id          = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)

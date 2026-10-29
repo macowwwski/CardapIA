@@ -1,6 +1,12 @@
-from prompt_builder import construir_contexto
-import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from src.prompts.builder import construir_contexto
+import json
+
+
 
 with open("data/pnae.json", encoding="utf-8") as f:
     pnae = json.load(f)
