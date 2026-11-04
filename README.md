@@ -37,10 +37,10 @@ OLLAMA_API_KEY=sua_chave
 PORT=8005
 ```
 
-### 4. Subir o PostgreSQL no Docker
+### 4. Subir o PostgreSQL e o Qdrant no Docker
 
 ```bash
-docker compose up -d db
+docker compose up -d
 ```
 
 ### 5. Criar as tabelas do BD
@@ -68,6 +68,14 @@ python helpers/importar_per_capita.py
 python helpers/linkar_per_capita_taco.py
 ```
 
+### 7. Indexar dados vetoriais no Qdrant (TACO e Per Capita)
+
+Gera os embeddings e popula as coleções vetoriais `taco_foods` e `per_capita_items` no Qdrant:
+
+```bash
+python helpers/indexar_qdrant.py
+```
+
 ## Executando o Servidor de API (FastAPI)
 
 Para disponibilizar o serviço de IA para o backend (`CooperaAgro-Back`):
@@ -83,20 +91,18 @@ O servidor iniciará em `http://localhost:8005` (ou na porta configurada em `POR
 
 ## Testando a configuração
 
-### 1. Teste do banco de dados
+### 1. Teste do banco vetorial (Qdrant)
 
-O comando a seguir deve retornar uma lista dos alimentos na categoria "Frutas e derivados":
-
-```bash
-python testes/test_tools.py
-```
-
-### 2. Teste da geração de cardápio via script
-
-Este comando devolverá, no terminal, o JSON de um cardápio para creche integral:
+Verifica a conexão com o Qdrant, exibe o total de pontos indexados em cada coleção e executa buscas semânticas de teste:
 
 ```bash
-python testes/test_creche_integral.py
+python testes/test_qdrant.py
 ```
 
-Para rodar o projeto outras vezes, é necessário criar um arquivo de especificações no mesmo estilo de _test_creche_integral_, pois ele simula os dados vindos do frontend.
+### 2. Teste das regras do PNAE e Prompt Builder
+
+Valida a construção do contexto nutricional e regras do PNAE para as etapas escolares:
+
+```bash
+python testes/test_prompt_builder.py
+```
