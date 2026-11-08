@@ -1,0 +1,264 @@
+taco_id,taco_descricao,per_capita_id,per_capita_nome,confianca
+f508cead-ff63-4eb4-9de5-cba585c99d3c,"Arroz, integral, cozido",4c1e7fb4-c7a5-4ac4-a884-2ea135ec1308,"Arroz, integral, cru",100.0
+ef95843a-13bc-4180-a675-73c0fce932b2,"Arroz, tipo 1, cozido",0fec1954-31c3-4ebd-aa09-cd14e8f35276,"Arroz, tipo 1, cru",100.0
+befdc259-0142-44e9-8c9b-3537f6c8455b,"Arroz, tipo 2, cozido",0fec1954-31c3-4ebd-aa09-cd14e8f35276,"Arroz, tipo 1, cru",100.0
+2c5e8122-07e4-4162-aff7-87cb451def83,"Arroz, tipo 2, cru",0fec1954-31c3-4ebd-aa09-cd14e8f35276,"Arroz, tipo 1, cru",100.0
+c8c3cd9b-4276-486a-b3ab-7e91d1b67409,"Biscoito, doce, recheado com chocolate",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,56.14
+095d07cf-15c0-48ff-8995-fb43f1421a01,"Biscoito, doce, recheado com morango",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,58.18
+6d5285c4-3384-4184-a302-b82cc61b5cb9,"Biscoito, doce, wafer, recheado de chocolate",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,54.84
+d4995000-2623-42af-96b4-8b7e03376361,"Biscoito, doce, wafer, recheado de morango",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,56.67
+a9987687-38bf-4592-b48d-aea82c5b5422,"Biscoito, salgado, cream cracker",31db24a1-f606-465d-aca9-9672018d3a85,"Biscoito, salgado, cream",84.62
+c148d28a-f44b-4830-b49d-dbb5a469b275,"Bolo, mistura para",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,50.0
+49f05031-cd09-4d1b-a076-3d890221a27f,"Bolo, pronto, aipim",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.28
+6c202732-5b36-4bf8-b6ab-bb8bc2ddd342,"Bolo, pronto, chocolate",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,55.56
+11a60a9f-8249-49e4-ac3e-b581002d7cc7,"Bolo, pronto, coco",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,53.33
+60f7720b-2eae-404e-879d-b020bcacbc84,"Bolo, pronto, milho",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+11ad2c20-f9da-40e1-909a-45705d4c8d70,"Canjica, com leite integral",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.38
+19eff0f9-1dd2-4441-899b-212f55dbb253,"Cereais, mingau, milho, infantil",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,65.31
+55201eeb-d0a1-418f-b774-8cc2099737dc,"Cereais, mistura para vitamina, trigo, cevada e aveia",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,39.56
+a11a8f4e-10f9-4c12-83fa-673d26e305d0,"Cereal matinal, milho, açúcar",b0f2e8b9-2028-4ece-ad97-c76e07b5ad91,"Cereal matinal, milho",85.11
+d79c143d-9320-4956-a8e5-fbffdaa22ba5,"Creme de arroz, pó",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.61
+88e2d0e8-24a0-475e-bbbf-74e35b7efa26,"Creme de milho, pó",9a087582-3fc7-4ccb-80da-f6a1dff580ef,Xérem de milho,77.42
+88ca7419-9d43-4e41-945e-dcfb5733191f,"Curau, milho verde",6b83fcc3-8166-4d3f-b7f5-c82f75829850,"Milho, verde, cru",78.57
+de91ee41-86c9-4ed8-a031-a3e0e41f4e36,"Curau, milho verde, mistura para",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,53.66
+ce734b88-52c1-4bff-b1c3-ad4c0db2123f,"Farinha, láctea, de cereais",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,63.41
+59b721d6-b9d0-4068-8c58-ee14e562773e,"Macarrão, instantâneo",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.71
+2f784ccb-1e7b-49e2-9cbf-2c81553eee75,"Milho, verde, enlatado, drenado",6b83fcc3-8166-4d3f-b7f5-c82f75829850,"Milho, verde, cru",100.0
+60bb18d1-e88d-4be1-b91b-df0afe21186f,"Mingau tradicional, pó",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,50.0
+5fc76660-afb1-46df-ae6f-b4aea434f87d,"Pamonha, barra para cozimento, pré-cozida",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.0
+61d5a4d9-ddc7-4114-902f-ea637e3fbb58,"Pastel, de carne, cru",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.52
+77fc21a2-1ab2-4993-9655-f304fda1ce5a,"Pastel, de carne, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.52
+e42fcc5d-e0f8-4499-af81-a7134a91786e,"Pastel, de queijo, cru",e27f4969-ce7d-480d-a7fd-ffaa8d276bfc,"Pão, de queijo, assado",75.86
+89e735e4-cc69-4342-801e-c30f42abde67,"Pastel, de queijo, frito",e27f4969-ce7d-480d-a7fd-ffaa8d276bfc,"Pão, de queijo, assado",75.86
+561736ae-01dd-4da2-a456-99932c42d3a9,"Pastel, massa, crua",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.63
+678dfef0-e257-4b9f-8a30-73f8e6b7a7c5,"Pastel, massa, frita",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.63
+8dd8dc6b-d68c-4cfe-8a09-9e6e96f79054,"Pipoca, com óleo de soja, sem sal",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,68.57
+c9600a6b-d515-4833-8da6-26ba7851c44a,"Abóbora, cabotian, cozida",0944713b-1243-4947-b8fe-4aa74db399a2,"Abóbora, cabotian, crua",100.0
+60c9c1d3-c964-4643-9e14-cad301f32b08,"Abóbora, moranga, refogada",d69c551f-f939-45fd-a371-2687655a83cc,"Abóbora, moranga, crua",76.92
+34c468c3-6375-44fc-9a84-75a749c81b15,"Abobrinha, italiana, cozida",502ad392-1c99-46ac-a44b-c4ffd1ed02b1,"Abobrinha, italiana, crua",100.0
+1516ff69-fcf0-48f4-964a-d8a8ae463c2a,"Abobrinha, italiana, refogada",502ad392-1c99-46ac-a44b-c4ffd1ed02b1,"Abobrinha, italiana, crua",80.0
+2d87bce0-1dd1-47c7-9985-ba015ed630b9,"Almeirão, refogado",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.0
+ab4f5e6d-20fd-40de-ae26-fff8cc8703cd,"Batata, baroa, cozida",1b29be1a-096b-4f94-b91e-9c4f0a61506a,"Batata, baroa, crua",100.0
+c6e57b25-66fc-43af-bc1f-eb405e66ea1b,"Batata, doce, cozida",e2f14b82-3584-49dd-8300-1d1146488caa,"Batata, doce, crua",100.0
+383e3ff8-b7a1-477b-ad8b-6ad6a8246d33,"Batata, frita, tipo chips, industrializada",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.89
+4fd9322d-e49c-4025-a1db-e43297934d97,"Batata, inglesa, cozida",f3e35e6c-66f9-4ef5-ad17-8b58929d3b8b,"Batata, inglesa, crua",100.0
+32aa1072-000b-45af-ae7d-1e5a7af51dd0,"Batata, inglesa, frita",f3e35e6c-66f9-4ef5-ad17-8b58929d3b8b,"Batata, inglesa, crua",100.0
+b2292a9d-dd14-4720-8bff-4a9ed07f1b38,"Batata, inglesa, sauté",f3e35e6c-66f9-4ef5-ad17-8b58929d3b8b,"Batata, inglesa, crua",82.35
+62b41c17-eb49-4472-9939-454cef48251e,"Berinjela, cozida",3d44360a-7b90-42f6-ad6b-30064096e56e,"Berinjela, crua",100.0
+92e84750-cc92-4b87-9139-c2cf676c821f,"Beterraba, cozida",521af75a-52f7-4225-918d-91cbaa689434,"Beterraba, crua",100.0
+91796a70-0768-4d59-8d3f-032ee930c213,"Biscoito, polvilho doce",5f12c404-bb78-4fcd-ad3b-df4e3b83353f,Biscoito de polvilho doce,93.62
+a3bbf4af-7714-40fb-a09d-41dc008e8fcf,"Brócolis, cozido",f62c80bf-a1a1-4678-b1b3-0c716fa8825d,"Brócolis, cru",100.0
+e134e7dd-d160-4f2e-a338-be6c84f73eb5,"Cará, cozido",2c152e62-c36a-49f9-9f14-9a04afa4448c,"Cará, cru",100.0
+69cb1952-dd6b-476f-bf0a-316e22406a15,"Catalonha, refogada",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+cf304005-1d43-4a96-b53a-d14a9b3e502a,"Cenoura, cozida",97718d19-3467-41e1-ac77-fdfbcf0b29b2,"Cenoura, crua",100.0
+19e650a8-be5e-4b88-a513-23d67e6918b8,"Chuchu, cozido",083db874-8dbb-4884-9070-a1dd1e4c4878,"Chuchu, cru",100.0
+7da8ee59-43e5-4590-8ae1-740c37aa9af6,"Couve, manteiga, refogada",43522e5b-9955-428f-8858-3e949a9a8136,"Couve, manteiga, crua",75.68
+b4f9ecf5-de78-4f98-801b-f7d084336f97,"Couve-flor, cozida",8e7d2f5d-2b60-44a7-8845-40db9c307a8d,"Couve-flor, crua",100.0
+8c6ec85b-b0ad-494f-869f-d4d6a8d7eae7,"Espinafre, Nova Zelândia, refogado",36ef90ef-22b2-4eb0-a2a8-cc110d68b4cc,"Espinafre, Nova Zelândia, cru",83.64
+6464afaf-a7dc-4f6e-b4d7-313ace3c3748,"Farinha, de puba",ab20e331-cfd5-4fd9-8114-326eec32b42e,"Farinha, de fubá",86.67
+f37b4180-7f97-4a73-a3cb-34fc74a460fe,"Mandioca, cozida",703599b3-359b-4380-bf8e-1fd34acda813,"Mandioca, crua",100.0
+02a92ded-b48c-4274-9581-2db60205feb3,"Mandioca, frita",703599b3-359b-4380-bf8e-1fd34acda813,"Mandioca, crua",100.0
+e9b36304-4e32-4c8f-beac-0677f7073e3b,"Nhoque, batata, cozido",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,51.85
+6ec04ea6-91e5-4e23-8772-aa5be2d1c83b,"Palmito, juçara, em conserva",d0bcf06e-b2e4-4d74-b793-fff66137142e,"Palmito, juçara, em",79.07
+210cda25-e9b1-4350-9562-8323e93007bb,"Palmito, pupunha, em conserva",d1483490-7f7a-4acd-9d1e-f6ba6f45dda9,"Palmito, pupunha, em",80.0
+fd554f1c-68bc-4ebd-9578-35af895916d0,"Pão, de queijo, cru",e27f4969-ce7d-480d-a7fd-ffaa8d276bfc,"Pão, de queijo, assado",100.0
+42ff343b-6809-46ed-8fa9-377706d2293a,"Repolho, roxo, refogado",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.73
+523868b1-d729-4e4f-9b35-4bb9b5ffa6ef,"Seleta de legumes, enlatada",8fe987ac-9570-4fe8-ba4a-65f7be156100,"Seleta de legumes,",79.07
+64878f7b-3ec6-4468-8759-c487c97e378a,"Tomate, molho industrializado",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,58.54
+f07e7610-d211-465e-aec8-ac52ff7df14f,"Açaí, polpa, com xarope de guaraná e glucose",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,51.61
+fd6de498-85f8-4159-86e9-52ee4067e3d7,"Ameixa, em calda, enlatada, drenada",0338d83b-d6bd-41aa-a3dc-17677ea5646c,"Ameixa, calda, enlatada",79.25
+a2f07f55-2701-4bdc-b8ae-a184d5a51104,"Mamão, doce em calda, drenado",6c58e757-d3ef-4b74-9155-c540fa8e9a6c,"Mamão, doce em calda,",100.0
+836fc4d6-a493-4bda-84e0-2a8fe6c3d647,"Mamão verde, doce em calda, drenado",6c58e757-d3ef-4b74-9155-c540fa8e9a6c,"Mamão, doce em calda,",86.36
+046d5a23-ade4-49fc-a787-01efdc86c5c0,"Manga, Tommy Atkins, crua",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,55.17
+f5c013be-3070-4df5-aecb-59c413128e03,"Pêssego, enlatado, em calda",674c0416-392b-47a4-b4f7-7e892c7a7bd1,"Pêssego, enlatado, em",76.92
+52fb0341-4685-4632-a520-1fb32a18da5e,"Margarina, com óleo hidrogenado, com sal (65% de lipids)",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.02
+eaf4288a-1b63-45b8-8aae-7ac35f34278c,"Margarina, com óleo hidrogenado, sem sal (80% de lipids)",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.02
+1d3f2f7c-792a-446b-8f86-0cc4c922c28d,"Margarina, com óleo interesterificado, com sal (65%de lipids)",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,53.73
+ce4cf5a0-bfd1-4e90-9f47-de5c48d04a4b,"Margarina, com óleo interesterificado, sem sal (65% de lipids)",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,53.73
+608384d2-1fe0-40a5-92fa-5cda98a6fd00,"Abadejo, filé, congelado, assado",0405d2f0-c15a-4237-92ec-7cd6d2b4f20e,"Abadejo, filé, congelado, cru",100.0
+e0133e7c-63ce-4a34-b633-33da5e682a74,"Abadejo, filé, congelado,cozido",0405d2f0-c15a-4237-92ec-7cd6d2b4f20e,"Abadejo, filé, congelado, cru",100.0
+8047c32b-8804-498d-a33d-aefffcec03b3,"Abadejo, filé, congelado, grelhado",0405d2f0-c15a-4237-92ec-7cd6d2b4f20e,"Abadejo, filé, congelado, cru",100.0
+9efc53da-78bf-4ea7-ad6d-853f6e0a5907,"Bacalhau, salgado, refogado",b80ed45e-9820-4ba9-a157-4469efe747b2,"Bacalhau, salgado, cru",78.05
+8a890e0b-660a-40da-ac5e-a1af12b8c5d7,"Cação, posta, com farinha de trigo, frita",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+427a25c6-b2b2-4ef3-8c05-c356e2400ce6,"Cação, posta, cozida",7ca95460-e2dc-4091-afbc-3a45c48f6abe,"Cação, posta, crua",100.0
+0e062c00-155d-4669-bdac-5d0733566be1,"Camarão, Rio Grande, grande, cru",045dec69-02db-42e8-8e09-fe9aaaf730cd,"Camarão, Rio Grande, grande, cozido",100.0
+a3a9bb3b-f589-408d-84c8-7b1fbf6a6b51,"Camarão, Sete Barbas, sem cabeça, com casca, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,56.25
+e74add89-f2f7-4291-8688-e1b92859af62,"Corimbatá, assado",be49172c-c96b-4ce6-a9f8-3d3a0ff0cc98,"Corimba, cru",87.5
+99d3322c-1bec-4cb0-b66c-f5e6f83b27d4,"Corimbatá, cozido",be49172c-c96b-4ce6-a9f8-3d3a0ff0cc98,"Corimba, cru",87.5
+832a9212-9554-4de6-90d4-7b687025b4bc,"Corvina grande, assada",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.29
+df0b711f-0d68-4222-9139-97f67295b07a,"Corvina grande, cozida",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.29
+fb0ca823-e245-4159-8a38-296bf8412758,"Lambari, congelado, frito",1eeaf816-cfe7-46cb-9b66-1170fe13d9ae,"Lambari, congelado, cru",100.0
+0c725f72-2667-4c06-a11f-17cd2d034821,"Manjuba, com farinha de trigo, frita",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.73
+cd156b76-dedb-443e-9e04-79d3ccb0fb7a,"Manjuba, frita",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,71.43
+60c39c7f-9d1b-4f72-853f-96538d34b3f1,"Merluza, filé, assado",bca309a1-766b-49a1-8def-084b35a78679,"Merluza, filé, cru",100.0
+2fe4fbf5-691e-4f31-b711-3a450027547a,"Merluza, filé, frito",bca309a1-766b-49a1-8def-084b35a78679,"Merluza, filé, cru",100.0
+44090e25-fd0e-40b7-861c-f3cbd27bc513,"Pescada, branca, frita",333bd9d3-5bb1-4105-88ff-5d1e31e90494,"Pescada, branca, crua",100.0
+a7b1d552-7899-4ef0-831f-088aa1d1fa2b,"Pescada, filé, com farinha de trigo, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,65.31
+fed66551-bc71-486b-a7c3-7f4b51d897bc,"Pescada, filé, frito",2872cb9a-5265-4137-aa54-7dfcf0f59b6e,"Pescada, filé, cru",100.0
+46d369a8-260b-4ba1-8f28-9f4793b6c97f,"Pescada, filé, molho escabeche",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+343ab6a6-9c99-44bf-906b-a078f5a83b6e,"Pintado, grelhado",440ff744-2d67-402a-a024-ad61668ce3ce,"Pintado, assado",100.0
+6dd4ac71-1bcd-4528-9fbc-8f5d1d61b7c6,"Salmão, filé, com pele, fresco,  grelhado",af2e899b-a7e8-4e2a-ad61-78af4dc13b80,"Salmão, sem pele, fresco, cru",81.63
+bbe71082-c425-48f1-a325-e64da45e8551,"Salmão, sem pele, fresco, grelhado",af2e899b-a7e8-4e2a-ad61-78af4dc13b80,"Salmão, sem pele, fresco, cru",100.0
+94883ea9-75b7-4acc-b469-1967887991fb,"Sardinha, assada",935d3e0b-2f2b-4e4b-9c91-a189da9bcb55,"Pescadinha, crua",77.78
+8bb08720-640f-4837-b4c9-a2fac088329b,"Sardinha, conserva em óleo",82d8e94f-a120-4555-bc93-8a4a4c2db6f3,"Sardinha, conserva em",88.89
+23f71e9f-0218-4e1d-b6ca-45a55c8e15aa,"Sardinha, frita",935d3e0b-2f2b-4e4b-9c91-a189da9bcb55,"Pescadinha, crua",77.78
+178bbfad-f74b-4497-befe-b78adf90ac9b,"Caldo de carne, tablete",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,55.56
+b1777d96-faaf-45b4-8595-b891ab77bb14,"Caldo de galinha, tablete",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,65.22
+d5436804-2096-4038-8bb0-ef3d27797df2,"Carne, bovina, acém, moído, cozido",2b456fb2-42ed-4014-ab04-08f6937ba8c8,"Carne, bovina, acém, moído, cru",100.0
+31d7c160-f787-4a35-a089-40f572ef8a61,"Carne, bovina, acém, sem gordura, cozido",88b7e507-710b-4a0c-99ec-e242eeb57e33,"Carne, bovina, acém, sem gordura, cru",100.0
+aadb01a3-ea0f-4d4d-96c2-8a2d9d727420,"Carne, bovina, almôndegas, fritas",a4c8e175-c686-4434-aee3-5528c3704735,"Carne, bovina, almôndegas, cruas",91.53
+38fb6b35-8339-4c3a-9888-f9a74e196f91,"Carne, bovina, bucho, cozido",e97ab9e1-6f5f-49c1-92f9-f88e883c9495,"Carne, bovina, bucho, cru",100.0
+15812e99-37a1-4622-93cf-e177b4d8f474,"Carne, bovina, capa de contra-filé, com gordura, grelhada",138b4858-0e4e-4fd4-8001-c21da8117256,"Carne, bovina, capa de contra-filé, com gordura, crua",100.0
+c3cb9e13-324e-44dc-86a0-ea8fd3777dd7,"Carne, bovina, capa de contra-filé, sem gordura, grelhada",81b4adc2-747a-4f33-8ead-f28bf175b795,"Carne, bovina, capa de contra-filé, sem gordura, crua",100.0
+2611c7ff-9b6b-4564-a7de-d80e47dad920,"Carne, bovina, charque, cozido",258fec94-7059-4aee-a223-d002920bdd2c,"Carne, bovina, charque, cru",100.0
+81f3dead-1638-4103-b41c-ac5193dde647,"Carne, bovina, contra-filé, à milanesa",05c43bd9-9101-4a52-803a-35ed4d63cd4c,"Carne, bovina, contra- filé de costela, cru",80.0
+8027d695-e308-48b3-866c-cb2f802e1ae3,"Carne, bovina, contra-filé de costela, cru",05c43bd9-9101-4a52-803a-35ed4d63cd4c,"Carne, bovina, contra- filé de costela, cru",100.0
+1435c7e5-687a-496c-8407-0823f14fd148,"Carne, bovina, contra-filé de costela, grelhado",05c43bd9-9101-4a52-803a-35ed4d63cd4c,"Carne, bovina, contra- filé de costela, cru",100.0
+a8d32a83-92a6-469f-a44b-3a36eddcf31b,"Carne, bovina, contra-filé, com gordura, cru",d01b250b-35f2-47f2-af76-05f35d7c6143,"Carne, bovina, contra- filé, com gordura, cru",100.0
+6dc09dcb-51e2-4dee-9f9b-de579e95d1fb,"Carne, bovina, contra-filé, com gordura, grelhado",d01b250b-35f2-47f2-af76-05f35d7c6143,"Carne, bovina, contra- filé, com gordura, cru",100.0
+e2e38b59-5a4c-4092-a342-b15de19bbe88,"Carne, bovina, contra-filé, sem gordura, cru",e6c4d58a-68ed-447f-a361-745c1fc39e45,"Carne, bovina, contra- filé, sem gordura, cru",100.0
+54d5e0c5-3b57-40fe-9671-41044c3dfea7,"Carne, bovina, contra-filé, sem gordura, grelhado",e6c4d58a-68ed-447f-a361-745c1fc39e45,"Carne, bovina, contra- filé, sem gordura, cru",100.0
+caf27a41-20a3-489e-8ce0-c08d40f678e8,"Carne, bovina, costela, assada",98c03595-cef3-4dd7-a502-2536e9ffb21a,"Carne, bovina, costela, crua",100.0
+9482b5be-7b20-407d-84bf-d325ad36aa96,"Carne, bovina, coxão duro, sem gordura, cozido",7e440179-ad2e-488e-af7f-01cc46a0b9f4,"Carne, bovina, coxão duro, sem gordura, cru",100.0
+97094209-18fc-4be8-a02d-a43ab2606086,"Carne, bovina, coxão mole, sem gordura, cozido",6aecc850-ca88-4d2d-807b-8b3a74cf573e,"Carne, bovina, coxão mole, sem gordura, cru",100.0
+42feb007-9391-4498-a2eb-f5d44896f10a,"Carne, bovina, cupim, assado",821d9ebb-54a5-4c13-ad23-9149f0652af7,"Carne, bovina, cupim, cru",100.0
+346897c6-064f-470f-b5ea-4cdbcec1ec0f,"Carne, bovina, fígado, grelhado",6c18e45e-a3de-45b9-96e8-65559decb888,"Carne, bovina, fígado, cru",100.0
+14673d74-86ac-4454-b0f8-c0a3b1836ace,"Carne, bovina, filé mingnon, sem gordura, grelhado",7a223cb3-f5ba-48df-8008-27a8d1611e3d,"Carne, bovina, filé mingnon, sem gordura, cru",100.0
+3e7a6fc7-733c-4eb9-adb8-cb7040e61721,"Carne, bovina, flanco, sem gordura, cozido",179f4e47-68a4-4c34-95c3-3a1f4b044fab,"Carne, bovina, flanco, sem gordura, cru",100.0
+e7e1033b-da7f-4761-a412-11b71aae3d40,"Carne, bovina, fraldinha, com gordura, cozida",f25dee1f-3767-4744-8884-2a77b0678443,"Carne, bovina, fraldinha, com gordura, crua",100.0
+e44b991b-be8e-488c-add7-19a452443bd2,"Carne, bovina, lagarto, cozido",832da66a-7dcb-46e5-a172-b53382ba0950,"Carne, bovina, lagarto, cru",100.0
+00d36142-94ac-42b3-9f02-3fccfefaa6d0,"Carne, bovina, língua, cozida",8d260f4f-1c8e-4551-8bcd-138c995e0fb0,"Carne, bovina, língua, crua",100.0
+c1165352-7a49-496b-9c28-aac9ef67ac10,"Carne, bovina, maminha, grelhada",ebae7bb9-3435-4486-b2c9-1dab9859cb37,"Carne, bovina, maminha, crua",100.0
+73c9bdda-def5-4687-9ef6-71192f2758f1,"Carne, bovina, miolo de alcatra, sem gordura, grelhado",0a87502e-d19b-4db8-9ce1-06b3d533c883,"Carne, bovina, miolo de alcatra, sem gordura, cru",100.0
+d4a49728-fea9-441c-8283-11e12f036b57,"Carne, bovina, músculo, sem gordura, cozido",08618756-d094-48e5-9722-d7e9eaf3247f,"Carne, bovina, músculo, sem gordura, cru",100.0
+cb6872e7-cb68-4022-80d7-5af501ddd630,"Carne, bovina, paleta, sem gordura, cozida",f02a57b4-e069-43cf-9aad-f20e7f6da59d,"Carne, bovina, paleta, sem gordura, crua",100.0
+10059a0a-7456-42b0-9715-9f47e6f7cb09,"Carne, bovina, patinho, sem gordura, grelhado",94b243a0-0daf-4ef6-8f54-c789c473b305,"Carne, bovina, patinho, sem gordura, cru",100.0
+5e4a5c0a-dcfe-449f-b9ca-f1ae21b2be67,"Carne, bovina, peito, sem gordura, cozido",adc94551-643c-4a54-81e3-525486ab5fd0,"Carne, bovina, peito, sem gordura, cru",100.0
+0e4c1a93-bd26-40b9-ad2c-0d2564b0c712,"Carne, bovina, picanha, com gordura, grelhada",724d8304-b637-4cb8-9e5b-cf898dcf2d78,"Carne, bovina, picanha, com gordura, crua",100.0
+3dc6991d-6452-4dfc-995e-a7102704d608,"Carne, bovina, picanha, sem gordura, grelhada",32335077-d177-4d36-92ec-8acc64669528,"Carne, bovina, picanha, sem gordura, crua",100.0
+ff29b8a0-7489-4fcd-bf9e-c4e4a322545a,"Carne, bovina, seca, cozida",7cb3174b-c686-470a-84c3-7a40cdded837,"Carne, bovina, seca, crua",100.0
+5d253d84-0e1a-4599-9555-90563be67843,"Coxinha de frango, frita",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,70.97
+05eec910-e3ef-45e6-8bcb-1ed9cb69b8a9,"Croquete, de carne, cru",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+acac3894-f5b6-4e29-8d00-4339eb1c87b0,"Croquete, de carne, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+cce7475f-67e6-4e91-8d95-4a3ac3ce5ed3,"Empada de frango, pré-cozida, assada",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.46
+557b53ec-9af7-4dfa-8aab-a3e23b571ae1,"Empada, de frango, pré-cozida",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.46
+21e500a4-aeb2-4f05-ab0f-e1a4ab3b619e,"Frango, caipira, inteiro, com pele, cozido",d8d70121-a0e9-4094-ab42-399d30dd1e48,"Frango, inteiro, com pele, cru",85.19
+ed1861c8-2071-4fc5-a5c4-119b86896e03,"Frango, caipira, inteiro, sem pele, cozido",ce1406c1-6699-4a80-887b-175e749ab465,"Frango, inteiro, sem pele, cru",85.19
+7ebea741-251a-4ce7-9826-6be8a76ccda0,"Frango, coração, grelhado",6b709817-7ad8-4660-925c-368b44756c18,"Frango, coração, cru",100.0
+b1058654-7fd0-4cc9-8abc-f36247e21509,"Frango, coxa, com pele, assada",99b51a89-c922-479e-9dc0-3e641aaccb97,"Frango, coxa, com pele, crua",100.0
+f400807c-74ea-4727-9c34-fc1806cf203d,"Frango, coxa, sem pele, cozida",7c903002-cfde-4f4e-8f9b-3820f05f39a2,"Frango, coxa, sem pele, crua",100.0
+d0ebe673-00b4-4c6d-98b0-f76de690a228,"Frango, filé, à milanesa",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,51.43
+46b151b6-ac63-49a5-ae5d-c8dea684b881,"Frango, inteiro, sem pele, assado",ce1406c1-6699-4a80-887b-175e749ab465,"Frango, inteiro, sem pele, cru",100.0
+d9786bd5-bbcb-4932-8cba-74564c772ffc,"Frango, inteiro, sem pele, cozido",ce1406c1-6699-4a80-887b-175e749ab465,"Frango, inteiro, sem pele, cru",100.0
+b90cbe46-9716-4f29-ac54-a71e8715e4e5,"Frango, peito, com pele, assado",9616849f-e047-41ee-bf58-8a7c03557bf7,"Frango, peito, com pele, cru",100.0
+e3e557ac-98f2-4847-b997-af4295331623,"Frango, peito, sem pele, cozido",cb7b01aa-dcc5-4edd-8638-a5be3b6eb663,"Frango, peito, sem pele, cru",100.0
+a76ad061-d0de-4897-a6e6-5cdbea723610,"Frango, peito, sem pele, grelhado",cb7b01aa-dcc5-4edd-8638-a5be3b6eb663,"Frango, peito, sem pele, cru",100.0
+6148b5a2-7fe0-4391-be1c-bcc33ae796e5,"Frango, sobrecoxa, com pele, assada",e7f6483b-c02f-456b-809d-c243b67d5dac,"Frango, sobrecoxa, com pele, crua",100.0
+a07f2931-9468-487a-b750-775e2b5e0659,"Frango, sobrecoxa, sem pele, assada",c77c4fb2-81fb-4a45-8e47-47470ce38b52,"Frango, sobrecoxa, sem pele, crua",100.0
+be5bbf31-7cfc-46ae-a665-29ce6385e56b,"Hambúrguer, bovino, frito",523efa99-68ac-4e27-a6cc-fb05bbf1b16f,"Hambúrguer, bovino, cru",100.0
+c2948ef8-bbaa-438f-aa30-430157817b85,"Hambúrguer, bovino, grelhado",523efa99-68ac-4e27-a6cc-fb05bbf1b16f,"Hambúrguer, bovino, cru",100.0
+5bd668aa-d51c-4ac2-97aa-4d4e2b29c4b7,"Lingüiça, frango, frita",340ef32e-9374-4d2b-aa8e-f3c653b4b80b,"Linguiça, frango, crua",93.33
+97f98368-c755-4173-bcb7-1e32b4f1e295,"Lingüiça, frango, grelhada",340ef32e-9374-4d2b-aa8e-f3c653b4b80b,"Linguiça, frango, crua",93.33
+6fd4466c-f637-41e3-a26b-e0fbba1607a7,"Lingüiça, porco, frita",1fdcbf3a-9647-49f9-9a3b-b9e6dfd68866,"Linguiça, porco, crua",92.86
+de987f0f-9aff-456d-ae0e-c3c36248bf8a,"Lingüiça, porco, grelhada",1fdcbf3a-9647-49f9-9a3b-b9e6dfd68866,"Linguiça, porco, crua",92.86
+46a455b4-dff2-41fd-8cad-1fd8c606ac67,"Peru, congelado, assado",49765d7f-4d50-4f00-8eef-04b0f98c3f5f,"Peru, congelado, cru",100.0
+cfe6de6e-d790-4bd2-928d-790df558e958,"Porco, bisteca, grelhada",46bda03e-d0b4-4746-a830-06b143c0c62d,"Porco, bisteca, crua",100.0
+ebe61d6a-f23d-422e-b310-430e9ab37849,"Porco, costela, assada",7dfb4038-c7a0-4ae3-9242-eb2495a674e0,"Porco, costela, crua",100.0
+626f0ebb-6471-472e-894d-27765facf8b1,"Porco, lombo, assado",59ce0b0b-a8cc-472d-a989-a1e9a663cd61,"Porco, lombo, cru",100.0
+194a6502-30af-46d4-9363-7f9b484c2312,"Porco, pernil, assado",71960849-b901-49d4-a617-90339357dbef,"Porco, pernil, cru",100.0
+6f4c05e4-e671-4ebd-a9e0-798f0203981e,"Presunto, com capa de gordura",57ed3571-f498-43d6-9d66-9bc0291de440,"Presunto, com capa de",83.33
+e741e24a-29eb-4157-99e1-5d1b07c0a219,"Presunto, sem capa de gordura",9df507fa-b86f-46c4-80e5-81671dbfda10,"Presunto, sem capa de",83.33
+6c72436a-58ce-449b-914d-1e5189bf50db,"Quibe, assado",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.73
+22643992-6c23-484a-b4d1-66ae6c3e382e,"Quibe, cru",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.73
+ffe71f5c-6a82-40ed-8544-6b7c4f8a22c3,"Quibe, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.73
+9726e21e-1efd-4d29-bd8b-c8bd945af5a6,"Toucinho, cru",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,70.59
+e202e81e-865d-4499-b363-bd23c3455c5a,"Toucinho, frito",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,70.59
+9a052d18-f553-4b21-828a-457472b9348f,"Bebida láctea, pêssego",d6726bb2-8b17-46e8-9440-78e986a26642,Bebida láctea,76.47
+13bc16e3-dd05-4ad5-a21a-e4c9c8a06aae,"Iogurte, natural",8586ce31-9a7c-4a71-9456-c15641be9927,Iogurte natural,100.0
+66cb01f0-1213-4d70-8481-df204afeb36f,"Iogurte, natural, desnatado",8586ce31-9a7c-4a71-9456-c15641be9927,Iogurte natural,75.0
+07d70c3e-db24-4454-a271-a9ee30a7136d,"Iogurte, sabor abacaxi",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,61.11
+13281fec-50f6-4012-a7b8-f6ff70b7d4c0,"Iogurte, sabor morango",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,61.11
+824152f9-7e3c-4a7b-bdb0-c53e43697651,"Iogurte, sabor pêssego",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,55.56
+40286944-26e6-4b95-9317-acdc796a45de,"Leite, de vaca, achocolatado",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,73.47
+ed606f7f-538d-45f3-a279-b1791f50696e,"Queijo, petit suisse, morango",2dc049fb-997a-4914-bd49-238e9e277915,"Queijo, petit suisse,",82.61
+17a638df-fac9-444f-bfec-c361d21dc5b6,"Bebida isotônica, sabores variados",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,46.81
+250488ff-0229-43ef-922a-e70b4d46d32f,"Café, infusão 10%",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,43.24
+a8be72f2-2ca7-43a4-8c91-db173665db75,"Cana, aguardente 1",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,57.14
+583e915e-83d5-4cfe-bbb2-993e1402dc1a,"Cana, caldo de",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,58.33
+fc1abd2a-c6b8-46a1-aac2-6df0d5285a33,"Cerveja, pilsen 2",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,50.0
+60e2cee6-a9c4-4b71-8f3d-6acc2b0d6c4f,"Chá, erva-doce, infusão 5%",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.78
+9ba93be1-0e28-4b6c-b59b-9acd1698aab8,"Chá, mate, infusão 5%",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,62.86
+f8021f77-f4e9-4c33-8ef2-fccca705ed91,"Chá, preto, infusão 5%",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,41.79
+36d17788-5f7b-417c-8c91-93e8c022f52b,"Coco, água de",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,62.5
+7e88765b-147d-4666-b73c-ed6eec2e4b0d,"Refrigerante, tipo água tônica",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,45.28
+fe66f91f-924f-4a05-86e8-5459ae075e7a,"Refrigerante, tipo cola",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,53.33
+4012677f-138f-4741-a7c9-06ff06c9f2ab,"Refrigerante, tipo guaraná",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.0
+45cc394c-e70e-4ec1-816b-ef8c463884e7,"Refrigerante, tipo laranja",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.0
+1e6ce7f4-7b4f-4f67-baa8-4c3cd60ef29e,"Refrigerante, tipo limão",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,46.81
+15ae2799-2393-4a92-9f4c-734d4f7f3a00,"Omelete, de queijo",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,73.33
+e7254a1d-2237-4486-92c4-b125ddc110c3,"Ovo, de galinha, clara, cozida/10minutos",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,73.08
+de42b592-225e-4d68-9014-200c07ba46df,"Ovo, de galinha, gema, cozida/10minutos",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,74.51
+8ef4fd9e-e520-4e15-987f-27908e3e085b,"Ovo, de galinha, inteiro, cozido/10minutos",e67dd1b3-d997-4bb3-86c1-e62de0aca77c,"Ovo, de galinha, inteiro, cru",81.48
+19033c66-a61d-4179-8cb1-7030a9436894,"Ovo, de galinha, inteiro, frito",e67dd1b3-d997-4bb3-86c1-e62de0aca77c,"Ovo, de galinha, inteiro, cru",100.0
+673e7718-1e39-4674-aa0a-da4d030bea18,"Chocolate, ao leite",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,68.29
+db02bf09-7ad5-4267-9ba1-58c1755df06e,"Chocolate, ao leite, com castanha do Pará",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.63
+b76e3d2d-8bea-408a-a7f1-7331caac496a,"Chocolate, ao leite, dietético",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+9b432ad0-5b42-4431-b543-0cde8238a350,"Chocolate, meio amargo",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,61.54
+8e64b68a-bbf8-4db9-86cb-b76f390fca27,"Doce, de abóbora, cremoso",03e14119-77ad-4e43-9fd4-a51df1006925,"Doce, de abóbora,",78.95
+3a78feb1-c9aa-4c04-b659-c142489ea2a5,Glicose de milho,542debe6-49c6-4454-8d58-c1f22117b70d,"Óleo, de milho",75.86
+ea86db6c-32c3-4bda-854f-66c62e66634b,"Maria mole, coco queimado",8d94b91c-e53c-42d1-ba8a-92a36784bb9a,"Maria mole, coco",76.92
+b32b86d5-6ff9-481e-95eb-ec28a23bd517,"Capuccino, pó",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.94
+3f4afadb-88c7-4f01-b5f4-70b3b0731b19,"Gelatina, sabores variados, pó",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.15
+d42e2b8b-d1b4-4e74-820d-548094887c9a,"Sal, dietético",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.0
+d7ae3133-ab45-4e72-8ada-7e253819bffc,Shoyu,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+981e449e-b3ef-4c29-8f50-c09854f18c12,Tempero a base de sal,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,51.28
+520defdb-4562-45f0-a644-bc3f458fc7a3,"Azeitona, preta, conserva",73ed07ab-9afa-4b27-81ef-914a8a09fbb2,"Azeitona, preta,",75.68
+09f0539a-3100-4a2b-87de-d4a68b03f182,"Azeitona, verde, conserva",5bf6ada2-d3c5-4fa2-ba6a-853e4902f7c2,"Azeitona, verde,",75.68
+f4c7d30c-9a3b-458d-a4a0-133145c5590d,"Chantilly, spray, com gordura vegetal",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,51.52
+4741ce1b-7e0d-4176-ac6f-8c08171f678d,"Maionese, tradicional com ovos",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,65.38
+33305e23-f3d0-4a98-a924-82a030ba3cb3,Acarajé,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,58.82
+a4e8e257-733f-41c4-b5ac-5be53cf0cc21,Arroz carreteiro,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,71.43
+758d6dce-8287-4c5c-98ee-893e824ce358,"Baião de dois, arroz e feijão-de-corda",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.31
+dfcfff4d-f02a-45c8-9f77-adbccf051f28,Barreado,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,63.16
+d131e44b-f74b-48aa-b09a-98d696e1dc76,"Bife à cavalo, com contra filé",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,52.05
+41960634-a80f-4245-b209-be0b503c88b8,Bolinho de arroz,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,56.25
+453724ca-e4fd-470f-a253-8b0cd51834a5,Camarão à baiana,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,58.54
+ffce743f-34ab-44e6-b379-c3f2c1b82415,"Charuto, de repolho",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,63.16
+4b356a60-0788-48fd-a00f-2a6a82d8ff65,"Cuscuz, de milho, cozido com sal",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.29
+a8c8dd44-e850-420a-8a57-10244f535646,"Cuscuz, paulista",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,54.55
+2ba90870-14d3-4a6c-b5f4-b070b1dd0ecb,"Cuxá, molho",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,50.0
+dd23c678-b15f-4666-a0e7-09386ed7a464,Dobradinha,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+05c2cd19-8b3b-4615-9a9f-018f45f06ba3,Estrogonofe de carne,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,61.11
+e1f6796d-7834-4789-9cc4-2543387e6aff,Estrogonofe de frango,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,63.16
+1a08e430-b279-42d0-a05b-3e8002449528,Feijão tropeiro mineiro,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.46
+43c9798f-b847-4629-806b-23d5d0f44513,L,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,40.0
+874a8c40-3e08-4a8e-b6fd-c7218f9c525d,"Frango, com açafrão",6b709817-7ad8-4660-925c-368b44756c18,"Frango, coração, cru",81.25
+fc9c34da-ee1f-4b4d-9f7f-94817ed8eee0,"Macarrão, molho bolognesa",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.57
+9c52de3e-c0bc-4cac-82e1-2125e8122a36,Maniçoba,703599b3-359b-4380-bf8e-1fd34acda813,"Mandioca, crua",75.0
+69334bed-84d0-409d-809b-edf80f4e03ec,Quibebe,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,61.54
+990bd6d9-58b9-4700-90e0-7836cc0df0fa,"Salada, de legumes, com maionese",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,59.57
+a9deeec0-06cc-431c-87f9-5b369d7c28db,"Salada, de legumes, cozida no vapor",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,65.12
+45af3b27-9fe1-4a78-a535-fd63638bfaaf,"Salpicão, de frango",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,68.75
+d9c5eef8-c43c-4405-bba4-af2a4b2435f8,Sarapatel,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,62.5
+ef9522c2-1a00-4e57-bbd6-7d061b7ff7b0,Tabule,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+7f523b57-66e5-49a8-9148-28c831ca5650,Tacacá,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+aff4fa99-ace3-4917-bb1b-9ad7f709bd59,"Tapioca, com manteiga",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,64.71
+2cfbf78a-8629-4ff5-a70a-ffaf77b83ab2,"Tucupi, com pimenta-de-cheiro",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,48.78
+a58a4dea-4079-4ea4-bf0b-84340b88bf8a,Vaca atolada,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,57.14
+ac0ce106-313f-4539-8af3-645603a6b89c,Vatapá,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,60.0
+575d68c4-a7e0-44a1-b7a9-8df707e0dbfa,Virado à paulista,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,62.86
+ed5d6c21-dee0-4f85-8591-1d893f006940,Yakisoba,NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,71.43
+3aa89980-18f5-43af-af89-7220d26c8125,"Ervilha, enlatada, drenada",24816131-640b-4189-b806-b510a754eeb1,"Ervilha, enlatada,",80.0
+00e51a81-07db-41ee-8541-6818b08ee321,"Feijão, carioca, cozido",160e2561-41f1-4514-beb1-2cb2a7ca96f7,"Feijão, carioca, cru",100.0
+8ec700fe-f2d1-421a-a64a-0475c9aea1a1,"Feijão, fradinho, cozido",c8162694-4c13-40a6-b824-7da5690f25af,"Feijão, fradinho, cru",100.0
+14a75314-994a-43a6-a52c-5ffa1948e4fa,"Feijão, jalo, cozido",e137253a-acbb-4c5e-846e-445c75b7011a,"Feijão, jalo, cru",100.0
+64746ea2-3db9-4c7d-ad36-d14ba842fd6f,"Feijão, preto, cozido",bee7ab3f-fce2-4d54-8f1f-d07d39bd2972,"Feijão, preto, cru",100.0
+140be5c8-66e7-44b9-89fc-ac0f50b54e6f,"Feijão, rajado, cozido",89bf59ac-b36b-4b09-b371-bde64ab2f14a,"Feijão, rajado, cru",100.0
+deace02c-f587-4a7e-b46e-fa6425ef09db,"Feijão, rosinha, cozido",4ba84f8a-e9a9-4324-9fc9-aea19d5a10e2,"Feijão, rosinha, cru",100.0
+ab15a8ec-7e2d-48d3-85a2-1c39645d8549,"Feijão, roxo, cozido",4b74958f-6b8d-4bfd-b640-5d853c4cdf2d,"Feijão, roxo, cru",100.0
+844ee9ea-3cc7-4f1e-af99-5d56c98f109f,"Lentilha, cozida",26142780-0f84-4b8e-9500-e939137f6ed2,"Lentilha, crua",100.0
+06293205-dd33-4e06-8d56-09cf68cb35de,"Pé-de-moleque, amendoim",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,74.29
+b55abebf-b05f-4af3-b9ae-d1e8a0ee7d0f,"Soja, extrato solúvel, natural, fluido",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,72.41
+fd18d225-79c4-49a3-9e57-4fafd0aa030b,"Coco,  verde, cru",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67
+a1aafe1d-7b24-495b-84a6-421f9b2ea3c3,"Pinhão, cozido",b9e28b2a-bc22-4598-a656-e7a542aaad52,Pinhão,100.0
+e1add24c-2585-408f-9bdc-556c2f30f467,"Pupunha, cozida",NENHUMA CORRESPONDÊNCIA SEGURA,NENHUMA CORRESPONDÊNCIA SEGURA,66.67

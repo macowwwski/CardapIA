@@ -1,24 +1,24 @@
-# Compara??o TACO x per capita
+# Comparacao TACO x per capita
 
 Fontes: `db/taco_final.sql` e `data/manual_per_capita.pdf`.
 
-Crit?rio: compara??o exata ap?s normalizar caixa, acentos e espa?os repetidos. N?o foi feita equival?ncia sem?ntica entre varia??es como cru/cozido, p?/UHT, com/sem gordura ou descri??es truncadas do PDF.
+Criterio: comparacao exata apos normalizar caixa, acentos e espacos repetidos. Nao foi feita equivalencia semantica entre variaveis como cru/cozido, p/UHT, com/sem gordura ou descricoes truncadas do PDF.
 
 ## Resumo
 
-- TACO: 597 linhas, 597 nomes ?nicos normalizados.
-- Per capita: 472 linhas, 471 nomes ?nicos normalizados.
+- TACO: 597 linhas, 597 nomes unicos normalizados.
+- Per capita: 472 linhas, 471 nomes unicos normalizados.
 - Em ambos: 334 nomes.
-- Na TACO e n?o no per capita: 263 nomes.
-- No per capita e n?o na TACO: 137 nomes.
+- Na TACO e nao no per capita: 263 nomes.
+- No per capita e nao na TACO: 137 nomes.
 - Duplicatas normalizadas no per capita: 1.
 - Duplicatas normalizadas na TACO: 0.
 
 ## Duplicatas no per capita
 
-- Iogurte de qualquer (2 ocorr?ncias)
+- Iogurte de qualquer (2 ocorrencias)
 
-## Na TACO e n?o no per capita
+## Na TACO e nao no per capita
 
 - Abadejo, filé, congelado, assado
 - Abadejo, filé, congelado, grelhado
@@ -284,7 +284,7 @@ Crit?rio: compara??o exata ap?s normalizar caixa, acentos e espa?os repetidos. N
 - Virado à paulista
 - Yakisoba
 
-## No per capita e n?o na TACO
+## No per capita e nao na TACO
 
 - Açafrão, pó
 - Achocolatado em pó diet
