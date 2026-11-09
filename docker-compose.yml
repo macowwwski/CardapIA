@@ -6,20 +6,23 @@ services:
       POSTGRES_PASSWORD: cardapia
       POSTGRES_DB: cardapia
     ports:
-      - "${DB_PORT:-5433}:5432"     # Host na 5433 porque o container do AdptWrt está na 5432
+      - "${DB_PORT:-5433}:5432" # Host na 5433 porque o container do AdptWrt está na 5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      # Inicialização automática do banco e TACO em UTF-8 no 'up'
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./db/taco_final.sql:/docker-entrypoint-initdb.d/02_taco_final.sql:ro
 
   qdrant:
     image: qdrant/qdrant:latest
     container_name: cardapia_qdrant
     restart: always
     ports:
-      - "6333:6333"   # Dashboard
-      - "6334:6334"   # gRPC
+      - "6333:6333" # Dashboard
+      - "6334:6334" # gRPC
     volumes:
       - qdrant_data:/qdrant/storage
-      
+
 volumes:
   postgres_data:
   qdrant_data:
