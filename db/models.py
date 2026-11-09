@@ -107,7 +107,7 @@ class Semana(Base):
  
     id          = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     cardapio_id = Column(UUID(as_uuid=True), ForeignKey("cardapio.id"), nullable=False)
-    numero      = Column(Integer, nullable=False)    # 1, 2, 3, 4
+    numero      = Column(Integer, nullable=False)    # 1 a 6
  
     # Relacionamentos
     cardapio    = relationship("Cardapio", back_populates="semanas")

@@ -82,13 +82,13 @@ CREATE TABLE public.cardapio (
  
 -- -------------------------------------------------------------
 -- TABELA: semana
--- Cada cardápio é dividido em semanas (1 a 4)
+-- Cada cardápio é dividido em semanas (1 a 6)
 -- -------------------------------------------------------------
  
 CREATE TABLE public.semana (
     id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     cardapio_id UUID NOT NULL REFERENCES public.cardapio(id) ON DELETE CASCADE,
-    numero      INTEGER NOT NULL CHECK (numero BETWEEN 1 AND 4)
+    numero      INTEGER NOT NULL CHECK (numero BETWEEN 1 AND 6)
 );
  
  
