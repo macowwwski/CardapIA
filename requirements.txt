@@ -48,3 +48,4 @@ xxhash==3.6.0
 zstandard==0.25.0
 qdrant-client
 fastembed
+langchain-google-genai

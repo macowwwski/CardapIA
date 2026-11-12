@@ -37,6 +37,12 @@ PER_CAPITA_MATCH_MIN_SCORE = float(os.getenv("PER_CAPITA_MATCH_MIN_SCORE", "0.00
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:31b-cloud")
 OLLAMA_TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE", "0.3"))
 
+# LLM (Provedor ativo e Google Gemini)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY", "")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini" if GEMINI_API_KEY else "ollama").strip().lower()
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", str(OLLAMA_TEMPERATURE)))
+
 # Caminho para os dados normativos do PNAE
 CAMINHO_PNAE_JSON = PROJECT_ROOT / "data" / "pnae.json"
 

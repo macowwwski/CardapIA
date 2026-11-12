@@ -1,14 +1,18 @@
-from langchain_ollama import ChatOllama
 import _bootstrap  # noqa: F401
 
 from src.ai_service import CardapioSchema
+from src.services.ai_generator import criar_llm
 
-llm = ChatOllama(model="gemma4:31b-cloud", temperature=0)
+
+def test_structured_output_schema_suportado():
+    assert "semanas" in CardapioSchema.model_fields
 
 
-llm_structured = llm.with_structured_output(CardapioSchema)
+if __name__ == "__main__":
+    llm = criar_llm(temperature=0)
+    llm_structured = llm.with_structured_output(CardapioSchema)
 
-res = llm_structured.invoke("""
+    res = llm_structured.invoke("""
 Retorne EXATAMENTE este JSON:
 
 {
@@ -18,5 +22,5 @@ Retorne EXATAMENTE este JSON:
 }
 """)
 
-print(res)
+    print(res)
 

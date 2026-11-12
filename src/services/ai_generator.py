@@ -14,8 +14,11 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_ollama import ChatOllama
 
 from src.config import (
+    GEMINI_API_KEY,
+    GEMINI_MODEL,
+    LLM_PROVIDER,
+    LLM_TEMPERATURE,
     OLLAMA_MODEL,
-    OLLAMA_TEMPERATURE,
 )
 from src.schemas_pydantic import CardapioSchema, RelatorioValidacaoSchema
 from src.taco.resolver import resolver_taco, resolver_per_capita
@@ -165,6 +168,42 @@ def _avaliar_aceitacao_correcao(
     return False, "Correção descartada: não apresentou melhora suficiente em relação ao original."
 
 
+def criar_llm(temperature: float):
+    """Instancia o modelo de chat configurado (Gemini ou Ollama)."""
+    if LLM_PROVIDER == "gemini":
+        if not GEMINI_API_KEY:
+            raise ValueError("GEMINI_API_KEY não configurada no .env.")
+        from langchain_google_genai import ChatGoogleGenerativeAI
+
+        return ChatGoogleGenerativeAI(
+            model=GEMINI_MODEL,
+            temperature=temperature,
+            google_api_key=GEMINI_API_KEY,
+        )
+
+    return ChatOllama(
+        model=OLLAMA_MODEL,
+        temperature=temperature,
+    )
+
+
+def _extrair_texto_resposta(resposta) -> str:
+    """Extrai texto simples da resposta LLM (string direta ou blocos de conteúdo)."""
+    conteudo = getattr(resposta, "content", "")
+    if isinstance(conteudo, str):
+        return conteudo
+    if isinstance(conteudo, list):
+        partes = []
+        for item in conteudo:
+            if isinstance(item, str):
+                partes.append(item)
+            elif isinstance(item, dict) and item.get("type") == "text":
+                partes.append(item.get("text", ""))
+        return "".join(partes)
+    texto = getattr(resposta, "text", None)
+    return texto if isinstance(texto, str) else str(conteudo)
+
+
 def gerar_cardapio(
     etapa: str,
     faixa_etaria: str,
@@ -197,10 +236,7 @@ def gerar_cardapio(
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # ETAPA 1 — Geração de texto livre do cardápio via LLM
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    llm = ChatOllama(
-        model=OLLAMA_MODEL,
-        temperature=OLLAMA_TEMPERATURE,
-    )
+    llm = criar_llm(temperature=LLM_TEMPERATURE)
 
     system_prompt_1 = pipeline.construir_system_prompt(
         turno=turno,
@@ -217,15 +253,12 @@ def gerar_cardapio(
     ]
 
     resposta = llm.invoke(mensagens)
-    texto_cardapio = resposta.content
+    texto_cardapio = _extrair_texto_resposta(resposta)
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # ETAPA 2 — Conversão para JSON estruturado com Schema Pydantic
     # - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    llm_structured = ChatOllama(
-        model=OLLAMA_MODEL,
-        temperature=0,
-    ).with_structured_output(CardapioSchema)
+    llm_structured = criar_llm(temperature=0).with_structured_output(CardapioSchema)
 
     prompt_2 = montar_prompt_conversao_json()
 
@@ -284,7 +317,7 @@ def gerar_cardapio(
                 SystemMessage(content=system_prompt_1),
                 HumanMessage(content=prompt_correcao),
             ])
-            texto_corr = resposta_corr.content
+            texto_corr = _extrair_texto_resposta(resposta_corr)
 
             resultado_corr = llm_structured.invoke(
                 montar_mensagem_conversao_json(prompt_2, texto_corr)
